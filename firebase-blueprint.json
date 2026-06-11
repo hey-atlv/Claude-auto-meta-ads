@@ -1,0 +1,321 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile and role information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "format": "email" },
+        "role": { "type": "string", "enum": ["admin", "user"] },
+        "department": { "type": "string" },
+        "createdAt": { "type": "number", "description": "Timestamp" }
+      },
+      "required": ["uid", "email", "role", "createdAt"]
+    },
+    "SheetConfig": {
+      "title": "SheetConfig",
+      "description": "Configuration for a Google Sheet data source",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "spreadsheetId": { "type": "string" },
+        "sheetName": { "type": "string" },
+        "apiKey": { "type": "string" },
+        "isActive": { "type": "boolean" },
+        "createdByUserId": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["name", "spreadsheetId", "sheetName", "apiKey", "isActive", "createdByUserId", "createdAt"]
+    },
+    "AdsData": {
+      "title": "AdsData",
+      "description": "Cached ads data from Google Sheets",
+      "type": "object",
+      "properties": {
+        "date": { "type": "string", "description": "YYYY-MM-DD" },
+        "market": { "type": "string", "enum": ["Nội Địa", "Việt Kiều", "Khác"] },
+        "account_id": { "type": "string" },
+        "account_name": { "type": "string" },
+        "campaign_id": { "type": "string" },
+        "campaign_name": { "type": "string" },
+        "adset_id": { "type": "string" },
+        "adset_name": { "type": "string" },
+        "ad_id": { "type": "string" },
+        "ad_name": { "type": "string" },
+        "brand": { "type": "string" },
+        "page_code": { "type": "string" },
+        "geography": { "type": "string" },
+        "page_type": { "type": "string" },
+        "content_id": { "type": "string" },
+        "objective": { "type": "string" },
+        "spend": { "type": "number" },
+        "impressions": { "type": "number" },
+        "reach": { "type": "number" },
+        "frequency": { "type": "number" },
+        "clicks": { "type": "number" },
+        "ctr_all": { "type": "number" },
+        "cpm": { "type": "number" },
+        "purchases": { "type": "number" },
+        "cost_per_purchase": { "type": "number" },
+        "messages": { "type": "number" },
+        "cost_per_messaging_conversation": { "type": "number" },
+        "revenue": { "type": "number" },
+        "leads": { "type": "number" }
+      },
+      "required": ["date", "account_id", "campaign_id", "spend"]
+    },
+    "KpiMonth": {
+      "title": "KpiMonth",
+      "description": "KPI configuration for a specific month",
+      "type": "object",
+      "properties": {
+        "month": { "type": "string", "description": "YYYY-MM" },
+        "basePriceDomestic": { "type": "number" },
+        "basePriceOverseas": { "type": "number" },
+        "baseDataDomestic": { "type": "number" },
+        "baseDataOverseas": { "type": "number" },
+        "levels": {
+          "type": "object",
+          "description": "Map of levelId to LevelConfig"
+        },
+        "personnel": {
+          "type": "array",
+          "description": "Array of PersonnelKpiConfig"
+        },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["month", "basePriceDomestic", "basePriceOverseas", "baseDataDomestic", "baseDataOverseas", "levels", "personnel", "updatedAt"]
+    },
+    "AdAccount": {
+      "title": "AdAccount",
+      "description": "Ad account configuration from Config tab",
+      "type": "object",
+      "properties": {
+        "account_id": { "type": "string" },
+        "account_name": { "type": "string" },
+        "brand": { "type": "string" },
+        "partner": { "type": "string" },
+        "runner": { "type": "string" },
+        "bm_name": { "type": "string" },
+        "status": { "type": "string" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["account_id"]
+    },
+    "Fanpage": {
+      "title": "Fanpage",
+      "description": "Fanpage configuration from Seryn Page tab",
+      "type": "object",
+      "properties": {
+        "page_code": { "type": "string" },
+        "page_name": { "type": "string" },
+        "page_id": { "type": "string" },
+        "runner": { "type": "string" },
+        "source_code": { "type": "string" },
+        "page_type": { "type": "string" },
+        "geography": { "type": "string" },
+        "page_link": { "type": "string" },
+        "status": { "type": "string" },
+        "pancake": { "type": "string" },
+        "add_bm": { "type": "string" },
+        "removed_pan": { "type": "string" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["page_code"]
+    },
+    "Partner": {
+      "title": "Partner",
+      "description": "Ad account partner information and dynamic fee history",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "feeHistory": {
+          "type": "array",
+          "items": { "$ref": "#/entities/PartnerFee" }
+        },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["name", "feeHistory", "createdAt"]
+    },
+    "PartnerFee": {
+      "title": "PartnerFee",
+      "description": "A single fee rate entry for a specific period",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "startDate": { "type": "string", "description": "YYYY-MM-DD" },
+        "feeRate": { "type": "number" }
+      },
+      "required": ["id", "startDate", "feeRate"]
+    },
+    "UserActivity": {
+      "title": "UserActivity",
+      "description": "Log of user actions and page views",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "action": { "type": "string" },
+        "page": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "metadata": { "type": "object" }
+      },
+      "required": ["userId", "userEmail", "action", "timestamp"]
+    },
+    "RoasSummary": {
+      "title": "RoasSummary",
+      "description": "Aggregated ROAS data from Roas tổng sheet",
+      "type": "object",
+      "properties": {
+        "reportMonth": { "type": "string" },
+        "startDate": { "type": "string" },
+        "endDate": { "type": "string" },
+        "channel": { "type": "string" },
+        "classification": { "type": "string" },
+        "personnel": { "type": "string" },
+        "total": {
+          "type": "object",
+          "properties": {
+            "spend": { "type": "number" },
+            "dataCount": { "type": "number" },
+            "dataPrice": { "type": "number" },
+            "roasMonth": { "type": "number" },
+            "roas3Months": { "type": "number" }
+          }
+        },
+        "domestic": {
+          "type": "object",
+          "properties": {
+            "spend": { "type": "number" },
+            "dataCount": { "type": "number" },
+            "dataPrice": { "type": "number" },
+            "roasMonth": { "type": "number" },
+            "roas3Months": { "type": "number" }
+          }
+        },
+        "overseas": {
+          "type": "object",
+          "properties": {
+            "spend": { "type": "number" },
+            "dataCount": { "type": "number" },
+            "dataPrice": { "type": "number" },
+            "roasMonth": { "type": "number" },
+            "roas3Months": { "type": "number" }
+          }
+        },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["reportMonth", "channel", "classification", "personnel", "updatedAt"]
+    },
+    "SyncHistory": {
+      "title": "SyncHistory",
+      "description": "Log of data synchronization events",
+      "type": "object",
+      "properties": {
+        "date": { "type": "string", "description": "YYYY-MM-DD" },
+        "timestamp": { "type": "number" },
+        "status": { "type": "string" },
+        "type": { "type": "string", "enum": ["AUTO", "MANUAL"] },
+        "error": { "type": "string" }
+      },
+      "required": ["date", "timestamp", "status", "type"]
+    },
+    "DailySummary": {
+      "title": "DailySummary",
+      "description": "Pre-aggregated daily totals for performance optimization",
+      "type": "object",
+      "properties": {
+        "date": { "type": "string", "description": "YYYY-MM-DD" },
+        "spend": { "type": "number" },
+        "revenue": { "type": "number" },
+        "leads": { "type": "number" },
+        "messaging": { "type": "number" },
+        "orders": { "type": "number" },
+        "updatedAt": { "type": "number" },
+        "markets": { "type": "object" }
+      },
+      "required": ["date", "spend", "revenue", "leads", "messaging", "updatedAt"]
+    },
+    "ContentPerformance": {
+      "title": "Content Performance",
+      "description": "Aggregation of metrics by content ID",
+      "type": "object",
+      "properties": {
+        "contentId": { "type": "string" },
+        "date": { "type": "string" },
+        "spend": { "type": "number" },
+        "revenue": { "type": "number" },
+        "roas": { "type": "number" },
+        "category": { "type": "string" }
+      }
+    },
+    "PersonnelPerformance": {
+      "title": "Personnel Performance",
+      "description": "Aggregation of metrics by staff/personnel",
+      "type": "object",
+      "properties": {
+        "personnel": { "type": "string" },
+        "date": { "type": "string" },
+        "spend": { "type": "number" },
+        "revenue": { "type": "number" },
+        "leads": { "type": "number" },
+        "orderCount": { "type": "number" }
+      }
+    }
+  },
+  "firestore": {
+    "/dailySummaries/{dateId}": {
+      "schema": { "$ref": "#/entities/DailySummary" },
+      "description": "Stores pre-calculated daily totals"
+    },
+    "/contentPerformance/{perfId}": {
+      "schema": { "$ref": "#/entities/ContentPerformance" },
+      "description": "Aggregated content stats"
+    },
+    "/personnelPerformance/{perfId}": {
+      "schema": { "$ref": "#/entities/PersonnelPerformance" },
+      "description": "Aggregated staff stats"
+    },
+    "/syncHistory/{historyId}": {
+      "schema": { "$ref": "#/entities/SyncHistory" },
+      "description": "Stores history of sync events"
+    },
+    "/roasSummary/{summaryId}": {
+      "schema": { "$ref": "#/entities/RoasSummary" },
+      "description": "Stores aggregated ROAS data from Roas tổng sheet"
+    },
+    "/userActivities/{activityId}": {
+      "schema": { "$ref": "#/entities/UserActivity" },
+      "description": "Stores user activity logs"
+    },
+    "/partners/{partnerId}": {
+      "schema": { "$ref": "#/entities/Partner" },
+      "description": "Stores partner definitions and fee history"
+    },
+    "/fanpages/{pageId}": {
+      "schema": { "$ref": "#/entities/Fanpage" },
+      "description": "Stores fanpages from Seryn Page sheet"
+    },
+    "/adAccounts/{accountId}": {
+      "schema": { "$ref": "#/entities/AdAccount" },
+      "description": "Stores ad accounts from Config sheet"
+    },
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Stores user profiles"
+    },
+    "/sheetsConfigs/{configId}": {
+      "schema": { "$ref": "#/entities/SheetConfig" },
+      "description": "Stores Google Sheets configurations"
+    },
+    "/adsData/{dataId}": {
+      "schema": { "$ref": "#/entities/AdsData" },
+      "description": "Stores cached ads data"
+    },
+    "/kpiMonths/{monthId}": {
+      "schema": { "$ref": "#/entities/KpiMonth" },
+      "description": "Stores KPI configurations per month"
+    }
+  }
+}

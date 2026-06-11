@@ -1,0 +1,940 @@
+content_id,content_name,channel,classification,period,geography,spend,data_count,data_price,roas_month,roas_3months
+,,Facebook,Tổng kênh Facebook,full-2026,total,16064267225,14865,1080677.244,1.530206876,2.20908157
+,,Facebook,Tổng kênh Facebook,full-2026,domestic,7965302657,10244,777557.8541,1.672485877,1.919038577
+,,Facebook,Tổng kênh Facebook,full-2026,overseas,8098964568,4621,1752643.274,1.390275987,2.494337814
+,,Facebook,Tổng kênh Facebook,T1,total,2863517025,2727,1050061.249,2.255026133,3.060589271
+,,Facebook,Tổng kênh Facebook,T1,domestic,1221535697,1719,710608.3169,2.106179383,2.487311659
+,,Facebook,Tổng kênh Facebook,T1,overseas,1641981328,1008,1628949.73,2.365759195,3.487073456
+,,Facebook,Tổng kênh Facebook,T2,total,3021555813,2837,1065053.159,1.730335636,2.636417691
+,,Facebook,Tổng kênh Facebook,T2,domestic,1372669593,1897,723600.2072,1.549425667,1.671447456
+,,Facebook,Tổng kênh Facebook,T2,overseas,1648886220,940,1754134.276,1.880940093,3.439738917
+,,Facebook,Tổng kênh Facebook,T3,total,3642506668,3059,1190750.791,1.299808629,1.961168103
+,,Facebook,Tổng kênh Facebook,T3,domestic,1792606621,2116,847167.5905,1.738120267,1.925054085
+,,Facebook,Tổng kênh Facebook,T3,overseas,1849900047,943,1961717.971,0.8750719817,1.99616363
+,,Facebook,Tổng kênh Facebook,T4,total,3190107833,3444,926279.8587,1.383321319,1.702472662
+,,Facebook,Tổng kênh Facebook,T4,domestic,1576143113,2383,661411.2938,1.708175531,1.776179508
+,,Facebook,Tổng kênh Facebook,T4,overseas,1613964720,1061,1521173.157,1.066079731,1.63049306
+,,Facebook,Tổng kênh Facebook,T5,total,2979385148,2615,1139344.225,1.220866648,1.977793879
+,,Facebook,Tổng kênh Facebook,T5,domestic,1803510306,1995,904015.1908,1.516506666,1.9499557
+,,Facebook,Tổng kênh Facebook,T5,overseas,1175874842,620,1896572.327,0.767425688,2.020490978
+,,Facebook,Tổng kênh Facebook,T6,total,367194738.2,183,2006528.624,0.3025724185,0.7894857138
+,,Facebook,Tổng kênh Facebook,T6,domestic,198837326.8,134,1483860.648,0.3978277182,0.9349099739
+,,Facebook,Tổng kênh Facebook,T6,overseas,168357411.4,49,3435865.539,0.1900718224,0.6177334227
+,,Facebook,Facebook CGSĐ,full-2026,total,15171657186,13607,1114989.137,1.45051565,2.133805441
+,,Facebook,Facebook CGSĐ,full-2026,domestic,7072692618,9074,779445.9574,1.616434224,1.837237576
+,,Facebook,Facebook CGSĐ,full-2026,overseas,8098964568,4533,1786667.674,1.305621688,2.392793282
+,,Facebook,Facebook CGSĐ,T1,total,2706006377,2420,1118184.453,1.946270711,2.716742258
+,,Facebook,Facebook CGSĐ,T1,domestic,1064025049,1439,739419.77,1.624746994,1.853805361
+,,Facebook,Facebook CGSĐ,T1,overseas,1641981328,981,1673783.209,2.154622221,3.275936483
+,,Facebook,Facebook CGSĐ,T2,total,2689562717,2457,1094653.121,1.777964005,2.781740672
+,,Facebook,Facebook CGSĐ,T2,domestic,1040676498,1536,677523.7615,1.803253465,1.930994987
+,,Facebook,Facebook CGSĐ,T2,overseas,1648886220,921,1790321.628,1.762002839,3.318679503
+,,Facebook,Facebook CGSĐ,T3,total,3343118897,2619,1276486.788,1.288014914,1.972677519
+,,Facebook,Facebook CGSĐ,T3,domestic,1493218851,1696,880435.6431,1.794104929,1.938089851
+,,Facebook,Facebook CGSĐ,T3,overseas,1849900047,923,2004225.403,0.8795046537,2.000596302
+,,Facebook,Facebook CGSĐ,T4,total,3166568076,3387,934918.2392,1.288343303,1.601753019
+,,Facebook,Facebook CGSĐ,T4,domestic,1552603356,2342,662939.0931,1.616656882,1.66914292
+,,Facebook,Facebook CGSĐ,T4,overseas,1613964720,1045,1544463.847,0.9725118867,1.536925215
+,,Facebook,Facebook CGSĐ,T5,total,2899206380,2543,1140073.291,1.200858892,1.932743163
+,,Facebook,Facebook CGSĐ,T5,domestic,1723331537,1928,893844.1584,1.496601869,1.950217313
+,,Facebook,Facebook CGSĐ,T5,overseas,1175874842,615,1911991.614,0.767425688,1.907133505
+,,Facebook,Facebook CGSĐ,T6,total,367194738.2,181,2028700.211,0.2478466888,0.7347599841
+,,Facebook,Facebook CGSĐ,T6,domestic,198837326.8,133,1495017.495,0.2967652048,0.8338474606
+,,Facebook,Facebook CGSĐ,T6,overseas,168357411.4,48,3507446.071,0.1900718224,0.6177334227
+,,Facebook,Facebook mess Nữ MB,full-2026,total,788891514,894,882428.9866,0.7813059071,0.9940185514
+,,Facebook,Facebook mess Nữ MB,full-2026,domestic,788891514,874,902621.8696,0.7917002387,1.004412883
+,,Facebook,Facebook mess Nữ MB,full-2026,overseas,0,20,0,,
+,,Facebook,Facebook mess Nữ MB,T1,total,157510647.7,188,837822.5943,1.39258268,1.779002271
+,,Facebook,Facebook mess Nữ MB,T1,domestic,157510647.7,182,865443.1194,1.39258268,1.779002271
+,,Facebook,Facebook mess Nữ MB,T1,overseas,0,6,0,,
+,,Facebook,Facebook mess Nữ MB,T2,total,331993095.5,316,1050611.062,0.2721984319,0.3341214064
+,,Facebook,Facebook mess Nữ MB,T2,domestic,331993095.5,309,1074411.312,0.2721984319,0.3341214064
+,,Facebook,Facebook mess Nữ MB,T2,overseas,0,7,0,,
+,,Facebook,Facebook mess Nữ MB,T3,total,299387770.8,390,767660.9507,1.024260274,1.226973964
+,,Facebook,Facebook mess Nữ MB,T3,domestic,299387770.8,383,781691.3075,1.051649502,1.254363193
+,,Facebook,Facebook mess Nữ MB,T3,overseas,0,7,0,,
+,,Facebook,Facebook remar,full-2026,total,103718525.3,52,1994587.026,0.4936437327,0.4936437327
+,,Facebook,Facebook remar,full-2026,domestic,103718525.3,49,2116704.599,0.4936437327,0.4936437327
+,,Facebook,Facebook remar,full-2026,overseas,0,3,0,,
+,,Facebook,Facebook remar,T4,total,23539757.14,10,2353975.714,1.486846266,1.486846266
+,,Facebook,Facebook remar,T4,domestic,23539757.14,9,2615528.571,1.486846266,1.486846266
+,,Facebook,Facebook remar,T4,overseas,0,1,0,,
+,,Facebook,Facebook remar,T5,total,80178768.2,42,1909018.29,0.2020485019,0.2020485019
+,,Facebook,Facebook remar,T5,domestic,80178768.2,40,2004469.205,0.2020485019,0.2020485019
+,,Facebook,Facebook remar,T5,overseas,0,2,0,,
+,,Facebook,Facebook hotline,full-2026,total,0,312,0,,
+,,Facebook,Facebook hotline,full-2026,domestic,0,247,0,,
+,,Facebook,Facebook hotline,full-2026,overseas,0,65,0,,
+,,Facebook,Facebook hotline,T1,total,0,119,0,,
+,,Facebook,Facebook hotline,T1,domestic,0,98,0,,
+,,Facebook,Facebook hotline,T1,overseas,0,21,0,,
+,,Facebook,Facebook hotline,T2,total,0,64,0,,
+,,Facebook,Facebook hotline,T2,domestic,0,52,0,,
+,,Facebook,Facebook hotline,T2,overseas,0,12,0,,
+,,Facebook,Facebook hotline,T3,total,0,50,0,,
+,,Facebook,Facebook hotline,T3,domestic,0,37,0,,
+,,Facebook,Facebook hotline,T3,overseas,0,13,0,,
+,,Facebook,Facebook hotline,T4,total,0,47,0,,
+,,Facebook,Facebook hotline,T4,domestic,0,32,0,,
+,,Facebook,Facebook hotline,T4,overseas,0,15,0,,
+,,Facebook,Facebook hotline,T5,total,0,30,0,,
+,,Facebook,Facebook hotline,T5,domestic,0,27,0,,
+,,Facebook,Facebook hotline,T5,overseas,0,3,0,,
+,,Facebook,Facebook hotline,T6,total,0,2,0,,
+,,Facebook,Facebook hotline,T6,domestic,0,1,0,,
+,,Facebook,Facebook hotline,T6,overseas,0,1,0,,
+,,PR,Tổng kênh PR - Facebook,full-2026,total,171544988.7,29,5915344.438,1.317353376,2.340333594
+,,PR,Tổng kênh PR - Facebook,full-2026,domestic,171544988.7,25,6861799.548,0.7699012428,0.7699012428
+,,PR,Tổng kênh PR - Facebook,full-2026,overseas,0,4,0,,
+,,PR,Tổng kênh PR - Facebook,T1,total,22210331.64,9,2467814.627,0.05687758384,0.05687758384
+,,PR,Tổng kênh PR - Facebook,T1,domestic,22210331.64,5,4442066.328,0,0
+,,PR,Tổng kênh PR - Facebook,T1,overseas,0,4,0,,
+,,PR,Tổng kênh PR - Facebook,T2,total,0,3,0,,
+,,PR,Tổng kênh PR - Facebook,T2,domestic,0,3,0,,
+,,PR,Tổng kênh PR - Facebook,T3,total,0,2,0,,
+,,PR,Tổng kênh PR - Facebook,T3,domestic,0,2,0,,
+,,PR,Tổng kênh PR - Facebook,T4,total,5550550,0,,0,0
+,,PR,Tổng kênh PR - Facebook,T4,domestic,5550550,0,,0,0
+,,PR,Tổng kênh PR - Facebook,T5,total,116867540.7,11,10624321.88,0.1411854814,0.1411854814
+,,PR,Tổng kênh PR - Facebook,T5,domestic,116867540.7,11,10624321.88,0.1411854814,0.1411854814
+,,PR,Tổng kênh PR - Facebook,T6,total,26916566.35,4,6729141.588,0,0
+,,PR,Tổng kênh PR - Facebook,T6,domestic,26916566.35,4,6729141.588,0,0
+,,PR,PR CTKM FB,full-2026,total,81715545.69,15,5447703.046,0.2019199635,0.2019199635
+,,PR,PR CTKM FB,full-2026,domestic,81715545.69,15,5447703.046,0.2019199635,0.2019199635
+,,PR,PR CTKM FB,T1,total,0,2,0,,
+,,PR,PR CTKM FB,T1,domestic,0,2,0,,
+,,PR,PR CTKM FB,T5,total,67728395.01,10,6772839.501,0.2436201241,0.2436201241
+,,PR,PR CTKM FB,T5,domestic,67728395.01,10,6772839.501,0.2436201241,0.2436201241
+,,PR,PR CTKM FB,T6,total,13987150.68,3,4662383.56,0,0
+,,PR,PR CTKM FB,T6,domestic,13987150.68,3,4662383.56,0,0
+,,PR,PR Facebook branding,full-2026,total,83201180.47,14,5942941.462,2.517817281,4.627007668
+,,PR,PR Facebook branding,full-2026,domestic,83201180.47,10,8320118.047,1.389075243,1.389075243
+,,PR,PR Facebook branding,full-2026,overseas,0,4,0,,
+,,PR,PR Facebook branding,T1,total,22210331.64,7,3172904.52,0.05687758384,0.05687758384
+,,PR,PR Facebook branding,T1,domestic,22210331.64,3,7403443.88,0,0
+,,PR,PR Facebook branding,T1,overseas,0,4,0,,
+,,PR,PR Facebook branding,T2,total,0,3,0,,
+,,PR,PR Facebook branding,T2,domestic,0,3,0,,
+,,PR,PR Facebook branding,T3,total,0,2,0,,
+,,PR,PR Facebook branding,T3,domestic,0,2,0,,
+,,PR,PR Facebook branding,T4,total,5550550,0,,0,0
+,,PR,PR Facebook branding,T4,domestic,5550550,0,,0,0
+,,PR,PR Facebook branding,T5,total,42510883.16,1,42510883.16,0,0
+,,PR,PR Facebook branding,T5,domestic,42510883.16,1,42510883.16,0,0
+,,PR,PR Facebook branding,T6,total,12929415.67,1,12929415.67,0,0
+,,PR,PR Facebook branding,T6,domestic,12929415.67,1,12929415.67,0,0
+,,PR,PR Facebook remar,full-2026,total,6628262.55,0,,0,0
+,,PR,PR Facebook remar,full-2026,domestic,6628262.55,0,,0,0
+,,PR,PR Facebook remar,T5,total,6628262.55,0,,0,0
+,,PR,PR Facebook remar,T5,domestic,6628262.55,0,,0,0
+,,FB+PR_FB,Roas theo CGSĐ,full-2026,total,16119834202,14830,1086974.66,1.533029634,2.220450577
+,,FB+PR_FB,Roas theo CGSĐ,full-2026,domestic,8020869634,10208,785743.4986,1.665464658,1.910309291
+,,FB+PR_FB,Roas theo CGSĐ,full-2026,overseas,8098964568,4622,1752264.078,1.401871626,2.527601301
+,,FB+PR_FB,Roas theo CGSĐ,T1,total,2885727356,2736,1054724.911,2.238107831,3.03747086
+,,FB+PR_FB,Roas theo CGSĐ,T1,domestic,1243746028,1724,721430.4109,2.068568053,2.442894217
+,,FB+PR_FB,Roas theo CGSĐ,T1,overseas,1641981328,1012,1622511.194,2.366528552,3.487842813
+,,FB+PR_FB,Roas theo CGSĐ,T2,total,3021555813,2840,1063928.103,1.79924785,2.763408306
+,,FB+PR_FB,Roas theo CGSĐ,T2,domestic,1372669593,1900,722457.6806,1.633621238,1.755643027
+,,FB+PR_FB,Roas theo CGSĐ,T2,overseas,1648886220,940,1754134.276,1.937129173,3.602355674
+,,FB+PR_FB,Roas theo CGSĐ,T3,total,3642506668,3061,1189972.776,1.299808629,1.961168103
+,,FB+PR_FB,Roas theo CGSĐ,T3,domestic,1792606621,2118,846367.6211,1.738120267,1.925054085
+,,FB+PR_FB,Roas theo CGSĐ,T3,overseas,1849900047,943,1961717.971,0.8750719817,1.99616363
+,,FB+PR_FB,Roas theo CGSĐ,T4,total,3172118626,3434,923738.6797,1.380132552,1.701093815
+,,FB+PR_FB,Roas theo CGSĐ,T4,domestic,1558153906,2374,656341.1567,1.70543429,1.774223387
+,,FB+PR_FB,Roas theo CGSĐ,T4,overseas,1613964720,1060,1522608.226,1.066079731,1.63049306
+,,FB+PR_FB,Roas theo CGSĐ,T5,total,3003814434,2572,1167890.527,1.196304911,1.947076239
+,,FB+PR_FB,Roas theo CGSĐ,T5,domestic,1827939592,1954,935485.9732,1.472193836,1.899850091
+,,FB+PR_FB,Roas theo CGSĐ,T5,overseas,1175874842,618,1902710.101,0.767425688,2.020490978
+,,FB+PR_FB,Roas theo CGSĐ,T6,total,394111304.6,187,2107547.083,0.281907671,0.735566315
+,,FB+PR_FB,Roas theo CGSĐ,T6,domestic,225753893.1,138,1635897.776,0.3503948433,0.823440949
+,,FB+PR_FB,Roas theo CGSĐ,T6,overseas,168357411.4,49,3435865.539,0.1900718224,0.6177334227
+,,FB+PR_FB,Roas theo tên thương hiệu,full-2026,total,16235812214,14894,1090090.789,1.5279579,2.210468358
+,,FB+PR_FB,Roas theo tên thương hiệu,full-2026,domestic,8136847646,10269,792370.0113,1.653457148,1.894811904
+,,FB+PR_FB,Roas theo tên thương hiệu,full-2026,overseas,8098964568,4625,1751127.474,1.401871626,2.527601301
+,,FB+PR_FB,Roas theo tên thương hiệu,T1,total,2885727356,2736,1054724.911,2.238107831,3.03747086
+,,FB+PR_FB,Roas theo tên thương hiệu,T1,domestic,1243746028,1724,721430.4109,2.068568053,2.442894217
+,,FB+PR_FB,Roas theo tên thương hiệu,T1,overseas,1641981328,1012,1622511.194,2.366528552,3.487842813
+,,FB+PR_FB,Roas theo tên thương hiệu,T2,total,3021555813,2840,1063928.103,1.79924785,2.763408306
+,,FB+PR_FB,Roas theo tên thương hiệu,T2,domestic,1372669593,1900,722457.6806,1.633621238,1.755643027
+,,FB+PR_FB,Roas theo tên thương hiệu,T2,overseas,1648886220,940,1754134.276,1.937129173,3.602355674
+,,FB+PR_FB,Roas theo tên thương hiệu,T3,total,3642506668,3061,1189972.776,1.299808629,1.961168103
+,,FB+PR_FB,Roas theo tên thương hiệu,T3,domestic,1792606621,2118,846367.6211,1.738120267,1.925054085
+,,FB+PR_FB,Roas theo tên thương hiệu,T3,overseas,1849900047,943,1961717.971,0.8750719817,1.99616363
+,,FB+PR_FB,Roas theo tên thương hiệu,T4,total,3195658383,3444,927891.5166,1.380918623,1.699515631
+,,FB+PR_FB,Roas theo tên thương hiệu,T4,domestic,1581693663,2383,663740.5217,1.702181126,1.76994646
+,,FB+PR_FB,Roas theo tên thương hiệu,T4,overseas,1613964720,1061,1521173.157,1.066079731,1.63049306
+,,FB+PR_FB,Roas theo tên thương hiệu,T5,total,3096252689,2626,1179075.662,1.180114263,1.908471402
+,,FB+PR_FB,Roas theo tên thương hiệu,T5,domestic,1920377846,2006,957316.9723,1.432809384,1.839880212
+,,FB+PR_FB,Roas theo tên thương hiệu,T5,overseas,1175874842,620,1896572.327,0.767425688,2.020490978
+,,FB+PR_FB,Roas theo tên thương hiệu,T6,total,394111304.6,187,2107547.083,0.281907671,0.735566315
+,,FB+PR_FB,Roas theo tên thương hiệu,T6,domestic,225753893.1,138,1635897.776,0.3503948433,0.823440949
+,,FB+PR_FB,Roas theo tên thương hiệu,T6,overseas,168357411.4,49,3435865.539,0.1900718224,0.6177334227
+240501,240501-ME chị Lan trùm khăn CNC 49t 240410 lt v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+240501,240501-ME chị Lan trùm khăn CNC 49t 240410 lt v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+240501,240501-ME chị Lan trùm khăn CNC 49t 240410 lt v1,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+240501,240501-ME chị Lan trùm khăn CNC 49t 240410 lt v1,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+240610,240610-CGSĐ tư vấn chị Huyền 43t 240517 tvc v2,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+240610,240610-CGSĐ tư vấn chị Huyền 43t 240517 tvc v2,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+240610,240610-CGSĐ tư vấn chị Huyền 43t 240517 tvc v2,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+240610,240610-CGSĐ tư vấn chị Huyền 43t 240517 tvc v2,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v2,Facebook,Facebook CGSĐ,full-2026,total,0,2,0,,
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v2,Facebook,Facebook CGSĐ,full-2026,domestic,0,2,0,,
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v2,Facebook,Facebook CGSĐ,T1,total,0,2,0,,
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v2,Facebook,Facebook CGSĐ,T1,domestic,0,2,0,,
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v5,Facebook,Facebook CGSĐ,full-2026,overseas,76603769.96,61,1255799.508,0.1044335025,1.390114351
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v5,Facebook,Facebook CGSĐ,T1,overseas,76603769.96,56,1367924.464,0.1044335025,0.1044335025
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v5,Facebook,Facebook CGSĐ,T2,total,19860260.81,48,413755.4335,6.750948604,11.70999728
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v5,Facebook,Facebook CGSĐ,T2,domestic,19860260.81,43,461866.5305,6.750948604,6.750948604
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v5,Facebook,Facebook CGSĐ,T2,overseas,0,5,0,,
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v5,Facebook,Facebook CGSĐ,T3,total,0,1,0,,
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v5,Facebook,Facebook CGSĐ,T3,domestic,0,1,0,,
+240710,240710-CGSĐ mượn tiền 240610 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,3,0,,
+240710,240710-CGSĐ mượn tiền 240610 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,3,0,,
+240710,240710-CGSĐ mượn tiền 240610 tvc v1,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+240710,240710-CGSĐ mượn tiền 240610 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+240710,240710-CGSĐ mượn tiền 240610 tvc v1,Facebook,Facebook CGSĐ,T2,total,0,2,0,,
+240710,240710-CGSĐ mượn tiền 240610 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,0,2,0,,
+240805,240805-CGSĐ Hiếu trải nghiệm 7 trong 1 tvc 240722 v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+240805,240805-CGSĐ Hiếu trải nghiệm 7 trong 1 tvc 240722 v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+240805,240805-CGSĐ Hiếu trải nghiệm 7 trong 1 tvc 240722 v1,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+240805,240805-CGSĐ Hiếu trải nghiệm 7 trong 1 tvc 240722 v1,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+240810,240810-CGSĐ Hiếu kiêng cữ vết sẹo 240716 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,3,0,,
+240810,240810-CGSĐ Hiếu kiêng cữ vết sẹo 240716 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,3,0,,
+240810,240810-CGSĐ Hiếu kiêng cữ vết sẹo 240716 tvc v1,Facebook,Facebook CGSĐ,T1,total,0,2,0,,
+240810,240810-CGSĐ Hiếu kiêng cữ vết sẹo 240716 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,0,2,0,,
+240810,240810-CGSĐ Hiếu kiêng cữ vết sẹo 240716 tvc v1,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+240810,240810-CGSĐ Hiếu kiêng cữ vết sẹo 240716 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,0,1,0,,
+240815,240815-CGSĐ Dì Dương ơi 51t 240530 tvc v2,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+240815,240815-CGSĐ Dì Dương ơi 51t 240530 tvc v2,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+240815,240815-CGSĐ Dì Dương ơi 51t 240530 tvc v2,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+240815,240815-CGSĐ Dì Dương ơi 51t 240530 tvc v2,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+240910,240910-ME hành trình chị Như 43t 240819 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+240910,240910-ME hành trình chị Như 43t 240819 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+240910,240910-ME hành trình chị Như 43t 240819 tvc v1,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+240910,240910-ME hành trình chị Như 43t 240819 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+241005,241005 - CGSĐ Hiếu ăn gì đẹp vậy 240912 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+241005,241005 - CGSĐ Hiếu ăn gì đẹp vậy 240912 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+241005,241005 - CGSĐ Hiếu ăn gì đẹp vậy 240912 tvc v1,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+241005,241005 - CGSĐ Hiếu ăn gì đẹp vậy 240912 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+241020,241020-CGSD Hiếu ai chăm chị 48t 240809 tvc v3,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+241020,241020-CGSD Hiếu ai chăm chị 48t 240809 tvc v3,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+241020,241020-CGSD Hiếu ai chăm chị 48t 240809 tvc v3,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+241020,241020-CGSD Hiếu ai chăm chị 48t 240809 tvc v3,Facebook,Facebook CGSĐ,T2,domestic,0,1,0,,
+241101,241101-CGSĐ Hiếu về luôn trong ngày 241014 v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+241101,241101-CGSĐ Hiếu về luôn trong ngày 241014 v1,Facebook,Facebook CGSĐ,full-2026,overseas,0,1,0,,
+241101,241101-CGSĐ Hiếu về luôn trong ngày 241014 v1,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+241101,241101-CGSĐ Hiếu về luôn trong ngày 241014 v1,Facebook,Facebook CGSĐ,T2,overseas,0,1,0,,
+241205,241205-CGSĐ Hiếu chị mơ hành trình tiktok 241112 v2,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+241205,241205-CGSĐ Hiếu chị mơ hành trình tiktok 241112 v2,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+241205,241205-CGSĐ Hiếu chị mơ hành trình tiktok 241112 v2,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+241205,241205-CGSĐ Hiếu chị mơ hành trình tiktok 241112 v2,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+250205,250205-SC CGSĐ Hiếu lần đầu tiên 260113 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,119720939.9,119,1006058.319,0.5102966953,0.5102966953
+250205,250205-SC CGSĐ Hiếu lần đầu tiên 260113 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,85153281.15,106,803332.841,0.187896459,0.187896459
+250205,250205-SC CGSĐ Hiếu lần đầu tiên 260113 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,34567658.77,13,2659050.675,1.304491007,1.304491007
+250205,250205-SC CGSĐ Hiếu lần đầu tiên 260113 tvc v1,Facebook,Facebook CGSĐ,T2,total,41630518.85,48,867302.476,1.083176507,1.083176507
+250205,250205-SC CGSĐ Hiếu lần đầu tiên 260113 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,34576670.52,45,768370.456,0,0
+250205,250205-SC CGSĐ Hiếu lần đầu tiên 260113 tvc v1,Facebook,Facebook CGSĐ,T2,overseas,7053848.33,3,2351282.777,6.392709042,6.392709042
+250205,250205-SC CGSĐ Hiếu lần đầu tiên 260113 tvc v1,Facebook,Facebook CGSĐ,T3,total,78090421.07,69,1131745.233,0.2048906867,0.2048906867
+250205,250205-SC CGSĐ Hiếu lần đầu tiên 260113 tvc v1,Facebook,Facebook CGSĐ,T3,domestic,50576610.63,59,857230.6886,0.3163517642,0.3163517642
+250205,250205-SC CGSĐ Hiếu lần đầu tiên 260113 tvc v1,Facebook,Facebook CGSĐ,T3,overseas,27513810.44,10,2751381.044,0,0
+250205,250205-SC CGSĐ Hiếu lần đầu tiên 260113 tvc v1,Facebook,Facebook CGSĐ,T4,total,0,1,0,,
+250205,250205-SC CGSĐ Hiếu lần đầu tiên 260113 tvc v1,Facebook,Facebook CGSĐ,T4,domestic,0,1,0,,
+250205,250205-SC CGSĐ Hiếu lần đầu tiên 260113 tvc v1,Facebook,Facebook CGSĐ,T5,total,0,1,0,,
+250205,250205-SC CGSĐ Hiếu lần đầu tiên 260113 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,0,1,0,,
+250310,250310 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook CGSĐ,full-2026,total,0,4,0,,
+250310,250310 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook CGSĐ,full-2026,overseas,0,4,0,,
+250310,250310 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook CGSĐ,T1,total,0,4,0,,
+250310,250310 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook CGSĐ,T1,overseas,0,4,0,,
+250410,250410-CGSĐ Hiếu chị Nga vươn mình 47t 250310 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+250410,250410-CGSĐ Hiếu chị Nga vươn mình 47t 250310 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+250410,250410-CGSĐ Hiếu chị Nga vươn mình 47t 250310 tvc v1,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+250410,250410-CGSĐ Hiếu chị Nga vươn mình 47t 250310 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+250415,250415-CGSĐ remake Hiếu trải nghiệm 7 trong 1 tvc 240722 v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+250415,250415-CGSĐ remake Hiếu trải nghiệm 7 trong 1 tvc 240722 v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+250415,250415-CGSĐ remake Hiếu trải nghiệm 7 trong 1 tvc 240722 v1,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+250415,250415-CGSĐ remake Hiếu trải nghiệm 7 trong 1 tvc 240722 v1,Facebook,Facebook CGSĐ,T2,domestic,0,1,0,,
+250525,250525-CGSĐ Hieu buy 1 get 5 250412 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+250525,250525-CGSĐ Hieu buy 1 get 5 250412 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+250525,250525-CGSĐ Hieu buy 1 get 5 250412 tvc v1,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+250525,250525-CGSĐ Hieu buy 1 get 5 250412 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,0,1,0,,
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,62919363.37,36,1747760.094,0.6293769975,1.724270466
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook CGSĐ,T1,total,146764361.8,147,998397.0188,1.142953221,1.313294302
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,105440856.3,128,823756.6898,1.568981947,1.806081691
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,41323505.46,19,2174921.34,0.05590038827,0.05590038827
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook CGSĐ,T2,overseas,21595857.91,17,1270344.583,1.726720011,4.051239843
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook CGSĐ,T3,total,0,1,0,,
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook CGSĐ,T3,domestic,0,1,0,,
+250527,250527-CGSĐ Hiếu bảo hành đặc biệt cho VK 250215 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+250527,250527-CGSĐ Hiếu bảo hành đặc biệt cho VK 250215 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+250527,250527-CGSĐ Hiếu bảo hành đặc biệt cho VK 250215 tvc v1,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+250527,250527-CGSĐ Hiếu bảo hành đặc biệt cho VK 250215 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,0,1,0,,
+250528,250528 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook CGSĐ,full-2026,total,34769288.04,13,2674560.618,0.5464592769,0.9889474861
+250528,250528 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook CGSĐ,full-2026,domestic,0,2,0,,
+250528,250528 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook CGSĐ,full-2026,overseas,34769288.04,11,3160844.367,0.5464592769,0.9889474861
+250528,250528 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook CGSĐ,T1,total,20525733.37,6,3420955.562,0.9256672908,0.9256672908
+250528,250528 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+250528,250528 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook CGSĐ,T1,overseas,20525733.37,5,4105146.674,0.9256672908,0.9256672908
+250528,250528 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook CGSĐ,T2,total,14243554.67,7,2034793.524,0,0
+250528,250528 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook CGSĐ,T2,domestic,0,1,0,,
+250528,250528 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook CGSĐ,T2,overseas,14243554.67,6,2373925.778,0,0
+250528,250528 -CGSĐ Hiếu đính chính căng da 250310 tvc v1,Facebook,Facebook CGSĐ,T3,total,0,1,0,,
+250528,250528 -CGSĐ Hiếu đính chính căng da 250310 tvc v1,Facebook,Facebook CGSĐ,T3,overseas,0,1,0,,
+250601,250601-CGSĐ Hiếu né game 240610 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+250601,250601-CGSĐ Hiếu né game 240610 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+250601,250601-CGSĐ Hiếu né game 240610 tvc v1,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+250601,250601-CGSĐ Hiếu né game 240610 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+250603,250603-CGSĐ Hiếu và chị Thu 5 con ltm 45t ln 241014 v3,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+250603,250603-CGSĐ Hiếu và chị Thu 5 con ltm 45t ln 241014 v3,Facebook,Facebook CGSĐ,full-2026,overseas,0,1,0,,
+250603,250603-CGSĐ Hiếu và chị Thu 5 con ltm 45t ln 241014 v3,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+250603,250603-CGSĐ Hiếu và chị Thu 5 con ltm 45t ln 241014 v3,Facebook,Facebook CGSĐ,T2,overseas,0,1,0,,
+250603,250603-CGSĐ Thông cô già rồi nên phẫu thuật không con 241126 tvc v3,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+250603,250603-CGSĐ Thông cô già rồi nên phẫu thuật không con 241126 tvc v3,Facebook,Facebook CGSĐ,T1,overseas,0,1,0,,
+250605,250605-CGSD Hiếu ai chăm chị 48t 240809 tvc v3,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+250605,250605-CGSD Hiếu ai chăm chị 48t 240809 tvc v3,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+250605,250605-CGSD Hiếu ai chăm chị 48t 240809 tvc v3,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+250605,250605-CGSD Hiếu ai chăm chị 48t 240809 tvc v3,Facebook,Facebook CGSĐ,T2,domestic,0,1,0,,
+250605,250605-CGSĐ Hiếu né game 240610 tvc v1,Facebook,Facebook CGSĐ,T1,total,0,3,0,,
+250605,250605-CGSĐ Hiếu né game 240610 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,0,3,0,,
+250615,250615-CGSĐ Thông 5in1 3D 49t 250410 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+250615,250615-CGSĐ Thông 5in1 3D 49t 250410 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,0,1,0,,
+250615,250615-CGSĐ Thông 5in1 3D 49t 250410 tvc v1,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+250615,250615-CGSĐ Thông 5in1 3D 49t 250410 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,0,1,0,,
+250705,250705-CGSĐ Hiếu nghỉ dưỡng bao lâu 250414 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+250705,250705-CGSĐ Hiếu nghỉ dưỡng bao lâu 250414 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,0,1,0,,
+250705,250705-CGSĐ Hiếu nghỉ dưỡng bao lâu 250414 tvc v1,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+250705,250705-CGSĐ Hiếu nghỉ dưỡng bao lâu 250414 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,0,1,0,,
+250715,250715-CGSĐ Hiếu không cần kiêng cữ 60t 45t 250708 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,2,0,,
+250715,250715-CGSĐ Hiếu không cần kiêng cữ 60t 45t 250708 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,2,0,,
+250715,250715-CGSĐ Hiếu không cần kiêng cữ 60t 45t 250708 tvc v1,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+250715,250715-CGSĐ Hiếu không cần kiêng cữ 60t 45t 250708 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+250715,250715-CGSĐ Hiếu không cần kiêng cữ 60t 45t 250708 tvc v1,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+250715,250715-CGSĐ Hiếu không cần kiêng cữ 60t 45t 250708 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,0,1,0,,
+250801,250801-CGSĐ Hiếu Cát hẹn cafe 250716 lt v1,Facebook,Facebook CGSĐ,full-2026,total,20081888.18,11,1825626.198,0.04979611434,2.495422719
+250801,250801-CGSĐ Hiếu Cát hẹn cafe 250716 lt v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,2,0,,
+250801,250801-CGSĐ Hiếu Cát hẹn cafe 250716 lt v1,Facebook,Facebook CGSĐ,full-2026,overseas,20081888.18,9,2231320.909,0.04979611434,2.495422719
+250801,250801-CGSĐ Hiếu Cát hẹn cafe 250716 lt v1,Facebook,Facebook CGSĐ,T1,total,20081888.18,11,1825626.198,0.04979611434,0.04979611434
+250801,250801-CGSĐ Hiếu Cát hẹn cafe 250716 lt v1,Facebook,Facebook CGSĐ,T1,domestic,0,2,0,,
+250801,250801-CGSĐ Hiếu Cát hẹn cafe 250716 lt v1,Facebook,Facebook CGSĐ,T1,overseas,20081888.18,9,2231320.909,0.04979611434,0.04979611434
+250805,250805-CGSĐ Hiếu bí quyết 3 năm 250716 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+250805,250805-CGSĐ Hiếu bí quyết 3 năm 250716 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+250805,250805-CGSĐ Hiếu bí quyết 3 năm 250716 tvc v1,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+250805,250805-CGSĐ Hiếu bí quyết 3 năm 250716 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,0,1,0,,
+250815,250815-CGSĐ Hiếu nguệch ngoạc 48t 250806 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,6533.77,1,6533.77,0,0
+250815,250815-CGSĐ Hiếu nguệch ngoạc 48t 250806 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,6533.77,1,6533.77,0,0
+250815,250815-CGSĐ Hiếu nguệch ngoạc 48t 250806 tvc v1,Facebook,Facebook CGSĐ,T1,total,6533.77,1,6533.77,0,0
+250815,250815-CGSĐ Hiếu nguệch ngoạc 48t 250806 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,6533.77,1,6533.77,0,0
+250820,250820-CGSĐ Hiếu hên xui 50t 250804 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+250820,250820-CGSĐ Hiếu hên xui 50t 250804 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+250820,250820-CGSĐ Hiếu hên xui 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+250820,250820-CGSĐ Hiếu hên xui 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,0,1,0,,
+250820,250820-CGSĐ Hiếu trên ô tô 50t 250804 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,243007318.8,172,1412833.249,0.8294680217,3.756041606
+250820,250820-CGSĐ Hiếu trên ô tô 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T1,total,222662882.6,280,795224.5806,2.74146635,4.402829015
+250820,250820-CGSĐ Hiếu trên ô tô 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,103839959.9,198,524444.2418,3.966257311,3.966257311
+250820,250820-CGSĐ Hiếu trên ô tô 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,118822922.7,82,1449060.033,1.671115265,4.78435126
+250820,250820-CGSĐ Hiếu trên ô tô 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T2,overseas,120157203.4,88,1365422.766,0.02496729213,2.623687894
+250820,250820-CGSĐ Hiếu trên ô tô 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T3,total,39246804.4,56,700835.7929,0,3.424528495
+250820,250820-CGSĐ Hiếu trên ô tô 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T3,domestic,35219611.72,54,652215.0319,0,2.992701931
+250820,250820-CGSĐ Hiếu trên ô tô 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T3,overseas,4027192.68,2,2013596.34,0,7.201046065
+250820,250820-CGSĐ Hiếu trên ô tô 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T4,total,10596905.88,20,529845.294,0,0
+250820,250820-CGSĐ Hiếu trên ô tô 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T4,domestic,10596905.88,20,529845.294,0,0
+250820,250820-CGSĐ Hiếu trên ô tô 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T5,total,0,2,0,,
+250820,250820-CGSĐ Hiếu trên ô tô 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,0,2,0,,
+250901,250901-CGSĐ Hiếu 99% 40t 50t 250804 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,47250011.43,109,433486.3434,1.803703267,1.803703267
+250901,250901-CGSĐ Hiếu 99% 40t 50t 250804 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,47250011.43,107,441588.8919,1.803703267,1.803703267
+250901,250901-CGSĐ Hiếu 99% 40t 50t 250804 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,0,2,0,,
+250901,250901-CGSĐ Hiếu 99% 40t 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T1,total,20382427.81,41,497132.3856,1.710542057,1.710542057
+250901,250901-CGSĐ Hiếu 99% 40t 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,20382427.81,40,509560.6953,1.710542057,1.710542057
+250901,250901-CGSĐ Hiếu 99% 40t 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,0,1,0,,
+250901,250901-CGSĐ Hiếu 99% 40t 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T2,total,26867583.62,68,395111.5238,1.874377715,1.874377715
+250901,250901-CGSĐ Hiếu 99% 40t 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,26867583.62,67,401008.7107,1.874377715,1.874377715
+250901,250901-CGSĐ Hiếu 99% 40t 50t 250804 tvc v1,Facebook,Facebook CGSĐ,T2,overseas,0,1,0,,
+250905,250905-CGSĐ Hiếu cô Đông lại đòi mượn tiền cnc 58t 250814 lt v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+250905,250905-CGSĐ Hiếu cô Đông lại đòi mượn tiền cnc 58t 250814 lt v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+250905,250905-CGSĐ Hiếu cô Đông lại đòi mượn tiền cnc 58t 250814 lt v1,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+250905,250905-CGSĐ Hiếu cô Đông lại đòi mượn tiền cnc 58t 250814 lt v1,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+250905,250905-CGSĐ Hiếu giá rẻ bất thường 250814 tvc v1,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+250905,250905-CGSĐ Hiếu giá rẻ bất thường 250814 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,0,1,0,,
+250915,250915-CGSĐ Hiếu Theo chân Vicky 250908 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,6061981.12,7,865997.3029,0.0329925145,20.8043934
+250915,250915-CGSĐ Hiếu Theo chân Vicky 250908 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,3,0,,
+250915,250915-CGSĐ Hiếu Theo chân Vicky 250908 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,6061981.12,4,1515495.28,0.0329925145,20.8043934
+250915,250915-CGSĐ Hiếu Theo chân Vicky 250908 tvc v1,Facebook,Facebook CGSĐ,T1,total,6061981.12,7,865997.3029,0.0329925145,20.8043934
+250915,250915-CGSĐ Hiếu Theo chân Vicky 250908 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,0,3,0,,
+250915,250915-CGSĐ Hiếu Theo chân Vicky 250908 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,6061981.12,4,1515495.28,0.0329925145,20.8043934
+250920,250920-CGSĐ Hiếu Cát trả lời livestream 38t 250716 lt v1,Facebook,Facebook CGSĐ,full-2026,total,33551795.43,11,3050163.221,0.02980466432,3.520103723
+250920,250920-CGSĐ Hiếu Cát trả lời livestream 38t 250716 lt v1,Facebook,Facebook CGSĐ,full-2026,overseas,33551795.43,11,3050163.221,0.02980466432,3.520103723
+250920,250920-CGSĐ Hiếu Cát trả lời livestream 38t 250716 lt v1,Facebook,Facebook CGSĐ,T1,total,31874752.98,11,2897704.816,0.03137279215,0.06902014272
+250920,250920-CGSĐ Hiếu Cát trả lời livestream 38t 250716 lt v1,Facebook,Facebook CGSĐ,T1,overseas,31874752.98,11,2897704.816,0.03137279215,0.06902014272
+250920,250920-CGSĐ Hiếu Cát trả lời livestream 38t 250716 lt v1,Facebook,Facebook CGSĐ,T2,total,1677042.45,0,,0,49.21258851
+250920,250920-CGSĐ Hiếu Cát trả lời livestream 38t 250716 lt v1,Facebook,Facebook CGSĐ,T2,overseas,1677042.45,0,,0,49.21258851
+250920,250920-CGSĐ Xuân ùa vào 250909 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,20157040.04,26,775270.7708,3.846219477,3.846219477
+250920,250920-CGSĐ Xuân ùa vào 250909 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,20157040.04,26,775270.7708,3.846219477,3.846219477
+251001,251001-CGSĐ Hiếu facetime Cát tvc 38t 250716 v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+251001,251001-CGSĐ Hiếu facetime Cát tvc 38t 250716 v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+251001,251001-CGSĐ Hiếu facetime Cát tvc 38t 250716 v1,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+251001,251001-CGSĐ Hiếu facetime Cát tvc 38t 250716 v1,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+251010,251010-CGSĐ Hiếu live dài chị Thơm Nhiên MC 250911 4557t lt v1,Facebook,Facebook CGSĐ,full-2026,total,1586860.15,7,226694.3071,0,0
+251010,251010-CGSĐ Hiếu live dài chị Thơm Nhiên MC 250911 4557t lt v1,Facebook,Facebook CGSĐ,full-2026,domestic,1586860.15,7,226694.3071,0,0
+251010,251010-CGSĐ Hiếu live dài chị Thơm Nhiên MC 250911 4557t lt v1,Facebook,Facebook CGSĐ,T1,total,1586860.15,5,317372.03,0,0
+251010,251010-CGSĐ Hiếu live dài chị Thơm Nhiên MC 250911 4557t lt v1,Facebook,Facebook CGSĐ,T1,domestic,1586860.15,5,317372.03,0,0
+251010,251010-CGSĐ Hiếu live dài chị Thơm Nhiên MC 250911 4557t lt v1,Facebook,Facebook CGSĐ,T2,total,0,2,0,,
+251010,251010-CGSĐ Hiếu live dài chị Thơm Nhiên MC 250911 4557t lt v1,Facebook,Facebook CGSĐ,T2,domestic,0,2,0,,
+251010,251010-CGSĐ Hiếu MC Hành trình Út Mận 43t 250917 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,12200192.27,8,1525024.034,26.58256467,25.43504177
+251010,251010-CGSĐ Hiếu MC Hành trình Út Mận 43t 250917 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,12200192.27,8,1525024.034,26.58256467,25.43504177
+251010,251010-CGSĐ Hiếu Vicky ô tô 56t 250908 tvc v1,Facebook,Facebook CGSĐ,T2,overseas,0,1,0,,
+251015,251015-CGSĐ Hiếu cùng 2 mẹ con cà phê 250911 46t lt v1,Facebook,Facebook CGSĐ,full-2026,total,2014625.68,3,671541.8933,0,0
+251015,251015-CGSĐ Hiếu cùng 2 mẹ con cà phê 250911 46t lt v1,Facebook,Facebook CGSĐ,full-2026,domestic,2014625.68,3,671541.8933,0,0
+251015,251015-CGSĐ Hiếu cùng 2 mẹ con cà phê 250911 46t lt v1,Facebook,Facebook CGSĐ,T1,total,2014625.68,3,671541.8933,0,0
+251015,251015-CGSĐ Hiếu cùng 2 mẹ con cà phê 250911 46t lt v1,Facebook,Facebook CGSĐ,T1,domestic,2014625.68,3,671541.8933,0,0
+251015,251015-CGSĐ Hiếu đọ da với cô không 56t 251007 ln v1,Facebook,Facebook CGSĐ,full-2026,overseas,0,3,0,,
+251015,251015-CGSĐ Hiếu đọ da với cô không 56t 251007 ln v1,Facebook,Facebook CGSĐ,T1,overseas,0,2,0,,
+251015,251015-CGSĐ Hiếu đọ da với cô không 56t 251007 ln v1,Facebook,Facebook CGSĐ,T2,total,44886883.79,57,787489.1893,1.362758892,2.189272048
+251015,251015-CGSĐ Hiếu đọ da với cô không 56t 251007 ln v1,Facebook,Facebook CGSĐ,T2,domestic,44886883.79,56,801551.4963,1.362758892,2.189272048
+251015,251015-CGSĐ Hiếu đọ da với cô không 56t 251007 ln v1,Facebook,Facebook CGSĐ,T2,overseas,0,1,0,,
+251020,251020-CGSĐ Hiếu Cát sofa nâu 38t 250716 lt v1,Facebook,Facebook CGSĐ,full-2026,total,27059632.51,7,3865661.787,0.03695541688,0.03695541688
+251020,251020-CGSĐ Hiếu Cát sofa nâu 38t 250716 lt v1,Facebook,Facebook CGSĐ,full-2026,overseas,27059632.51,7,3865661.787,0.03695541688,0.03695541688
+251020,251020-CGSĐ Hiếu Cát sofa nâu 38t 250716 lt v1,Facebook,Facebook CGSĐ,T1,total,27059632.51,7,3865661.787,0.03695541688,0.03695541688
+251020,251020-CGSĐ Hiếu Cát sofa nâu 38t 250716 lt v1,Facebook,Facebook CGSĐ,T1,overseas,27059632.51,7,3865661.787,0.03695541688,0.03695541688
+251101,251101-CGSĐ Hiếu ft Xuân báo giá bất ngờ 251021 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+251101,251101-CGSĐ Hiếu ft Xuân báo giá bất ngờ 251021 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+251101,251101-CGSĐ Hiếu ft Xuân báo giá bất ngờ 251021 tvc v1,Facebook,Facebook CGSĐ,T1,total,0,1,0,,
+251101,251101-CGSĐ Hiếu ft Xuân báo giá bất ngờ 251021 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+251101,251101-CGSĐ Hiếu giá gấp 7 lần hả 251013 tvc v1,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+251101,251101-CGSĐ Hiếu giá gấp 7 lần hả 251013 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,0,1,0,,
+251105,251105-CGSĐ Hiếu 7 trong 1 mới đẹp 251013 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,19458939.62,19,1024154.717,1.500595642,1.500595642
+251105,251105-CGSĐ Hiếu 7 trong 1 mới đẹp 251013 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,19458939.62,18,1081052.201,1.500595642,1.500595642
+251105,251105-CGSĐ Hiếu 7 trong 1 mới đẹp 251013 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,0,1,0,,
+251105,251105-CGSĐ Hiếu 7 trong 1 mới đẹp 251013 tvc v1,Facebook,Facebook CGSĐ,T1,total,19458939.62,18,1081052.201,0.6680734024,0.6680734024
+251105,251105-CGSĐ Hiếu 7 trong 1 mới đẹp 251013 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,19458939.62,17,1144643.507,0.6680734024,0.6680734024
+251105,251105-CGSĐ Hiếu 7 trong 1 mới đẹp 251013 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,0,1,0,,
+251105,251105-CGSĐ Hiếu 7 trong 1 mới đẹp 251013 tvc v1,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+251105,251105-CGSĐ Hiếu 7 trong 1 mới đẹp 251013 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,0,1,0,,
+251105,251105-CGSĐ Hiếu bắt cóc Charly 51t 251013 ld v1,Facebook,Facebook CGSĐ,T2,overseas,0,1,0,,
+251105,251105-CGSĐ Hiếu trả giá cả đời 250911 tvc v1,Facebook,Facebook CGSĐ,T3,total,0,1,0,,
+251105,251105-CGSĐ Hiếu trả giá cả đời 250911 tvc v1,Facebook,Facebook CGSĐ,T3,overseas,0,1,0,,
+251110,251110-CGSĐ Hiếu Check check check 251104 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,12239244.2,6,2039874.033,1.813363606,11.47688515
+251110,251110-CGSĐ Hiếu Check check check 251104 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,7082760.98,6,1180460.163,2.992364144,2.992364144
+251110,251110-CGSĐ Hiếu Check check check 251104 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,5156483.22,0,,0.1939306224,23.13091984
+251110,251110-CGSĐ Hiếu Check check check 251104 tvc v1,Facebook,Facebook CGSĐ,T1,total,12239244.2,6,2039874.033,1.813363606,1.813363606
+251110,251110-CGSĐ Hiếu Check check check 251104 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,7082760.98,6,1180460.163,2.992364144,2.992364144
+251110,251110-CGSĐ Hiếu Check check check 251104 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,5156483.22,0,,0.1939306224,0.1939306224
+251110,251110-CGSĐ Hiếu Hiếu đồ giả 251021 tvc v1,Facebook,Facebook CGSĐ,T2,total,12331209.93,6,2055201.655,2.189566162,2.189566162
+251110,251110-CGSĐ Hiếu Hiếu đồ giả 251021 tvc v1,Facebook,Facebook CGSĐ,T2,overseas,12331209.93,6,2055201.655,2.189566162,2.189566162
+251110,251110-CGSĐ Hiếu lẻ hay full 251007 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,0,1,0,,
+251115,251115-CGSĐ Hiếu chị Vân sofa 53t 251021 lt v1,Facebook,Facebook CGSĐ,full-2026,total,26906911.02,13,2069762.386,1.307626876,7.160695624
+251115,251115-CGSĐ Hiếu chị Vân sofa 53t 251021 lt v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+251115,251115-CGSĐ Hiếu chị Vân sofa 53t 251021 lt v1,Facebook,Facebook CGSĐ,full-2026,overseas,26906911.02,12,2242242.585,1.307626876,7.160695624
+251115,251115-CGSĐ Hiếu chị Vân sofa 53t 251021 lt v1,Facebook,Facebook CGSĐ,T1,total,26906911.02,12,2242242.585,1.307626876,1.307626876
+251115,251115-CGSĐ Hiếu chị Vân sofa 53t 251021 lt v1,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+251115,251115-CGSĐ Hiếu chị Vân sofa 53t 251021 lt v1,Facebook,Facebook CGSĐ,T1,overseas,26906911.02,11,2446082.82,1.307626876,1.307626876
+251115,251115-CGSĐ Hiếu chị Vân sofa 53t 251021 lt v1,Facebook,Facebook CGSĐ,T2,total,0,1,0,,
+251115,251115-CGSĐ Hiếu chị Vân sofa 53t 251021 lt v1,Facebook,Facebook CGSĐ,T2,overseas,0,1,0,,
+251115,251115-CGSĐ Hiếu ưu đãi Việt kiều 251105 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,0,2,0,,
+251115,251115-CGSĐ Hiếu Vũ khí tối thượng 251104 tvc v1,Facebook,Facebook CGSĐ,T3,total,0,1,0,,
+251115,251115-CGSĐ Hiếu Vũ khí tối thượng 251104 tvc v1,Facebook,Facebook CGSĐ,T3,domestic,0,1,0,,
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook CGSĐ,full-2026,total,83457533.17,117,713312.2493,5.910714363,6.919426181
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook CGSĐ,full-2026,domestic,11567048.82,51,226804.8788,6.196878834,9.584484489
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook CGSĐ,full-2026,overseas,71890484.35,66,1089249.763,5.864671017,6.490623122
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook CGSĐ,T1,total,64116492.46,91,704576.8402,7.116862175,7.728009144
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook CGSĐ,T1,domestic,11567048.82,47,246107.4217,3.129078174,6.516683829
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook CGSĐ,T1,overseas,52549443.64,44,1194305.537,7.994642967,7.994642967
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook CGSĐ,T2,total,19341040.71,26,743886.1812,1.912275588,3.204863737
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook CGSĐ,T2,domestic,0,4,0,,
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook CGSĐ,T2,overseas,19341040.71,22,879138.2141,0.07755528891,1.370143437
+251205,251205-CGSĐ Hiếu cảnh báo căng da trán 251112 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,73526448.8,52,1413970.169,3.076443969,6.045536093
+251205,251205-CGSĐ Hiếu cảnh báo căng da trán 251112 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,4,0,,
+251205,251205-CGSĐ Hiếu cảnh báo căng da trán 251112 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,73526448.8,48,1531801.017,3.076443969,6.045536093
+251205,251205-CGSĐ Hiếu cảnh báo căng da trán 251112 tvc v1,Facebook,Facebook CGSĐ,T1,total,41455800.62,27,1535400.023,4.060589772,4.060589772
+251205,251205-CGSĐ Hiếu cảnh báo căng da trán 251112 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+251205,251205-CGSĐ Hiếu cảnh báo căng da trán 251112 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,41455800.62,26,1594453.87,4.060589772,4.060589772
+251205,251205-CGSĐ Hiếu cảnh báo căng da trán 251112 tvc v1,Facebook,Facebook CGSĐ,T2,total,32070648.18,24,1336277.008,1.804297801,6.755179963
+251205,251205-CGSĐ Hiếu cảnh báo căng da trán 251112 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,0,2,0,,
+251205,251205-CGSĐ Hiếu cảnh báo căng da trán 251112 tvc v1,Facebook,Facebook CGSĐ,T2,overseas,32070648.18,22,1457756.735,1.804297801,6.755179963
+251205,251205-CGSĐ Hiếu cảnh báo căng da trán 251112 tvc v1,Facebook,Facebook CGSĐ,T3,total,0,1,0,,
+251205,251205-CGSĐ Hiếu cảnh báo căng da trán 251112 tvc v1,Facebook,Facebook CGSĐ,T3,domestic,0,1,0,,
+251210,251210-CGSĐ Hiếu bão quà 251104 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,40433808.53,21,1925419.454,3.049977345,4.794289904
+251210,251210-CGSĐ Hiếu bão quà 251104 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,4,0,,
+251210,251210-CGSĐ Hiếu bão quà 251104 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,40433808.53,17,2378459.325,2.14731689,3.891629449
+251210,251210-CGSĐ Hiếu bão quà 251104 tvc v1,Facebook,Facebook CGSĐ,T1,total,35858669.64,18,1992148.313,2.421288934,2.393401676
+251210,251210-CGSĐ Hiếu bão quà 251104 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,0,2,0,,
+251210,251210-CGSĐ Hiếu bão quà 251104 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,35858669.64,16,2241166.853,2.421288934,2.393401676
+251210,251210-CGSĐ Hiếu bão quà 251104 tvc v1,Facebook,Facebook CGSĐ,T2,total,4575138.89,3,1525046.297,7.977462734,18.76603138
+251210,251210-CGSĐ Hiếu bão quà 251104 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,0,2,0,,
+251210,251210-CGSĐ Hiếu bão quà 251104 tvc v1,Facebook,Facebook CGSĐ,T2,overseas,4575138.89,1,4575138.89,0,10.78856865
+251210,251210-CGSĐ Hiếu hành trình Mina 45t 251105 tvc v1,Facebook,Facebook CGSĐ,T3,total,0,3,0,,
+251210,251210-CGSĐ Hiếu hành trình Mina 45t 251105 tvc v1,Facebook,Facebook CGSĐ,T3,overseas,0,3,0,,
+251215,251215-CGSĐ Hiếu Lại là Vicky 55t 250908 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,4777819.94,0,,0,0
+251215,251215-CGSĐ Hiếu Lại là Vicky 55t 250908 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,4777819.94,0,,0,0
+251215,251215-CGSĐ Hiếu Lại là Vicky 55t 250908 tvc v1,Facebook,Facebook CGSĐ,T1,total,4777819.94,0,,0,0
+251215,251215-CGSĐ Hiếu Lại là Vicky 55t 250908 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,4777819.94,0,,0,0
+251215,251215-DVM CGSĐ Hiếu và Tina CNC 251119 44t lt v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+251215,251215-DVM CGSĐ Hiếu và Tina CNC 251119 44t lt v1,Facebook,Facebook CGSĐ,T4,total,0,1,0,,
+251215,251215-DVM CGSĐ Hiếu và Tina CNC 251119 44t lt v1,Facebook,Facebook CGSĐ,T4,domestic,0,1,0,,
+251220,251220-DVM CGSĐ Xuân Chị Chi 6 cháu 56t 250711 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+251220,251220-DVM CGSĐ Xuân Chị Chi 6 cháu 56t 250711 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,0,1,0,,
+251220,251220-DVM CGSĐ Xuân Chị Chi 6 cháu 56t 250711 tvc v1,Facebook,Facebook CGSĐ,T4,total,0,1,0,,
+251220,251220-DVM CGSĐ Xuân Chị Chi 6 cháu 56t 250711 tvc v1,Facebook,Facebook CGSĐ,T4,overseas,0,1,0,,
+260101,260101-SC CGSĐ Hiếu 3 cô tóc vàng hoe 49t 55t 250908 241217 241126 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,49030542.6,24,2042939.275,0.02039545041,0.02039545041
+260101,260101-SC CGSĐ Hiếu 3 cô tóc vàng hoe 49t 55t 250908 241217 241126 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,1933011.6,3,644337.2,0,0
+260101,260101-SC CGSĐ Hiếu 3 cô tóc vàng hoe 49t 55t 250908 241217 241126 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,47097531,21,2242739.571,0.02123253552,0.02123253552
+260101,260101-SC CGSĐ Hiếu 3 cô tóc vàng hoe 49t 55t 250908 241217 241126 tvc v1,Facebook,Facebook CGSĐ,T1,total,25759220.52,10,2575922.052,0,0
+260101,260101-SC CGSĐ Hiếu 3 cô tóc vàng hoe 49t 55t 250908 241217 241126 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,1933011.6,3,644337.2,0,0
+260101,260101-SC CGSĐ Hiếu 3 cô tóc vàng hoe 49t 55t 250908 241217 241126 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,23826208.92,7,3403744.131,0,0
+260101,260101-SC CGSĐ Hiếu 3 cô tóc vàng hoe 49t 55t 250908 241217 241126 tvc v1,Facebook,Facebook CGSĐ,T2,total,23271322.08,11,2115574.735,0.04297134458,0.04297134458
+260101,260101-SC CGSĐ Hiếu 3 cô tóc vàng hoe 49t 55t 250908 241217 241126 tvc v1,Facebook,Facebook CGSĐ,T2,overseas,23271322.08,11,2115574.735,0.04297134458,0.04297134458
+260101,260101-SC CGSĐ Hiếu 3 cô tóc vàng hoe 49t 55t 250908 241217 241126 tvc v1,Facebook,Facebook CGSĐ,T3,total,0,2,0,,
+260101,260101-SC CGSĐ Hiếu 3 cô tóc vàng hoe 49t 55t 250908 241217 241126 tvc v1,Facebook,Facebook CGSĐ,T3,overseas,0,2,0,,
+260101,260101-SC CGSĐ Hiếu 3 cô tóc vàng hoe 49t 55t 250908 241217 241126 tvc v1,Facebook,Facebook CGSĐ,T4,total,0,1,0,,
+260101,260101-SC CGSĐ Hiếu 3 cô tóc vàng hoe 49t 55t 250908 241217 241126 tvc v1,Facebook,Facebook CGSĐ,T4,overseas,0,1,0,,
+260101,260101-SC CGSĐ Hiếu facetime tái khám Charly 251013 51t tvc v1,Facebook,Facebook CGSĐ,T2,domestic,765833.09,0,,0,0
+260101,260101-SC CGSĐ Hiếu Megalive Oanh cùng Xuân 251112 51t lt v1,Facebook,Facebook CGSĐ,T3,domestic,63900528.16,110,580913.8924,0.2660384897,0.2660384897
+260101,260101-SC CGSĐ Hiếu Megalive Oanh cùng Xuân 251112 51t lt v1,Facebook,Facebook CGSĐ,T4,domestic,36403111.21,95,383190.6443,8.438564447,8.856111175
+260101,260101-SC CGSĐ Hiếu Megalive Oanh cùng Xuân 251112 51t lt v1,Facebook,Facebook CGSĐ,T5,total,164228492,197,833647.1674,3.339146536,3.69597865
+260101,260101-SC CGSĐ Hiếu Megalive Oanh cùng Xuân 251112 51t lt v1,Facebook,Facebook CGSĐ,T5,domestic,156390700.7,185,845355.1388,3.506493657,3.64972468
+260101,260101-SC CGSĐ Hiếu Megalive Oanh cùng Xuân 251112 51t lt v1,Facebook,Facebook CGSĐ,T5,overseas,7837791.29,12,653149.2742,0,4.618903293
+260101,260101-SC CGSĐ Hiếu Megalive Oanh cùng Xuân 251112 51t lt v1,Facebook,Facebook CGSĐ,T6,total,15062585.93,12,1255215.494,0.06638966275,0.06638966275
+260101,260101-SC CGSĐ Hiếu Megalive Oanh cùng Xuân 251112 51t lt v1,Facebook,Facebook CGSĐ,T6,domestic,11325776.26,9,1258419.584,0,0
+260101,260101-SC CGSĐ Hiếu Megalive Oanh cùng Xuân 251112 51t lt v1,Facebook,Facebook CGSĐ,T6,overseas,3736809.67,3,1245603.223,0.2676079566,0.2676079566
+260105,260105-SC CGSĐ Hiếu vợ chồng chị Thơm áo dài 57t 250911 lt v1,Facebook,Facebook CGSĐ,full-2026,total,2875710.2,0,,0,0
+260105,260105-SC CGSĐ Hiếu vợ chồng chị Thơm áo dài 57t 250911 lt v1,Facebook,Facebook CGSĐ,full-2026,overseas,2875710.2,0,,0,0
+260105,260105-SC CGSĐ Hiếu vợ chồng chị Thơm áo dài 57t 250911 lt v1,Facebook,Facebook CGSĐ,T2,total,2875710.2,0,,0,0
+260105,260105-SC CGSĐ Hiếu vợ chồng chị Thơm áo dài 57t 250911 lt v1,Facebook,Facebook CGSĐ,T2,overseas,2875710.2,0,,0,0
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,72458451.17,34,2131130.917,0.006900506317,0.02070151895
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,22263245.82,18,1236846.99,0.02245854014,0.02245854014
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,50195205.35,16,3137200.334,0,0.01992222152
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,T1,total,44762966.09,22,2034680.277,0.01116994792,0.01116994792
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,16226104.17,15,1081740.278,0.03081454394,0.03081454394
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,28536861.92,7,4076694.56,0,0
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,T2,total,25156202.82,10,2515620.282,0,0
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,6037141.65,2,3018570.825,0,0
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,T2,overseas,19119061.17,8,2389882.646,0,0
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,T3,total,2539282.26,0,,0,0.3938120688
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,T3,overseas,2539282.26,0,,0,0.3938120688
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,T4,total,0,1,0,,
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,T4,overseas,0,1,0,,
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,T5,total,0,1,0,,
+260110,260110-SC CGSĐ Hiếu 7 hiệu quả 251212 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,0,1,0,,
+260110,260110-SC CGSĐ Hiếu bắt tay 251105 tvc v1,Facebook,Facebook CGSĐ,T3,domestic,1842699.25,3,614233.0833,0,10.69040431
+260110,260110-SC CGSĐ Hiếu bắt tay 251105 tvc v1,Facebook,Facebook CGSĐ,T4,domestic,0,1,0,,
+260110,260110-SC CGSĐ Hiếu DVM 7in1 251104 tvc v1,Facebook,Facebook CGSĐ,T5,overseas,0,1,0,,
+260110,260110-SC CGSĐ Hiếu Sera Core hiệu quả 7trong1 251212 tvc v1,Facebook,Facebook CGSĐ,T6,total,8307338.24,2,4153669.12,0,0
+260110,260110-SC CGSĐ Hiếu Sera Core hiệu quả 7trong1 251212 tvc v1,Facebook,Facebook CGSĐ,T6,domestic,6553764.08,1,6553764.08,0,0
+260110,260110-SC CGSĐ Hiếu Sera Core hiệu quả 7trong1 251212 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,1753574.16,1,1753574.16,0,0
+260115,260115-SC CGSĐ Hiếu anh Hiếu key phông 251007 51t tvc v1,Facebook,Facebook CGSĐ,full-2026,total,1427072.87,2,713536.435,0,0
+260115,260115-SC CGSĐ Hiếu anh Hiếu key phông 251007 51t tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,1427072.87,2,713536.435,0,0
+260115,260115-SC CGSĐ Hiếu anh Hiếu key phông 251007 51t tvc v1,Facebook,Facebook CGSĐ,T1,total,1427072.87,2,713536.435,0,0
+260115,260115-SC CGSĐ Hiếu anh Hiếu key phông 251007 51t tvc v1,Facebook,Facebook CGSĐ,T1,domestic,1427072.87,2,713536.435,0,0
+260115,260115-SC CGSĐ Hiếu Chấp luôn cháu gái 56t 251003 tvc v1,Facebook,Facebook CGSĐ,T2,total,4926521.74,2,2463260.87,0,0
+260115,260115-SC CGSĐ Hiếu Chấp luôn cháu gái 56t 251003 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,4926521.74,2,2463260.87,0,0
+260115,260115-SC CGSĐ Hiếu chị Bông cnc 50t 251208 lt v1,Facebook,Facebook CGSĐ,full-2026,overseas,26841811.67,11,2440164.697,0.1117659284,3.996712343
+260115,260115-SC CGSĐ Hiếu chị Bông cnc 50t 251208 lt v1,Facebook,Facebook CGSĐ,T1,overseas,3526889.32,3,1175629.773,0.2835359744,0.2835359744
+260115,260115-SC CGSĐ Hiếu chị Bông cnc 50t 251208 lt v1,Facebook,Facebook CGSĐ,T2,overseas,8524937.5,2,4262468.75,0,0
+260115,260115-SC CGSĐ Hiếu chị Bông cnc 50t 251208 lt v1,Facebook,Facebook CGSĐ,T3,total,14789984.85,5,2957996.97,0.06761332146,4.79946401
+260115,260115-SC CGSĐ Hiếu chị Bông cnc 50t 251208 lt v1,Facebook,Facebook CGSĐ,T3,overseas,14789984.85,5,2957996.97,0.06761332146,4.79946401
+260115,260115-SC CGSĐ Hiếu chị Bông cnc 50t 251208 lt v1,Facebook,Facebook CGSĐ,T4,total,0,1,0,,
+260115,260115-SC CGSĐ Hiếu chị Bông cnc 50t 251208 lt v1,Facebook,Facebook CGSĐ,T4,overseas,0,1,0,,
+260115,260115-SC CGSĐ Hiếu chị Lan bà ba 49t 251215 lt,Facebook,Facebook CGSĐ,T3,domestic,921854.32,0,,0,0
+260115,260115-SC CGSĐ Hiếu giả đáp SC 251208 tvc v1,Facebook,Facebook CGSĐ,T4,domestic,4397362.62,8,549670.3275,5.573886467,5.573886467
+260115,260115-SC CGSĐ Hiếu giả đáp SC 251208 tvc v1,Facebook,Facebook CGSĐ,T5,total,0,2,0,,
+260115,260115-SC CGSĐ Hiếu giả đáp SC 251208 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,0,2,0,,
+260115,260115-SC CGSĐ Hiếu thời điểm vàng 251208 tvc v1,Facebook,Facebook CGSĐ,T5,overseas,51656526.18,12,4304710.515,0,0
+260115,260115-SC CGSĐ Hiếu thời điểm vàng 251208 tvc v1,Facebook,Facebook CGSĐ,T6,total,1701582.15,0,,0,0
+260115,260115-SC CGSĐ Hiếu thời điểm vàng 251208 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,1701582.15,0,,0,0
+260115,260115-SC CGSĐ Hiếu vlog chị Lan 49t 251215 ld v1,Facebook,Facebook CGSĐ,T6,domestic,0,1,0,,
+260120,260120-SC CGSĐ Hiếu căng da vẫn nhăn 63t 251215 lt v1,Facebook,Facebook CGSĐ,full-2026,total,11371493.32,15,758099.5547,1.424615004,1.424615004
+260120,260120-SC CGSĐ Hiếu căng da vẫn nhăn 63t 251215 lt v1,Facebook,Facebook CGSĐ,full-2026,domestic,11371493.32,15,758099.5547,1.424615004,1.424615004
+260120,260120-SC CGSĐ Hiếu căng da vẫn nhăn 63t 251215 lt v1,Facebook,Facebook CGSĐ,T2,total,9871975.6,14,705141.1143,0,0
+260120,260120-SC CGSĐ Hiếu căng da vẫn nhăn 63t 251215 lt v1,Facebook,Facebook CGSĐ,T2,domestic,9871975.6,14,705141.1143,0,0
+260120,260120-SC CGSĐ Hiếu căng da vẫn nhăn 63t 251215 lt v1,Facebook,Facebook CGSĐ,T3,total,1499517.72,0,,0,0
+260120,260120-SC CGSĐ Hiếu căng da vẫn nhăn 63t 251215 lt v1,Facebook,Facebook CGSĐ,T3,domestic,1499517.72,0,,0,0
+260120,260120-SC CGSĐ Hiếu căng da vẫn nhăn 63t 251215 lt v1,Facebook,Facebook CGSĐ,T4,total,0,1,0,,
+260120,260120-SC CGSĐ Hiếu căng da vẫn nhăn 63t 251215 lt v1,Facebook,Facebook CGSĐ,T4,domestic,0,1,0,,
+260120,260120-SC CGSĐ Hiếu chuyên gia hot ở seryn 251112 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,9785941.56,1,9785941.56,0,0
+260120,260120-SC CGSĐ Hiếu chuyên gia hot ở seryn 251112 tvc v1,Facebook,Facebook CGSĐ,T1,total,2621129.33,2,1310564.665,0,0
+260120,260120-SC CGSĐ Hiếu chuyên gia hot ở seryn 251112 tvc v1,Facebook,Facebook CGSĐ,T1,domestic,0,1,0,,
+260120,260120-SC CGSĐ Hiếu chuyên gia hot ở seryn 251112 tvc v1,Facebook,Facebook CGSĐ,T1,overseas,2621129.33,1,2621129.33,0,0
+260120,260120-SC CGSĐ Hiếu chuyên gia hot ở seryn 251112 tvc v1,Facebook,Facebook CGSĐ,T2,overseas,7164812.23,0,,0,0
+260120,260120-SC CGSĐ Hiếu có giảm giá khủng không 251215 tvc v1,Facebook,Facebook CGSĐ,T5,total,0,1,0,,
+260120,260120-SC CGSĐ Hiếu có giảm giá khủng không 251215 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,0,1,0,,
+260120,260120-SC CGSĐ Xuân và chị Nguyên tóc xù 251017 55t lt v1,Facebook,Facebook CGSĐ,T3,overseas,36631637.91,10,3663163.791,0,0
+260120,260120-SC CGSĐ Xuân và chị Nguyên tóc xù 251017 55t lt v1,Facebook,Facebook CGSĐ,T4,overseas,0,1,0,,
+260205,260205-SC CGSĐ Hiếu AI Oxyregen 260113 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,42286467.73,30,1409548.924,0.7638862202,2.447384602
+260205,260205-SC CGSĐ Hiếu AI Oxyregen 260113 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,18550373.78,16,1159398.361,0,0
+260205,260205-SC CGSĐ Hiếu AI Oxyregen 260113 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,23736093.95,14,1695435.282,1.360883137,4.36007922
+260205,260205-SC CGSĐ Hiếu AI Oxyregen 260113 tvc v1,Facebook,Facebook CGSĐ,T2,total,32045598.69,22,1456618.122,0.9673715352,0.9673715352
+260205,260205-SC CGSĐ Hiếu AI Oxyregen 260113 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,15548517.81,12,1295709.818,0,0
+260205,260205-SC CGSĐ Hiếu AI Oxyregen 260113 tvc v1,Facebook,Facebook CGSĐ,T2,overseas,16497080.88,10,1649708.088,1.879120326,1.879120326
+260205,260205-SC CGSĐ Hiếu AI Oxyregen 260113 tvc v1,Facebook,Facebook CGSĐ,T3,total,10240869.04,7,1462981.291,0.1271425301,3.641414596
+260205,260205-SC CGSĐ Hiếu AI Oxyregen 260113 tvc v1,Facebook,Facebook CGSĐ,T3,domestic,3001855.97,3,1000618.657,0,0
+260205,260205-SC CGSĐ Hiếu AI Oxyregen 260113 tvc v1,Facebook,Facebook CGSĐ,T3,overseas,7239013.07,4,1809753.268,0.1798656788,5.151427362
+260205,260205-SC CGSĐ Hiếu AI Oxyregen 260113 tvc v1,Facebook,Facebook CGSĐ,T5,total,0,1,0,,
+260205,260205-SC CGSĐ Hiếu AI Oxyregen 260113 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,0,1,0,,
+260205,260205-SC CGSĐ Hiếu biết tin gì chưa 260119 tvc v1,Facebook,Facebook CGSĐ,T4,total,59269346.85,26,2279590.263,2.499885824,2.499885824
+260205,260205-SC CGSĐ Hiếu biết tin gì chưa 260119 tvc v1,Facebook,Facebook CGSĐ,T4,domestic,0,2,0,,
+260205,260205-SC CGSĐ Hiếu biết tin gì chưa 260119 tvc v1,Facebook,Facebook CGSĐ,T4,overseas,59269346.85,24,2469556.119,2.499885824,2.499885824
+260205,260205-SC CGSĐ Hiếu biết tin gì chưa 260119 tvc v1,Facebook,Facebook CGSĐ,T5,overseas,45778700.58,24,1907445.858,0.05712263491,2.590208951
+260205,260205-SC CGSĐ Hiếu biết tin gì chưa 260119 tvc v1,Facebook,Facebook CGSĐ,T6,total,2986806.46,2,1493403.23,0,0
+260205,260205-SC CGSĐ Hiếu biết tin gì chưa 260119 tvc v1,Facebook,Facebook CGSĐ,T6,domestic,0,1,0,,
+260205,260205-SC CGSĐ Hiếu biết tin gì chưa 260119 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,2986806.46,1,2986806.46,0,0
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,68287391.17,60,1138123.186,0.8829243432,0.8829243432
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,49549132.03,52,952867.9237,1.196642556,1.196642556
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,18738259.14,8,2342282.393,0.05336675048,0.05336675048
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,T2,total,29109789.8,22,1323172.264,0,0
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,T2,domestic,13524500.62,19,711815.8221,0,0
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,T2,overseas,15585289.18,3,5195096.393,0,0
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,T3,total,9035190.85,7,1290741.55,4.902231811,4.902231811
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,T3,domestic,5882220.89,5,1176444.178,7.529911037,7.529911037
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,T3,overseas,3152969.96,2,1576484.98,0,0
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,T4,total,26021820.96,24,1084242.54,0.6148685761,0.6148685761
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,T4,domestic,26021820.96,22,1182810.044,0.5764392901,0.5764392901
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,T4,overseas,0,2,0,,
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,T5,total,4120589.56,7,588655.6514,0,0
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,4120589.56,6,686764.9267,0,0
+260210,260210-SC CGSĐ Hiếu 2 tvv 1 mẫu 50t 260114 tvc v1,Facebook,Facebook CGSĐ,T5,overseas,0,1,0,,
+260225,260225-SC CGSĐ Hiếu cá mòi 3 cô gái 260116 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,37275788.23,54,690292.3746,1.073082607,1.073082607
+260225,260225-SC CGSĐ Hiếu cá mòi 3 cô gái 260116 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,33908273.03,52,652082.1737,1.179653118,1.179653118
+260225,260225-SC CGSĐ Hiếu cá mòi 3 cô gái 260116 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,3367515.2,2,1683757.6,0,0
+260225,260225-SC CGSĐ Hiếu cá mòi 3 cô gái 260116 tvc v1,Facebook,Facebook CGSĐ,T2,total,1677747.94,1,1677747.94,0,0
+260225,260225-SC CGSĐ Hiếu cá mòi 3 cô gái 260116 tvc v1,Facebook,Facebook CGSĐ,T2,overseas,1677747.94,1,1677747.94,0,0
+260225,260225-SC CGSĐ Hiếu cá mòi 3 cô gái 260116 tvc v1,Facebook,Facebook CGSĐ,T3,total,35598040.29,50,711960.8058,1.123657361,1.123657361
+260225,260225-SC CGSĐ Hiếu cá mòi 3 cô gái 260116 tvc v1,Facebook,Facebook CGSĐ,T3,domestic,33908273.03,49,692005.572,1.179653118,1.179653118
+260225,260225-SC CGSĐ Hiếu cá mòi 3 cô gái 260116 tvc v1,Facebook,Facebook CGSĐ,T3,overseas,1689767.26,1,1689767.26,0,0
+260225,260225-SC CGSĐ Hiếu cá mòi 3 cô gái 260116 tvc v1,Facebook,Facebook CGSĐ,T4,total,0,2,0,,
+260225,260225-SC CGSĐ Hiếu cá mòi 3 cô gái 260116 tvc v1,Facebook,Facebook CGSĐ,T4,domestic,0,2,0,,
+260225,260225-SC CGSĐ Hiếu cá mòi 3 cô gái 260116 tvc v1,Facebook,Facebook CGSĐ,T5,total,0,1,0,,
+260225,260225-SC CGSĐ Hiếu cá mòi 3 cô gái 260116 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,0,1,0,,
+260225,260225-SC CGSĐ Hiếu đừng dụ cô Loan 260206 65t tvc v1,Facebook,Facebook CGSĐ,T4,overseas,59767235.42,35,1707635.298,0.6657426886,0.9869889344
+260225,260225-SC CGSĐ Hiếu đừng dụ cô Loan 260206 65t tvc v1,Facebook,Facebook CGSĐ,T5,overseas,1996568.36,4,499142.09,0,0
+260225,260225-SC CGSĐ Hiếu tư vấn Việt kiều 260119 tvc v1,Facebook,Facebook CGSĐ,T6,total,8859704.65,4,2214926.163,0,0
+260225,260225-SC CGSĐ Hiếu tư vấn Việt kiều 260119 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,8859704.65,4,2214926.163,0,0
+260305,260305-SC CGSĐ Hiếu bị chị Tín hù 260206 54t tvc v1,Facebook,Facebook CGSĐ,full-2026,total,13794764.22,5,2758952.844,1.81228179,1.81228179
+260305,260305-SC CGSĐ Hiếu bị chị Tín hù 260206 54t tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,1963072.97,1,1963072.97,12.73513536,12.73513536
+260305,260305-SC CGSĐ Hiếu bị chị Tín hù 260206 54t tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,11831691.25,4,2957922.813,0,0
+260305,260305-SC CGSĐ Hiếu bị chị Tín hù 260206 54t tvc v1,Facebook,Facebook CGSĐ,T3,total,13794764.22,5,2758952.844,1.81228179,1.81228179
+260305,260305-SC CGSĐ Hiếu bị chị Tín hù 260206 54t tvc v1,Facebook,Facebook CGSĐ,T3,domestic,1963072.97,1,1963072.97,12.73513536,12.73513536
+260305,260305-SC CGSĐ Hiếu bị chị Tín hù 260206 54t tvc v1,Facebook,Facebook CGSĐ,T3,overseas,11831691.25,4,2957922.813,0,0
+260305,260305-SC CGSĐ Hiếu cô Loan căng hết mức 260206 65t tvc v1,Facebook,Facebook CGSĐ,T4,total,23529240.25,28,840330.0089,0,0
+260305,260305-SC CGSĐ Hiếu cô Loan căng hết mức 260206 65t tvc v1,Facebook,Facebook CGSĐ,T4,domestic,23529240.25,24,980385.0104,0,0
+260305,260305-SC CGSĐ Hiếu cô Loan căng hết mức 260206 65t tvc v1,Facebook,Facebook CGSĐ,T4,overseas,0,4,0,,
+260305,260305-SC CGSĐ Hiếu cô Loan căng hết mức 260206 65t tvc v1,Facebook,Facebook CGSĐ,T5,total,0,1,0,,
+260305,260305-SC CGSĐ Hiếu cô Loan căng hết mức 260206 65t tvc v1,Facebook,Facebook CGSĐ,T5,domestic,0,1,0,,
+260305,260305-SC CGSĐ Hiếu làm đẹp gói rẻ 260225 tvc v1,Facebook,Facebook CGSĐ,T5,overseas,95262051.7,56,1701108.066,1.097106331,1.808911281
+260305,260305-SC CGSĐ Hiếu làm đẹp gói rẻ 260225 tvc v1,Facebook,Facebook CGSĐ,T6,total,5405311.33,1,5405311.33,0,0
+260305,260305-SC CGSĐ Hiếu làm đẹp gói rẻ 260225 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,5405311.33,1,5405311.33,0,0
+260310,260310-SC CGSĐ Hiếu áo poto trên oto 260225 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,28549103.84,23,1241265.384,0.5254105377,0.5254105377
+260310,260310-SC CGSĐ Hiếu áo poto trên oto 260225 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,11298848.28,17,664638.1341,1.327568937,1.327568937
+260310,260310-SC CGSĐ Hiếu áo poto trên oto 260225 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,17250255.56,6,2875042.593,0,0
+260310,260310-SC CGSĐ Hiếu áo poto trên oto 260225 tvc v1,Facebook,Facebook CGSĐ,T3,total,22530744.99,19,1185828.684,0.6657569471,0.6657569471
+260310,260310-SC CGSĐ Hiếu áo poto trên oto 260225 tvc v1,Facebook,Facebook CGSĐ,T3,domestic,5280489.43,13,406191.4946,2.840645777,2.840645777
+260310,260310-SC CGSĐ Hiếu áo poto trên oto 260225 tvc v1,Facebook,Facebook CGSĐ,T3,overseas,17250255.56,6,2875042.593,0,0
+260310,260310-SC CGSĐ Hiếu áo poto trên oto 260225 tvc v1,Facebook,Facebook CGSĐ,T4,total,6018358.85,3,2006119.617,0,0
+260310,260310-SC CGSĐ Hiếu áo poto trên oto 260225 tvc v1,Facebook,Facebook CGSĐ,T4,domestic,6018358.85,3,2006119.617,0,0
+260310,260310-SC CGSĐ Hiếu áo poto trên oto 260225 tvc v1,Facebook,Facebook CGSĐ,T5,total,0,1,0,,
+260310,260310-SC CGSĐ Hiếu áo poto trên oto 260225 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,0,1,0,,
+260310,260310-SC CGSĐ Hiếu một nửa khuôn mặt 50t 260114 tvc v1,Facebook,Facebook CGSĐ,T4,overseas,6060610.52,7,865801.5029,0,0
+260310,260310-SC CGSĐ Hiếu VK 1 năm bảo hành 260206 tvc v1,Facebook,Facebook CGSĐ,T5,overseas,3202061.5,0,,0,0.3959948927
+260315,260315-SC CGSĐ Hiếu hải quan nhận không ra 260225 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,17575245.11,16,1098452.819,1.193724461,1.193724461
+260315,260315-SC CGSĐ Hiếu hải quan nhận không ra 260225 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,17575245.11,16,1098452.819,1.193724461,1.193724461
+260315,260315-SC CGSĐ Hiếu hải quan nhận không ra 260225 tvc v1,Facebook,Facebook CGSĐ,T3,total,4041699.81,1,4041699.81,5.190885268,5.190885268
+260315,260315-SC CGSĐ Hiếu hải quan nhận không ra 260225 tvc v1,Facebook,Facebook CGSĐ,T3,domestic,4041699.81,1,4041699.81,5.190885268,5.190885268
+260315,260315-SC CGSĐ Hiếu hải quan nhận không ra 260225 tvc v1,Facebook,Facebook CGSĐ,T4,total,13533545.3,13,1041041.946,0,0
+260315,260315-SC CGSĐ Hiếu hải quan nhận không ra 260225 tvc v1,Facebook,Facebook CGSĐ,T4,domestic,13533545.3,13,1041041.946,0,0
+260315,260315-SC CGSĐ Hiếu hải quan nhận không ra 260225 tvc v1,Facebook,Facebook CGSĐ,T5,total,0,2,0,,
+260315,260315-SC CGSĐ Hiếu hải quan nhận không ra 260225 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,0,2,0,,
+260315,260315-SC CGSĐ Hiếu khách thật 62t 260118 lt v1,Facebook,Facebook CGSĐ,full-2026,overseas,2764982.07,2,1382491.035,0,0
+260315,260315-SC CGSĐ Hiếu khách thật 62t 260118 lt v1,Facebook,Facebook CGSĐ,T3,overseas,2764982.07,2,1382491.035,0,0
+260315,260315-SC CGSĐ Hiếu làm đẹp 7in1 với oxy 260206 tvc v1,Facebook,Facebook CGSĐ,T4,overseas,18487191.47,15,1232479.431,0.05409150447,0.05409150447
+260315,260315-SC CGSĐ Hiếu trải nghiệm SC 260206 tvc v1,Facebook,Facebook CGSĐ,T5,overseas,0,1,0,,
+260315,260315-SC CGSĐ Hiếu trải nghiệm SC 260206 tvc v1,Facebook,Facebook CGSĐ,T6,total,5905663.02,2,2952831.51,9.991765497,22.69144033
+260315,260315-SC CGSĐ Hiếu trải nghiệm SC 260206 tvc v1,Facebook,Facebook CGSĐ,T6,domestic,5905663.02,2,2952831.51,9.991765497,22.69144033
+260320,260320-SC CGSĐ Chị gái bán đất 55t 60t 260305 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,16642079.75,9,1849119.972,0,0
+260320,260320-SC CGSĐ Chị gái bán đất 55t 60t 260305 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,2687768.36,4,671942.09,0,0
+260320,260320-SC CGSĐ Chị gái bán đất 55t 60t 260305 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,13954311.39,5,2790862.278,0,0
+260320,260320-SC CGSĐ Chị gái bán đất 55t 60t 260305 tvc v1,Facebook,Facebook CGSĐ,T3,total,11479002.54,7,1639857.506,0,0
+260320,260320-SC CGSĐ Chị gái bán đất 55t 60t 260305 tvc v1,Facebook,Facebook CGSĐ,T3,domestic,2687768.36,3,895922.7867,0,0
+260320,260320-SC CGSĐ Chị gái bán đất 55t 60t 260305 tvc v1,Facebook,Facebook CGSĐ,T3,overseas,8791234.18,4,2197808.545,0,0
+260320,260320-SC CGSĐ Chị gái bán đất 55t 60t 260305 tvc v1,Facebook,Facebook CGSĐ,T4,total,5163077.21,2,2581538.605,0,0
+260320,260320-SC CGSĐ Chị gái bán đất 55t 60t 260305 tvc v1,Facebook,Facebook CGSĐ,T4,domestic,0,1,0,,
+260320,260320-SC CGSĐ Chị gái bán đất 55t 60t 260305 tvc v1,Facebook,Facebook CGSĐ,T4,overseas,5163077.21,1,5163077.21,0,0
+260320,260320-SC CGSĐ Đền 1 tỉ 55t 60t 260305 tvc v1,Facebook,Facebook CGSĐ,T5,total,1370177.69,1,1370177.69,0,0
+260320,260320-SC CGSĐ Đền 1 tỉ 55t 60t 260305 tvc v1,Facebook,Facebook CGSĐ,T5,overseas,1370177.69,1,1370177.69,0,0
+260320,260320-SC CGSĐ Hiếu chị Chi đầm xanh trước buồng oxy 56t 260119 ln v1,Facebook,Facebook CGSĐ,T5,domestic,0,1,0,,
+260320,260320-SC CGSĐ Hiếu chị Kim nửa mặt 45t 260225 ln v1,Facebook,Facebook CGSĐ,T6,total,0,1,0,,
+260320,260320-SC CGSĐ Hiếu chị Kim nửa mặt 45t 260225 ln v1,Facebook,Facebook CGSĐ,T6,domestic,0,1,0,,
+260320,260320-SC CGSĐ Hiếu Cholie bắt cóc Minh Hiếu 45t 260311 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,5836958.38,1,5836958.38,0,0.1713221056
+260331,260331-SC CGSĐ Hiếu Baby em sợ 45t 260311 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,76802320.42,66,1163671.522,2.158697798,2.158697798
+260331,260331-SC CGSĐ Hiếu Baby em sợ 45t 260311 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,49438827.23,45,1098640.605,3.353497833,3.353497833
+260331,260331-SC CGSĐ Hiếu Baby em sợ 45t 260311 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,27363493.19,21,1303023.485,0,0
+260331,260331-SC CGSĐ Hiếu Baby em sợ 45t 260311 tvc v1,Facebook,Facebook CGSĐ,T3,total,5485648.2,7,783664.0286,0,0
+260331,260331-SC CGSĐ Hiếu Baby em sợ 45t 260311 tvc v1,Facebook,Facebook CGSĐ,T3,domestic,2199355.49,3,733118.4967,0,0
+260331,260331-SC CGSĐ Hiếu Baby em sợ 45t 260311 tvc v1,Facebook,Facebook CGSĐ,T3,overseas,3286292.71,4,821573.1775,0,0
+260331,260331-SC CGSĐ Hiếu Baby em sợ 45t 260311 tvc v1,Facebook,Facebook CGSĐ,T4,total,46272833.52,40,1156820.838,0.8191199267,0.8191199267
+260331,260331-SC CGSĐ Hiếu Baby em sợ 45t 260311 tvc v1,Facebook,Facebook CGSĐ,T4,domestic,24113469.25,27,893091.4537,1.571860092,1.571860092
+260331,260331-SC CGSĐ Hiếu Baby em sợ 45t 260311 tvc v1,Facebook,Facebook CGSĐ,T4,overseas,22159364.27,13,1704566.482,0,0
+260331,260331-SC CGSĐ Hiếu Baby em sợ 45t 260311 tvc v1,Facebook,Facebook CGSĐ,T5,total,22684534.58,19,1193922.873,5.63776169,5.63776169
+260331,260331-SC CGSĐ Hiếu Baby em sợ 45t 260311 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,20766698.37,15,1384446.558,6.158417565,6.158417565
+260331,260331-SC CGSĐ Hiếu Baby em sợ 45t 260311 tvc v1,Facebook,Facebook CGSĐ,T5,overseas,1917836.21,4,479459.0525,0,0
+260331,260331-SC CGSĐ Hiếu Baby em sợ 45t 260311 tvc v1,Facebook,Facebook CGSĐ,T6,total,2359304.12,0,,0,0
+260331,260331-SC CGSĐ Hiếu Baby em sợ 45t 260311 tvc v1,Facebook,Facebook CGSĐ,T6,domestic,2359304.12,0,,0,0
+260405,260405-SC CGSĐ Hiếu chị Tín buồng oxy 260206 54t lt v1,Facebook,Facebook CGSĐ,full-2026,total,1894675.94,1,1894675.94,0,0
+260405,260405-SC CGSĐ Hiếu chị Tín buồng oxy 260206 54t lt v1,Facebook,Facebook CGSĐ,full-2026,domestic,1324533.71,1,1324533.71,0,0
+260405,260405-SC CGSĐ Hiếu chị Tín buồng oxy 260206 54t lt v1,Facebook,Facebook CGSĐ,full-2026,overseas,570142.23,0,,0,0
+260405,260405-SC CGSĐ Hiếu chị Tín buồng oxy 260206 54t lt v1,Facebook,Facebook CGSĐ,T4,total,1324533.71,1,1324533.71,0,0
+260405,260405-SC CGSĐ Hiếu chị Tín buồng oxy 260206 54t lt v1,Facebook,Facebook CGSĐ,T4,domestic,1324533.71,1,1324533.71,0,0
+260405,260405-SC CGSĐ Hiếu chị Tín buồng oxy 260206 54t lt v1,Facebook,Facebook CGSĐ,T5,total,570142.23,0,,0,0
+260405,260405-SC CGSĐ Hiếu chị Tín buồng oxy 260206 54t lt v1,Facebook,Facebook CGSĐ,T5,overseas,570142.23,0,,0,0
+260405,260405-SC CGSĐ Hiếu nằm giải đáp 260306 tvc v1,Facebook,Facebook CGSĐ,T4,overseas,11298312.16,3,3766104.053,0,0
+260405,260405-SC CGSĐ Hiếu nằm giải đáp 260306 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,0,1,0,,
+260405,260405-SC CGSĐ Hiếu VK săn vàng 260317 tvc v1,Facebook,Facebook CGSĐ,T6,total,3021118.85,2,1510559.425,0,0
+260405,260405-SC CGSĐ Hiếu VK săn vàng 260317 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,3021118.85,2,1510559.425,0,0
+260410,260410-SC CGSĐ Hiếu 8in7to1 260311 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,497932995.6,467,1066237.678,1.08219164,1.685845149
+260410,260410-SC CGSĐ Hiếu 8in7to1 260311 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,384912248.3,404,952753.0898,1.006104123,1.737917676
+260410,260410-SC CGSĐ Hiếu 8in7to1 260311 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,113020747.3,63,1793980.115,1.341321206,1.5085029
+260410,260410-SC CGSĐ Hiếu 8in7to1 260311 tvc v1,Facebook,Facebook CGSĐ,T4,total,269573975.9,266,1013435.999,1.453587364,1.453587364
+260410,260410-SC CGSĐ Hiếu 8in7to1 260311 tvc v1,Facebook,Facebook CGSĐ,T4,domestic,209994753.8,224,937476.5792,1.379330649,1.379330649
+260410,260410-SC CGSĐ Hiếu 8in7to1 260311 tvc v1,Facebook,Facebook CGSĐ,T4,overseas,59579222.11,42,1418552.907,1.715314859,1.715314859
+260410,260410-SC CGSĐ Hiếu 8in7to1 260311 tvc v1,Facebook,Facebook CGSĐ,T5,total,209622162,193,1086125.192,0.7013075267,2.135216027
+260410,260410-SC CGSĐ Hiếu 8in7to1 260311 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,160905110.7,173,930087.3453,0.6066283386,2.357250172
+260410,260410-SC CGSĐ Hiếu 8in7to1 260311 tvc v1,Facebook,Facebook CGSĐ,T5,overseas,48717051.3,20,2435852.565,1.014018679,1.40187056
+260410,260410-SC CGSĐ Hiếu 8in7to1 260311 tvc v1,Facebook,Facebook CGSĐ,T6,total,18736857.65,8,2342107.206,0,0
+260410,260410-SC CGSĐ Hiếu 8in7to1 260311 tvc v1,Facebook,Facebook CGSĐ,T6,domestic,14012383.8,7,2001769.114,0,0
+260410,260410-SC CGSĐ Hiếu 8in7to1 260311 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,4724473.85,1,4724473.85,0,0
+260415,260415-SC CGSĐ Hiếu ám ảnh hỏi giá 260324 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,14877538.37,7,2125362.624,0,0
+260415,260415-SC CGSĐ Hiếu ám ảnh hỏi giá 260324 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,11793456.3,6,1965576.05,0,0
+260415,260415-SC CGSĐ Hiếu ám ảnh hỏi giá 260324 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,3084082.07,1,3084082.07,0,0
+260415,260415-SC CGSĐ Hiếu ám ảnh hỏi giá 260324 tvc v1,Facebook,Facebook CGSĐ,T4,total,3084082.07,1,3084082.07,0,0
+260415,260415-SC CGSĐ Hiếu ám ảnh hỏi giá 260324 tvc v1,Facebook,Facebook CGSĐ,T4,overseas,3084082.07,1,3084082.07,0,0
+260415,260415-SC CGSĐ Hiếu ám ảnh hỏi giá 260324 tvc v1,Facebook,Facebook CGSĐ,T5,total,11793456.3,6,1965576.05,0,0
+260415,260415-SC CGSĐ Hiếu ám ảnh hỏi giá 260324 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,11793456.3,6,1965576.05,0,0
+260415,260415-SC CGSĐ Hiếu BA Cholie 45t 260311 tvc v1,Facebook,Facebook CGSĐ,T4,domestic,906289.35,1,906289.35,0,0
+260415,260415-SC CGSĐ Hiếu BA Cholie 45t 260311 tvc v1,Facebook,Facebook CGSĐ,T5,overseas,1713653.13,0,,0,0
+260415,260415-SC CGSĐ Hiếu mời đoàn mình tới Seryn 250311 tvc v1,Facebook,Facebook CGSĐ,T6,total,2969139.06,2,1484569.53,0,0
+260415,260415-SC CGSĐ Hiếu mời đoàn mình tới Seryn 250311 tvc v1,Facebook,Facebook CGSĐ,T6,domestic,0,1,0,,
+260415,260415-SC CGSĐ Hiếu mời đoàn mình tới Seryn 250311 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,2969139.06,1,2969139.06,0,0
+260420,260420-SC CGSĐ Hiếu chị Thương nửa mặt 52t 260317 ln v1,Facebook,Facebook CGSĐ,full-2026,total,24913277.7,8,3114159.713,0,0
+260420,260420-SC CGSĐ Hiếu chị Thương nửa mặt 52t 260317 ln v1,Facebook,Facebook CGSĐ,full-2026,domestic,9714347.08,5,1942869.416,0,0
+260420,260420-SC CGSĐ Hiếu chị Thương nửa mặt 52t 260317 ln v1,Facebook,Facebook CGSĐ,full-2026,overseas,15198930.62,3,5066310.207,0,0
+260420,260420-SC CGSĐ Hiếu chị Thương nửa mặt 52t 260317 ln v1,Facebook,Facebook CGSĐ,T4,total,11662164.76,5,2332432.952,0,0
+260420,260420-SC CGSĐ Hiếu chị Thương nửa mặt 52t 260317 ln v1,Facebook,Facebook CGSĐ,T4,domestic,3717655.87,2,1858827.935,0,0
+260420,260420-SC CGSĐ Hiếu chị Thương nửa mặt 52t 260317 ln v1,Facebook,Facebook CGSĐ,T4,overseas,7944508.89,3,2648169.63,0,0
+260420,260420-SC CGSĐ Hiếu chị Thương nửa mặt 52t 260317 ln v1,Facebook,Facebook CGSĐ,T5,total,13251112.94,3,4417037.647,0,0
+260420,260420-SC CGSĐ Hiếu chị Thương nửa mặt 52t 260317 ln v1,Facebook,Facebook CGSĐ,T5,domestic,5996691.21,3,1998897.07,0,0
+260420,260420-SC CGSĐ Hiếu chị Thương nửa mặt 52t 260317 ln v1,Facebook,Facebook CGSĐ,T5,overseas,7254421.73,0,,0,0
+260420,260420-SC CGSĐ Hiếu có tin vui 260410 tvc v1,Facebook,Facebook CGSĐ,T6,total,23901170.14,12,1991764.178,0,0
+260420,260420-SC CGSĐ Hiếu có tin vui 260410 tvc v1,Facebook,Facebook CGSĐ,T6,domestic,14808985.82,12,1234082.152,0,0
+260420,260420-SC CGSĐ Hiếu có tin vui 260410 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,9092184.32,0,,0,0
+260505,260505-SC CGSĐ Hiếu chị Lyn Việt Kiều tự live 52t 260410 ln v1,Facebook,Facebook CGSĐ,full-2026,total,25602117.56,20,1280105.878,0,0
+260505,260505-SC CGSĐ Hiếu chị Lyn Việt Kiều tự live 52t 260410 ln v1,Facebook,Facebook CGSĐ,full-2026,domestic,1514235.82,0,,0,0
+260505,260505-SC CGSĐ Hiếu chị Lyn Việt Kiều tự live 52t 260410 ln v1,Facebook,Facebook CGSĐ,full-2026,overseas,24087881.74,20,1204394.087,0,0
+260505,260505-SC CGSĐ Hiếu chị Lyn Việt Kiều tự live 52t 260410 ln v1,Facebook,Facebook CGSĐ,T5,total,25042322.39,19,1318016.968,0,0
+260505,260505-SC CGSĐ Hiếu chị Lyn Việt Kiều tự live 52t 260410 ln v1,Facebook,Facebook CGSĐ,T5,domestic,954440.65,0,,0,0
+260505,260505-SC CGSĐ Hiếu chị Lyn Việt Kiều tự live 52t 260410 ln v1,Facebook,Facebook CGSĐ,T5,overseas,24087881.74,19,1267783.249,0,0
+260505,260505-SC CGSĐ Hiếu chị Lyn Việt Kiều tự live 52t 260410 ln v1,Facebook,Facebook CGSĐ,T6,total,559795.17,1,559795.17,0,0
+260505,260505-SC CGSĐ Hiếu chị Lyn Việt Kiều tự live 52t 260410 ln v1,Facebook,Facebook CGSĐ,T6,domestic,559795.17,0,,0,0
+260505,260505-SC CGSĐ Hiếu chị Lyn Việt Kiều tự live 52t 260410 ln v1,Facebook,Facebook CGSĐ,T6,overseas,0,1,0,,
+260510,260510-CGSĐ Hiếu Jasmine toàn mặt 63t 260324 lt v1,Facebook,Facebook CGSĐ,full-2026,total,21861814.61,13,1681678.047,0,0
+260510,260510-CGSĐ Hiếu Jasmine toàn mặt 63t 260324 lt v1,Facebook,Facebook CGSĐ,full-2026,domestic,17762499.75,11,1614772.705,0,0
+260510,260510-CGSĐ Hiếu Jasmine toàn mặt 63t 260324 lt v1,Facebook,Facebook CGSĐ,full-2026,overseas,4099314.86,2,2049657.43,0,0
+260510,260510-CGSĐ Hiếu Jasmine toàn mặt 63t 260324 lt v1,Facebook,Facebook CGSĐ,T5,total,21861814.61,13,1681678.047,0,0
+260510,260510-CGSĐ Hiếu Jasmine toàn mặt 63t 260324 lt v1,Facebook,Facebook CGSĐ,T5,domestic,17762499.75,11,1614772.705,0,0
+260510,260510-CGSĐ Hiếu Jasmine toàn mặt 63t 260324 lt v1,Facebook,Facebook CGSĐ,T5,overseas,4099314.86,2,2049657.43,0,0
+260510,260510-SC CGSĐ Hiếu cam kết 100% 260420 tvc v1,Facebook,Facebook CGSĐ,T6,total,264867.64,1,264867.64,0,0
+260510,260510-SC CGSĐ Hiếu cam kết 100% 260420 tvc v1,Facebook,Facebook CGSĐ,T6,domestic,264867.64,1,264867.64,0,0
+260510,260510-SC CGSĐ Hiếu chị Thư hun chồng 52t 260420 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,5946806.66,2,2973403.33,0,0.1681574763
+260515,260515 - SC CGSĐ Hiếu có quà 260416 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,13542234.86,2,6771117.43,0,0
+260515,260515 - SC CGSĐ Hiếu có quà 260416 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,10408138.28,0,,0,0
+260515,260515 - SC CGSĐ Hiếu có quà 260416 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,3134096.58,2,1567048.29,0,0
+260515,260515 - SC CGSĐ Hiếu có quà 260416 tvc v1,Facebook,Facebook CGSĐ,T5,total,4627902.55,0,,0,0
+260515,260515 - SC CGSĐ Hiếu có quà 260416 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,4627902.55,0,,0,0
+260515,260515 - SC CGSĐ Hiếu có quà 260416 tvc v1,Facebook,Facebook CGSĐ,T6,total,8914332.31,2,4457166.155,0,0
+260515,260515 - SC CGSĐ Hiếu có quà 260416 tvc v1,Facebook,Facebook CGSĐ,T6,domestic,5780235.73,0,,0,0
+260515,260515 - SC CGSĐ Hiếu có quà 260416 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,3134096.58,2,1567048.29,0,0
+260515,260515-SC CGSĐ Hiếu 1 phút test 260416 tvc v1,Facebook,Facebook CGSĐ,T5,overseas,1842406.55,1,1842406.55,0,0
+260520,260520-SC CGSĐ Hiếu đền ngay 1 tỏi 260515 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,19571682.11,3,6523894.037,0,0
+260520,260520-SC CGSĐ Hiếu đền ngay 1 tỏi 260515 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,9679154.83,2,4839577.415,0,0
+260520,260520-SC CGSĐ Hiếu đền ngay 1 tỏi 260515 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,9892527.28,1,9892527.28,0,0
+260520,260520-SC CGSĐ Hiếu đền ngay 1 tỏi 260515 tvc v1,Facebook,Facebook CGSĐ,T5,total,7979598.81,2,3989799.405,0,0
+260520,260520-SC CGSĐ Hiếu đền ngay 1 tỏi 260515 tvc v1,Facebook,Facebook CGSĐ,T5,domestic,7979598.81,2,3989799.405,0,0
+260520,260520-SC CGSĐ Hiếu đền ngay 1 tỏi 260515 tvc v1,Facebook,Facebook CGSĐ,T6,total,11592083.3,1,11592083.3,0,0
+260520,260520-SC CGSĐ Hiếu đền ngay 1 tỏi 260515 tvc v1,Facebook,Facebook CGSĐ,T6,domestic,1699556.02,0,,0,0
+260520,260520-SC CGSĐ Hiếu đền ngay 1 tỏi 260515 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,9892527.28,1,9892527.28,0,0
+260605,260605-SC CGSĐ Hiếu muốn rẻ nhưng phải đẹp 260513 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,1704210.94,0,,0,0
+260605,260605-SC CGSĐ Hiếu muốn rẻ nhưng phải đẹp 260513 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,794018.39,0,,0,0
+260605,260605-SC CGSĐ Hiếu muốn rẻ nhưng phải đẹp 260513 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,910192.55,0,,0,0
+260605,260605-SC CGSĐ Hiếu muốn rẻ nhưng phải đẹp 260513 tvc v1,Facebook,Facebook CGSĐ,T6,total,1704210.94,0,,0,0
+260605,260605-SC CGSĐ Hiếu muốn rẻ nhưng phải đẹp 260513 tvc v1,Facebook,Facebook CGSĐ,T6,domestic,794018.39,0,,0,0
+260605,260605-SC CGSĐ Hiếu muốn rẻ nhưng phải đẹp 260513 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,910192.55,0,,0,0
+260610,260610-SC CGSĐ Hiếu Hạ cửa kính 260515 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,1815485.02,0,,0,0
+260610,260610-SC CGSĐ Hiếu Hạ cửa kính 260515 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,781903.76,0,,0,0
+260610,260610-SC CGSĐ Hiếu Hạ cửa kính 260515 tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,1033581.26,0,,0,0
+260610,260610-SC CGSĐ Hiếu Hạ cửa kính 260515 tvc v1,Facebook,Facebook CGSĐ,T6,total,1815485.02,0,,0,0
+260610,260610-SC CGSĐ Hiếu Hạ cửa kính 260515 tvc v1,Facebook,Facebook CGSĐ,T6,domestic,781903.76,0,,0,0
+260610,260610-SC CGSĐ Hiếu Hạ cửa kính 260515 tvc v1,Facebook,Facebook CGSĐ,T6,overseas,1033581.26,0,,0,0
+60225,60225-SC CGSĐ Hiếu đừng dụ cô Loan 260206 65t tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+60225,60225-SC CGSĐ Hiếu đừng dụ cô Loan 260206 65t tvc v1,Facebook,Facebook CGSĐ,full-2026,overseas,0,1,0,,
+60225,60225-SC CGSĐ Hiếu đừng dụ cô Loan 260206 65t tvc v1,Facebook,Facebook CGSĐ,T4,total,0,1,0,,
+60225,60225-SC CGSĐ Hiếu đừng dụ cô Loan 260206 65t tvc v1,Facebook,Facebook CGSĐ,T4,overseas,0,1,0,,
+60315,60315-SC CGSĐ Hiếu trải nghiệm SC 260206 tvc v1,Facebook,Facebook CGSĐ,full-2026,total,0,1,0,,
+60315,60315-SC CGSĐ Hiếu trải nghiệm SC 260206 tvc v1,Facebook,Facebook CGSĐ,full-2026,domestic,0,1,0,,
+60315,60315-SC CGSĐ Hiếu trải nghiệm SC 260206 tvc v1,Facebook,Facebook CGSĐ,T3,total,0,1,0,,
+60315,60315-SC CGSĐ Hiếu trải nghiệm SC 260206 tvc v1,Facebook,Facebook CGSĐ,T3,domestic,0,1,0,,
+260120,260120-SC Zalo CGSĐ Hiếu rửa mặt chứng minh 251119 tvc v1,Facebook,Facebook hotline,full-2026,total,0,1,0,,
+260120,260120-SC Zalo CGSĐ Hiếu rửa mặt chứng minh 251119 tvc v1,Facebook,Facebook hotline,full-2026,overseas,0,1,0,,
+260120,260120-SC Zalo CGSĐ Hiếu rửa mặt chứng minh 251119 tvc v1,Facebook,Facebook hotline,T2,total,0,1,0,,
+260120,260120-SC Zalo CGSĐ Hiếu rửa mặt chứng minh 251119 tvc v1,Facebook,Facebook hotline,T2,overseas,0,1,0,,
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v5,Facebook,Facebook mess Nữ MB,full-2026,total,57344672.76,74,774928.0103,2.029412575,2.029412575
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v5,Facebook,Facebook mess Nữ MB,full-2026,domestic,57344672.76,74,774928.0103,2.029412575,2.029412575
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v5,Facebook,Facebook mess Nữ MB,T2,total,0,1,0,,
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v5,Facebook,Facebook mess Nữ MB,T2,domestic,0,1,0,,
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v5,Facebook,Facebook mess Nữ MB,T3,total,57344672.76,73,785543.4625,2.029412575,2.029412575
+240620,240620-CGSĐ làm đẹp lẻ 240610 tvc v5,Facebook,Facebook mess Nữ MB,T3,domestic,57344672.76,73,785543.4625,2.029412575,2.029412575
+240810,240810-CGSĐ Hiếu kiêng cữ vết sẹo 240716 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,total,0,1,0,,
+240810,240810-CGSĐ Hiếu kiêng cữ vết sẹo 240716 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,0,1,0,,
+240810,240810-CGSĐ Hiếu kiêng cữ vết sẹo 240716 tvc v1,Facebook,Facebook mess Nữ MB,T3,total,0,1,0,,
+240810,240810-CGSĐ Hiếu kiêng cữ vết sẹo 240716 tvc v1,Facebook,Facebook mess Nữ MB,T3,domestic,0,1,0,,
+250310,250310 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook mess Nữ MB,full-2026,total,0,1,0,,
+250310,250310 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook mess Nữ MB,full-2026,domestic,0,1,0,,
+250310,250310 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook mess Nữ MB,T3,total,0,1,0,,
+250310,250310 - CGSĐ Hiếu tự live cùng Candy và Trizzie 250215 lt v2,Facebook,Facebook mess Nữ MB,T3,domestic,0,1,0,,
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,total,248391631.1,249,997556.7512,0.4707912239,0.9133310935
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,248391631.1,245,1013843.392,0.4707912239,0.9133310935
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,overseas,0,4,0,,
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook mess Nữ MB,T1,total,38490601.59,41,938795.1607,0.9169667021,2.498267006
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook mess Nữ MB,T1,domestic,38490601.59,38,1012910.568,0.9169667021,2.498267006
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook mess Nữ MB,T1,overseas,0,3,0,,
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook mess Nữ MB,T2,total,101257434.5,111,912229.1397,0.5398912215,0.733042471
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook mess Nữ MB,T2,domestic,101257434.5,111,912229.1397,0.5398912215,0.733042471
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook mess Nữ MB,T3,total,108643595,97,1120037.061,0.2483165253,0.5198465682
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook mess Nữ MB,T3,domestic,108643595,96,1131704.114,0.2483165253,0.5198465682
+250525,250525-CGSĐ Hiếu làm 1 nhận 5 250412 tvc v1,Facebook,Facebook mess Nữ MB,T3,overseas,0,1,0,,
+250528,250528-CGSĐ Hiếu công nghệ 7in 1 220716 tvc v2,Facebook,Facebook mess Nữ MB,full-2026,total,0,2,0,,
+250528,250528-CGSĐ Hiếu công nghệ 7in 1 220716 tvc v2,Facebook,Facebook mess Nữ MB,full-2026,domestic,0,2,0,,
+250528,250528-CGSĐ Hiếu công nghệ 7in 1 220716 tvc v2,Facebook,Facebook mess Nữ MB,T1,total,0,1,0,,
+250528,250528-CGSĐ Hiếu công nghệ 7in 1 220716 tvc v2,Facebook,Facebook mess Nữ MB,T1,domestic,0,1,0,,
+250528,250528-CGSĐ Hiếu công nghệ 7in 1 220716 tvc v2,Facebook,Facebook mess Nữ MB,T3,total,0,1,0,,
+250528,250528-CGSĐ Hiếu công nghệ 7in 1 220716 tvc v2,Facebook,Facebook mess Nữ MB,T3,domestic,0,1,0,,
+250620,250620-CGSĐ Hiếu giảm giá sập sàn 250310 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,total,0,1,0,,
+250620,250620-CGSĐ Hiếu giảm giá sập sàn 250310 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,0,1,0,,
+250620,250620-CGSĐ Hiếu giảm giá sập sàn 250310 tvc v1,Facebook,Facebook mess Nữ MB,T2,total,0,1,0,,
+250620,250620-CGSĐ Hiếu giảm giá sập sàn 250310 tvc v1,Facebook,Facebook mess Nữ MB,T2,domestic,0,1,0,,
+250801,250801-CGSĐ Hiếu Cát hẹn cafe 250716 lt v1,Facebook,Facebook mess Nữ MB,full-2026,total,1369939.91,0,,0,0
+250801,250801-CGSĐ Hiếu Cát hẹn cafe 250716 lt v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,1369939.91,0,,0,0
+250801,250801-CGSĐ Hiếu Cát hẹn cafe 250716 lt v1,Facebook,Facebook mess Nữ MB,T2,total,1369939.91,0,,0,0
+250801,250801-CGSĐ Hiếu Cát hẹn cafe 250716 lt v1,Facebook,Facebook mess Nữ MB,T2,domestic,1369939.91,0,,0,0
+250810,250810-CGSĐ Hiếu trả lời 1:1 250716 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,total,44379622.87,38,1167884.812,0.5220864555,0.5220864555
+250810,250810-CGSĐ Hiếu trả lời 1:1 250716 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,44379622.87,37,1199449.267,0.5220864555,0.5220864555
+250810,250810-CGSĐ Hiếu trả lời 1:1 250716 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,overseas,0,1,0,,
+250810,250810-CGSĐ Hiếu trả lời 1:1 250716 tvc v1,Facebook,Facebook mess Nữ MB,T2,total,19028354.98,14,1359168.213,0,0
+250810,250810-CGSĐ Hiếu trả lời 1:1 250716 tvc v1,Facebook,Facebook mess Nữ MB,T2,domestic,19028354.98,14,1359168.213,0,0
+250810,250810-CGSĐ Hiếu trả lời 1:1 250716 tvc v1,Facebook,Facebook mess Nữ MB,T3,total,25351267.89,24,1056302.829,0.9139582328,0.9139582328
+250810,250810-CGSĐ Hiếu trả lời 1:1 250716 tvc v1,Facebook,Facebook mess Nữ MB,T3,domestic,25351267.89,23,1102229.039,0.9139582328,0.9139582328
+250810,250810-CGSĐ Hiếu trả lời 1:1 250716 tvc v1,Facebook,Facebook mess Nữ MB,T3,overseas,0,1,0,,
+250810,250810-chị Quỳnh Chi 56t 250711 asa v1,Facebook,Facebook mess Nữ MB,T1,total,0,3,0,,
+250810,250810-chị Quỳnh Chi 56t 250711 asa v1,Facebook,Facebook mess Nữ MB,T1,domestic,0,3,0,,
+250810,250810-chị Quỳnh Chi 56t 250711 asa v1,Facebook,Facebook mess Nữ MB,T2,overseas,0,1,0,,
+250820,250820-CGSĐ Hiếu hên xui 50t 250804 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,total,0,2,0,,
+250820,250820-CGSĐ Hiếu hên xui 50t 250804 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,0,2,0,,
+250820,250820-CGSĐ Hiếu hên xui 50t 250804 tvc v1,Facebook,Facebook mess Nữ MB,T2,total,0,1,0,,
+250820,250820-CGSĐ Hiếu hên xui 50t 250804 tvc v1,Facebook,Facebook mess Nữ MB,T2,domestic,0,1,0,,
+250820,250820-CGSĐ Hiếu hên xui 50t 250804 tvc v1,Facebook,Facebook mess Nữ MB,T3,total,0,1,0,,
+250820,250820-CGSĐ Hiếu hên xui 50t 250804 tvc v1,Facebook,Facebook mess Nữ MB,T3,domestic,0,1,0,,
+250820,250820-CGSĐ Hiếu trên ô tô 50t 250804 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,overseas,0,2,0,,
+250820,250820-CGSĐ Hiếu trên ô tô 50t 250804 tvc v1,Facebook,Facebook mess Nữ MB,T3,overseas,0,2,0,,
+250820,250820-chị Mita 43t 250707 asa v1,Facebook,Facebook mess Nữ MB,T1,total,0,2,0,,
+250820,250820-chị Mita 43t 250707 asa v1,Facebook,Facebook mess Nữ MB,T1,domestic,0,2,0,,
+250910,250910-ME Chị Châu tử thần 42t 250310 tvc,Facebook,Facebook mess Nữ MB,full-2026,total,0,1,0,,
+250910,250910-ME Chị Châu tử thần 42t 250310 tvc,Facebook,Facebook mess Nữ MB,full-2026,domestic,0,1,0,,
+250910,250910-ME Chị Châu tử thần 42t 250310 tvc,Facebook,Facebook mess Nữ MB,T3,total,0,1,0,,
+250910,250910-ME Chị Châu tử thần 42t 250310 tvc,Facebook,Facebook mess Nữ MB,T3,domestic,0,1,0,,
+250910,250910-ME Chị Lan Anh biến hình 51t 250210 ln,Facebook,Facebook mess Nữ MB,T1,total,0,1,0,,
+250910,250910-ME Chị Lan Anh biến hình 51t 250210 ln,Facebook,Facebook mess Nữ MB,T1,domestic,0,1,0,,
+250910,250910-ME Chị Lan Anh biến hình 51t 250210 ln,Facebook,Facebook mess Nữ MB,T2,total,0,1,0,,
+250910,250910-ME Chị Lan Anh biến hình 51t 250210 ln,Facebook,Facebook mess Nữ MB,T2,domestic,0,1,0,,
+250915,250915-CGSĐ Hiếu nâng cơ chưa đủ 250806 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,total,0,3,0,,
+250915,250915-CGSĐ Hiếu nâng cơ chưa đủ 250806 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,0,3,0,,
+250915,250915-CGSĐ Hiếu nâng cơ chưa đủ 250806 tvc v1,Facebook,Facebook mess Nữ MB,T3,total,0,3,0,,
+250915,250915-CGSĐ Hiếu nâng cơ chưa đủ 250806 tvc v1,Facebook,Facebook mess Nữ MB,T3,domestic,0,3,0,,
+251001,251001-CGSĐ Hiếu facetime Cát tvc 38t 250716 v1,Facebook,Facebook mess Nữ MB,full-2026,total,0,1,0,,
+251001,251001-CGSĐ Hiếu facetime Cát tvc 38t 250716 v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,0,1,0,,
+251001,251001-CGSĐ Hiếu facetime Cát tvc 38t 250716 v1,Facebook,Facebook mess Nữ MB,T3,total,0,1,0,,
+251001,251001-CGSĐ Hiếu facetime Cát tvc 38t 250716 v1,Facebook,Facebook mess Nữ MB,T3,domestic,0,1,0,,
+251010,251010-CGSĐ Hiếu trải nghiệm MC 250911 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,total,20619880.21,15,1374658.681,0,0
+251010,251010-CGSĐ Hiếu trải nghiệm MC 250911 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,20619880.21,15,1374658.681,0,0
+251010,251010-CGSĐ Hiếu trải nghiệm MC 250911 tvc v1,Facebook,Facebook mess Nữ MB,T1,total,10006462.74,8,1250807.843,0,0
+251010,251010-CGSĐ Hiếu trải nghiệm MC 250911 tvc v1,Facebook,Facebook mess Nữ MB,T1,domestic,10006462.74,8,1250807.843,0,0
+251010,251010-CGSĐ Hiếu trải nghiệm MC 250911 tvc v1,Facebook,Facebook mess Nữ MB,T2,total,10613417.47,5,2122683.494,0,0
+251010,251010-CGSĐ Hiếu trải nghiệm MC 250911 tvc v1,Facebook,Facebook mess Nữ MB,T2,domestic,10613417.47,5,2122683.494,0,0
+251010,251010-CGSĐ Hiếu trải nghiệm MC 250911 tvc v1,Facebook,Facebook mess Nữ MB,T3,total,0,2,0,,
+251010,251010-CGSĐ Hiếu trải nghiệm MC 250911 tvc v1,Facebook,Facebook mess Nữ MB,T3,domestic,0,2,0,,
+251020,251020-CGSĐ Hiếu trả giá cả đời 250911 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,total,0,1,0,,
+251020,251020-CGSĐ Hiếu trả giá cả đời 250911 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,0,1,0,,
+251020,251020-CGSĐ Hiếu trả giá cả đời 250911 tvc v1,Facebook,Facebook mess Nữ MB,T3,total,0,1,0,,
+251020,251020-CGSĐ Hiếu trả giá cả đời 250911 tvc v1,Facebook,Facebook mess Nữ MB,T3,domestic,0,1,0,,
+251101,251101-CGSĐ Hiếu ft Xuân báo giá bất ngờ 251021 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,total,18981889.93,17,1116581.761,0,0
+251101,251101-CGSĐ Hiếu ft Xuân báo giá bất ngờ 251021 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,18981889.93,17,1116581.761,0,0
+251101,251101-CGSĐ Hiếu ft Xuân báo giá bất ngờ 251021 tvc v1,Facebook,Facebook mess Nữ MB,T2,total,15539000.32,11,1412636.393,0,0
+251101,251101-CGSĐ Hiếu ft Xuân báo giá bất ngờ 251021 tvc v1,Facebook,Facebook mess Nữ MB,T2,domestic,15539000.32,11,1412636.393,0,0
+251101,251101-CGSĐ Hiếu ft Xuân báo giá bất ngờ 251021 tvc v1,Facebook,Facebook mess Nữ MB,T3,total,3442889.61,6,573814.935,0,0
+251101,251101-CGSĐ Hiếu ft Xuân báo giá bất ngờ 251021 tvc v1,Facebook,Facebook mess Nữ MB,T3,domestic,3442889.61,6,573814.935,0,0
+251105,251105-CGSĐ Hiếu 7 trong 1 mới đẹp 251013 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,total,1139130.55,0,,0,0
+251105,251105-CGSĐ Hiếu 7 trong 1 mới đẹp 251013 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,1139130.55,0,,0,0
+251105,251105-CGSĐ Hiếu 7 trong 1 mới đẹp 251013 tvc v1,Facebook,Facebook mess Nữ MB,T2,total,1139130.55,0,,0,0
+251105,251105-CGSĐ Hiếu 7 trong 1 mới đẹp 251013 tvc v1,Facebook,Facebook mess Nữ MB,T2,domestic,1139130.55,0,,0,0
+251105,251105-CGSĐ Hiếu giá rẻ bất thường 250814 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,overseas,0,3,0,,
+251105,251105-CGSĐ Hiếu giá rẻ bất thường 250814 tvc v1,Facebook,Facebook mess Nữ MB,T1,total,50894716.36,47,1082866.306,2.834926891,2.834926891
+251105,251105-CGSĐ Hiếu giá rẻ bất thường 250814 tvc v1,Facebook,Facebook mess Nữ MB,T1,domestic,50894716.36,46,1106406.877,2.834926891,2.834926891
+251105,251105-CGSĐ Hiếu giá rẻ bất thường 250814 tvc v1,Facebook,Facebook mess Nữ MB,T1,overseas,0,1,0,,
+251105,251105-CGSĐ Hiếu giá rẻ bất thường 250814 tvc v1,Facebook,Facebook mess Nữ MB,T2,overseas,0,2,0,,
+251105,251105-CGSĐ Hiếu giá rẻ bất thường 250814 tvc v1,Facebook,Facebook mess Nữ MB,T3,total,6301581.6,8,787697.7,0,2.570783182
+251105,251105-CGSĐ Hiếu giá rẻ bất thường 250814 tvc v1,Facebook,Facebook mess Nữ MB,T3,domestic,6301581.6,8,787697.7,0,2.570783182
+251110,251110-ảnh Ba chị Khánh Thi 49t 251017 asa1,Facebook,Facebook mess Nữ MB,full-2026,total,0,1,0,,
+251110,251110-ảnh Ba chị Khánh Thi 49t 251017 asa1,Facebook,Facebook mess Nữ MB,full-2026,overseas,0,1,0,,
+251110,251110-ảnh Ba chị Khánh Thi 49t 251017 asa1,Facebook,Facebook mess Nữ MB,T2,total,0,1,0,,
+251110,251110-ảnh Ba chị Khánh Thi 49t 251017 asa1,Facebook,Facebook mess Nữ MB,T2,overseas,0,1,0,,
+251110,251110-CGSĐ Hiếu Hiếu đồ giả 251021 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,5175663.45,2,2587831.725,0,0
+251110,251110-CGSĐ Hiếu Hiếu đồ giả 251021 tvc v1,Facebook,Facebook mess Nữ MB,T2,domestic,5175663.45,2,2587831.725,0,0
+251110,251110-CGSĐ Hiếu MC làm sao đẹp 250911 250922 tvc v1,Facebook,Facebook mess Nữ MB,T1,total,857925.32,0,,0,0
+251110,251110-CGSĐ Hiếu MC làm sao đẹp 250911 250922 tvc v1,Facebook,Facebook mess Nữ MB,T1,domestic,857925.32,0,,0,0
+251115,251115-ảnh hành trình chị Phương Hồng 46t 251021 asa1,Facebook,Facebook mess Nữ MB,full-2026,total,4639198.08,4,1159799.52,0,0
+251115,251115-ảnh hành trình chị Phương Hồng 46t 251021 asa1,Facebook,Facebook mess Nữ MB,full-2026,domestic,4639198.08,4,1159799.52,0,0
+251115,251115-ảnh hành trình chị Phương Hồng 46t 251021 asa1,Facebook,Facebook mess Nữ MB,T1,total,857028.75,1,857028.75,0,0
+251115,251115-ảnh hành trình chị Phương Hồng 46t 251021 asa1,Facebook,Facebook mess Nữ MB,T1,domestic,857028.75,1,857028.75,0,0
+251115,251115-ảnh hành trình chị Phương Hồng 46t 251021 asa1,Facebook,Facebook mess Nữ MB,T2,total,3782169.33,3,1260723.11,0,0
+251115,251115-ảnh hành trình chị Phương Hồng 46t 251021 asa1,Facebook,Facebook mess Nữ MB,T2,domestic,3782169.33,3,1260723.11,0,0
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook mess Nữ MB,full-2026,total,30467263.39,57,534513.3928,1.930826515,1.930826515
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,30467263.39,54,564208.5813,1.930826515,1.930826515
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook mess Nữ MB,full-2026,overseas,0,3,0,,
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook mess Nữ MB,T2,total,26841367.72,45,596474.8382,0,0
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook mess Nữ MB,T2,domestic,26841367.72,43,624217.854,0,0
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook mess Nữ MB,T2,overseas,0,2,0,,
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook mess Nữ MB,T3,total,3625895.67,12,302157.9725,16.22412925,16.22412925
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook mess Nữ MB,T3,domestic,3625895.67,11,329626.8791,16.22412925,16.22412925
+251120,251120-CGSĐ Hiếu facetime Charly tvc 251013 v1,Facebook,Facebook mess Nữ MB,T3,overseas,0,1,0,,
+251210,251210-CGSĐ Hiếu mặt lệch 251104 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,total,2868974.19,1,2868974.19,0,0
+251210,251210-CGSĐ Hiếu mặt lệch 251104 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,2868974.19,1,2868974.19,0,0
+251210,251210-CGSĐ Hiếu mặt lệch 251104 tvc v1,Facebook,Facebook mess Nữ MB,T2,total,2868974.19,1,2868974.19,0,0
+251210,251210-CGSĐ Hiếu mặt lệch 251104 tvc v1,Facebook,Facebook mess Nữ MB,T2,domestic,2868974.19,1,2868974.19,0,0
+260110,260110-SC CGSĐ Hiếu chỉ trỏ cô Huyền 60t 251209 v1,Facebook,Facebook mess Nữ MB,full-2026,total,0,1,0,,
+260110,260110-SC CGSĐ Hiếu chỉ trỏ cô Huyền 60t 251209 v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,0,1,0,,
+260110,260110-SC CGSĐ Hiếu chỉ trỏ cô Huyền 60t 251209 v1,Facebook,Facebook mess Nữ MB,T3,total,0,1,0,,
+260110,260110-SC CGSĐ Hiếu chỉ trỏ cô Huyền 60t 251209 v1,Facebook,Facebook mess Nữ MB,T3,domestic,0,1,0,,
+260115,260115-SC Hiếu Phương ko sẹo 63t 251215 lt v1,Facebook,Facebook mess Nữ MB,full-2026,total,0,1,0,,
+260115,260115-SC Hiếu Phương ko sẹo 63t 251215 lt v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,0,1,0,,
+260115,260115-SC Hiếu Phương ko sẹo 63t 251215 lt v1,Facebook,Facebook mess Nữ MB,T2,total,0,1,0,,
+260115,260115-SC Hiếu Phương ko sẹo 63t 251215 lt v1,Facebook,Facebook mess Nữ MB,T2,domestic,0,1,0,,
+260205,260205-MC MB Nửa mặt chị Mai 55t 251113 lt v1,Facebook,Facebook mess Nữ MB,full-2026,total,3014424.63,2,1507212.315,0,0
+260205,260205-MC MB Nửa mặt chị Mai 55t 251113 lt v1,Facebook,Facebook mess Nữ MB,full-2026,domestic,3014424.63,2,1507212.315,0,0
+260205,260205-MC MB Nửa mặt chị Mai 55t 251113 lt v1,Facebook,Facebook mess Nữ MB,T2,total,3014424.63,2,1507212.315,0,0
+260205,260205-MC MB Nửa mặt chị Mai 55t 251113 lt v1,Facebook,Facebook mess Nữ MB,T2,domestic,3014424.63,2,1507212.315,0,0
+260315,260315-SC CGSĐ Hiếu vlog chị Hậu 56t 260206 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,total,0,1,0,,
+260315,260315-SC CGSĐ Hiếu vlog chị Hậu 56t 260206 tvc v1,Facebook,Facebook mess Nữ MB,full-2026,overseas,0,1,0,,
+260315,260315-SC CGSĐ Hiếu vlog chị Hậu 56t 260206 tvc v1,Facebook,Facebook mess Nữ MB,T3,total,0,1,0,,
+260315,260315-SC CGSĐ Hiếu vlog chị Hậu 56t 260206 tvc v1,Facebook,Facebook mess Nữ MB,T3,overseas,0,1,0,,
+260415,260415-SC Clip ending CAM tvc v1,Facebook,Facebook remar,full-2026,total,43756772.94,18,2430931.83,0.7998761711,0.7998761711
+260415,260415-SC Clip ending CAM tvc v1,Facebook,Facebook remar,full-2026,domestic,43756772.94,17,2573927.82,0.7998761711,0.7998761711
+260415,260415-SC Clip ending CAM tvc v1,Facebook,Facebook remar,full-2026,overseas,0,1,0,,
+260415,260415-SC Clip ending CAM tvc v1,Facebook,Facebook remar,T4,total,8837038.45,4,2209259.613,3.960602887,3.960602887
+260415,260415-SC Clip ending CAM tvc v1,Facebook,Facebook remar,T4,domestic,8837038.45,4,2209259.613,3.960602887,3.960602887
+260415,260415-SC Clip ending CAM tvc v1,Facebook,Facebook remar,T5,total,34919734.49,14,2494266.749,0,0
+260415,260415-SC Clip ending CAM tvc v1,Facebook,Facebook remar,T5,domestic,34919734.49,13,2686133.422,0,0
+260415,260415-SC Clip ending CAM tvc v1,Facebook,Facebook remar,T5,overseas,0,1,0,,
+260415,260415-SC Clip ending XANH tvc v1,Facebook,Facebook remar,T4,overseas,0,1,0,,

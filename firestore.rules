@@ -1,0 +1,399 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: users
+    // Document ID: {userId}
+    // Fields:
+    //   - uid: string (required, immutable)
+    //   - email: string (required, immutable)
+    //   - role: string (required, enum: ['admin', 'user'])
+    //   - department: string (optional)
+    //   - createdAt: number (required, immutable)
+    //
+    // Collection: sheetsConfigs
+    // Document ID: {configId}
+    // Fields:
+    //   - name: string (required)
+    //   - spreadsheetId: string (required)
+    //   - sheetName: string (required)
+    //   - apiKey: string (required)
+    //   - isActive: boolean (required)
+    //   - createdByUserId: string (required, immutable)
+    //   - createdAt: number (required, immutable)
+    //
+    // Collection: adsData
+    // Document ID: {dataId}
+    // Fields:
+    //   - date: string (required, YYYY-MM-DD)
+    //   - market: string (optional)
+    //   - account_id: string (required)
+    //   - account_name: string (optional)
+    //   - campaign_id: string (required)
+    //   - campaign_name: string (optional)
+    //   - adset_id: string (optional)
+    //   - adset_name: string (optional)
+    //   - ad_id: string (optional)
+    //   - ad_name: string (optional)
+    //   - brand: string (optional)
+    //   - page_code: string (optional)
+    //   - geography: string (optional)
+    //   - page_type: string (optional)
+    //   - content_id: string (optional)
+    //   - objective: string (optional)
+    //   - spend: number (required)
+    //   - impressions: number (optional)
+    //   - reach: number (optional)
+    //   - frequency: number (optional)
+    //   - clicks: number (optional)
+    //   - ctr_all: number (optional)
+    //   - cpm: number (optional)
+    //   - purchases: number (optional)
+    //   - cost_per_purchase: number (optional)
+    //   - messages: number (optional)
+    //   - cost_per_messaging_conversation: number (optional)
+    //   - revenue: number (optional)
+    //   - leads: number (optional)
+    //
+    // Collection: adAccounts
+    // Document ID: {accountId}
+    // Fields:
+    //   - account_id: string (required)
+    //   - account_name: string (optional)
+    //   - brand: string (optional)
+    //   - partner: string (optional)
+    //   - runner: string (optional)
+    //   - bm_name: string (optional)
+    //   - status: string (optional)
+    //   - updatedAt: number (optional)
+    //
+    // Collection: fanpages
+    // Document ID: {pageId}
+    // Fields:
+    //   - page_code: string (required)
+    //   - page_name: string (optional)
+    //   - page_id: string (optional)
+    //   - runner: string (optional)
+    //   - source_code: string (optional)
+    //   - page_type: string (optional)
+    //   - geography: string (optional)
+    //   - page_link: string (optional)
+    //   - status: string (optional)
+    //   - pancake: string (optional)
+    //   - add_bm: string (optional)
+    //   - removed_pan: string (optional)
+    //   - updatedAt: number (optional)
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() &&
+        (
+          (request.auth.token.email != null && request.auth.token.email == "lvahust@gmail.com") ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin')
+        );
+    }
+
+    function hasOnlyAllowedFields(allowedFields) {
+      return request.resource.data.diff({}).affectedKeys().hasOnly(allowedFields);
+    }
+
+    function isValidEmail(email) {
+      return email is string && email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    function isValidDateString(dateStr) {
+      return dateStr is string && dateStr.matches("^\\d{4}-\\d{2}-\\d{2}$");
+    }
+
+    // ===============================================================
+    // Domain Validators
+    // ===============================================================
+    function isValidUser(data) {
+      return hasOnlyAllowedFields(['uid', 'email', 'role', 'department', 'createdAt']) &&
+             data.uid is string && data.uid.size() > 0 &&
+             data.email is string && isValidEmail(data.email) &&
+             data.role in ['admin', 'user'] &&
+             (!('department' in data) || data.department is string) &&
+             data.createdAt is number;
+    }
+
+    function isValidSheetConfig(data) {
+      return hasOnlyAllowedFields(['name', 'spreadsheetId', 'sheetName', 'apiKey', 'isActive', 'createdByUserId', 'createdAt', 'hasSyncedHistorical']) &&
+             data.name is string && data.name.size() > 0 &&
+             data.spreadsheetId is string && data.spreadsheetId.size() > 0 &&
+             data.sheetName is string && data.sheetName.size() > 0 &&
+             data.apiKey is string && data.apiKey.size() > 0 &&
+             data.isActive is bool &&
+             data.createdByUserId is string && data.createdByUserId.size() > 0 &&
+             data.createdAt is number &&
+             (!('hasSyncedHistorical' in data) || data.hasSyncedHistorical is bool);
+    }
+
+    function isValidAdsData(data) {
+      return hasOnlyAllowedFields(['date', 'market', 'account_id', 'account_name', 'campaign_id', 'campaign_name', 'adset_id', 'adset_name', 'ad_id', 'ad_name', 'brand', 'page_code', 'geography', 'page_type', 'content_id', 'objective', 'spend', 'impressions', 'reach', 'frequency', 'clicks', 'ctr_all', 'cpm', 'purchases', 'cost_per_purchase', 'messages', 'cost_per_messaging_conversation', 'revenue', 'leads', 'updatedAt']) &&
+             data.date is string && isValidDateString(data.date) &&
+             (!('market' in data) || data.market is string) &&
+             data.account_id is string && data.account_id.size() > 0 &&
+             (!('account_name' in data) || data.account_name is string) &&
+             data.campaign_id is string && data.campaign_id.size() > 0 &&
+             (!('campaign_name' in data) || data.campaign_name is string) &&
+             (!('adset_id' in data) || data.adset_id is string) &&
+             (!('adset_name' in data) || data.adset_name is string) &&
+             (!('ad_id' in data) || data.ad_id is string) &&
+             (!('ad_name' in data) || data.ad_name is string) &&
+             (!('brand' in data) || data.brand is string) &&
+             (!('page_code' in data) || data.page_code is string) &&
+             (!('geography' in data) || data.geography is string) &&
+             (!('page_type' in data) || data.page_type is string) &&
+             (!('content_id' in data) || data.content_id is string) &&
+             (!('objective' in data) || data.objective is string) &&
+             data.spend is number &&
+             (!('impressions' in data) || data.impressions is number) &&
+             (!('reach' in data) || data.reach is number) &&
+             (!('frequency' in data) || data.frequency is number) &&
+             (!('clicks' in data) || data.clicks is number) &&
+             (!('ctr_all' in data) || data.ctr_all is number) &&
+             (!('cpm' in data) || data.cpm is number) &&
+             (!('purchases' in data) || data.purchases is number) &&
+             (!('cost_per_purchase' in data) || data.cost_per_purchase is number) &&
+             (!('messages' in data) || data.messages is number) &&
+             (!('cost_per_messaging_conversation' in data) || data.cost_per_messaging_conversation is number) &&
+             (!('revenue' in data) || data.revenue is number) &&
+             (!('leads' in data) || data.leads is number) &&
+             (!('updatedAt' in data) || data.updatedAt is number);
+    }
+
+    function isValidAdAccount(data) {
+      return hasOnlyAllowedFields(['account_id', 'account_name', 'status', 'bm_name', 'Company_name', 'Partner_name', 'Ads_name', 'Bank_name', 'number_card', 'updatedAt']) &&
+             data.account_id is string && data.account_id.size() > 0 &&
+             (!('account_name' in data) || data.account_name is string) &&
+             (!('status' in data) || data.status is string) &&
+             (!('bm_name' in data) || data.bm_name is string) &&
+             (!('Company_name' in data) || data.Company_name is string) &&
+             (!('Partner_name' in data) || data.Partner_name is string) &&
+             (!('Ads_name' in data) || data.Ads_name is string) &&
+             (!('Bank_name' in data) || data.Bank_name is string) &&
+             (!('number_card' in data) || data.number_card is string) &&
+             (!('updatedAt' in data) || data.updatedAt is number);
+    }
+
+    function isValidFanpage(data) {
+      return hasOnlyAllowedFields(['page_code', 'page_name', 'page_id', 'runner', 'source_code', 'page_type', 'geography', 'page_link', 'status', 'pancake', 'add_bm', 'removed_pan', 'updatedAt']) &&
+             data.page_code is string &&
+             (!('page_name' in data) || data.page_name is string) &&
+             (!('page_id' in data) || data.page_id is string) &&
+             (!('runner' in data) || data.runner is string) &&
+             (!('source_code' in data) || data.source_code is string) &&
+             (!('page_type' in data) || data.page_type is string) &&
+             (!('geography' in data) || data.geography is string) &&
+             (!('page_link' in data) || data.page_link is string) &&
+             (!('status' in data) || data.status is string) &&
+             (!('pancake' in data) || data.pancake is string) &&
+             (!('add_bm' in data) || data.add_bm is string) &&
+             (!('removed_pan' in data) || data.removed_pan is string) &&
+             (!('updatedAt' in data) || data.updatedAt is number);
+    }
+
+    function isValidKpiMonth(data) {
+      return hasOnlyAllowedFields(['month', 'totalBudgetDomestic', 'totalBudgetOverseas', 'totalDataDomestic', 'totalDataOverseas', 'basePriceDomestic', 'basePriceOverseas', 'baseDataDomestic', 'baseDataOverseas', 'levels', 'personnel', 'createdAt', 'updatedAt', 'rewards']) &&
+             data.month is string && data.month.size() > 0 && data.month.size() < 20 &&
+             (!('totalBudgetDomestic' in data) || (data.totalBudgetDomestic is number && data.totalBudgetDomestic >= 0)) &&
+             (!('totalBudgetOverseas' in data) || (data.totalBudgetOverseas is number && data.totalBudgetOverseas >= 0)) &&
+             (!('totalDataDomestic' in data) || (data.totalDataDomestic is number && data.totalDataDomestic >= 0)) &&
+             (!('totalDataOverseas' in data) || (data.totalDataOverseas is number && data.totalDataOverseas >= 0)) &&
+             (!('basePriceDomestic' in data) || (data.basePriceDomestic is number && data.basePriceDomestic >= 0)) &&
+             (!('basePriceOverseas' in data) || (data.basePriceOverseas is number && data.basePriceOverseas >= 0)) &&
+             (!('baseDataDomestic' in data) || (data.baseDataDomestic is number && data.baseDataDomestic >= 0)) &&
+             (!('baseDataOverseas' in data) || (data.baseDataOverseas is number && data.baseDataOverseas >= 0)) &&
+             (!('levels' in data) || data.levels is map) &&
+             (!('personnel' in data) || data.personnel is list) &&
+             (!('rewards' in data) || data.rewards is map) &&
+             (!('createdAt' in data) || data.createdAt is number) &&
+             (!('updatedAt' in data) || data.updatedAt is number);
+    }
+
+    function isValidPartner(data) {
+      return hasOnlyAllowedFields(['name', 'feeHistory', 'createdAt']) &&
+             data.name is string && data.name.size() > 0 && data.name.size() < 100 &&
+             data.feeHistory is list && data.feeHistory.size() <= 50 &&
+             (data.feeHistory.size() == 0 || (
+               data.feeHistory[0] is map && 
+               data.feeHistory[0].id is string &&
+               data.feeHistory[0].startDate is string &&
+               data.feeHistory[0].feeRate is number
+             )) &&
+             data.createdAt is number;
+    }
+
+    function isValidUserActivity(data) {
+      return hasOnlyAllowedFields(['userId', 'userEmail', 'action', 'page', 'timestamp', 'metadata']) &&
+             data.userId == request.auth.uid &&
+             data.userEmail == request.auth.token.email &&
+             data.action is string && data.action.size() < 100 &&
+             (!('page' in data) || (data.page is string && data.page.size() < 100)) &&
+             data.timestamp is number &&
+             (!('metadata' in data) || data.metadata is map);
+    }
+
+    function isValidRoasSummary(data) {
+      return hasOnlyAllowedFields(['reportMonth', 'startDate', 'endDate', 'channel', 'classification', 'personnel', 'total', 'domestic', 'overseas', 'updatedAt']) &&
+             data.reportMonth is string &&
+             data.startDate is string &&
+             data.endDate is string &&
+             data.channel is string &&
+             data.classification is string &&
+             data.personnel is string &&
+             data.total is map &&
+             data.domestic is map &&
+             data.overseas is map &&
+             data.updatedAt is number;
+    }
+
+    function isValidSyncHistory(data) {
+      return hasOnlyAllowedFields(['date', 'timestamp', 'status', 'type', 'error', 'message', 'userEmail', 'configName']) &&
+             isValidDateString(data.date) &&
+             data.timestamp is number &&
+             data.status is string &&
+             data.type in ['AUTO', 'MANUAL'] &&
+             (!('error' in data) || data.error is string) &&
+             (!('message' in data) || data.message is string) &&
+             (!('userEmail' in data) || data.userEmail is string) &&
+             (!('configName' in data) || data.configName is string);
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+    match /dailySummaries/{summaryId} {
+      allow read: if isAuthenticated();
+      allow create, update, delete: if isAuthenticated();
+    }
+
+    match /contentPerformance/{perfId} {
+      allow read: if isAuthenticated();
+      allow create, update, delete: if isAuthenticated();
+    }
+
+    match /personnelPerformance/{perfId} {
+      allow read: if isAuthenticated();
+      allow create, update, delete: if isAuthenticated();
+    }
+
+    match /contents/{contentId} {
+      allow read: if isAuthenticated();
+      allow create, update, delete: if isAuthenticated();
+    }
+
+    match /performance/{perfId} {
+      allow read: if isAuthenticated();
+      allow create, update, delete: if isAuthenticated();
+    }
+
+    match /syncHistory/{historyId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated() && isValidSyncHistory(request.resource.data);
+      allow update, delete: if isAdmin();
+    }
+
+    match /roasSummary/{summaryId} {
+      allow read: if isAuthenticated();
+      allow create, update: if isAuthenticated() && isValidRoasSummary(request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    match /userActivities/{activityId} {
+      allow read: if isAdmin();
+      allow create: if isAuthenticated() && isValidUserActivity(request.resource.data);
+      allow update, delete: if false;
+    }
+
+    match /users/{userId} {
+      // Users can read their own profile, admins can read all
+      allow read: if isOwner(userId) || isAdmin();
+      
+      // Only admins can create/update users, OR a user can create their own profile with 'user' role
+      allow create: if isAuthenticated() && isValidUser(request.resource.data) && 
+                    ((isOwner(userId) && request.resource.data.role == 'user' && request.resource.data.uid == request.auth.uid) || isAdmin());
+      
+      allow update: if isAuthenticated() && isValidUser(request.resource.data) && 
+                    ((isOwner(userId) && request.resource.data.role == resource.data.role && request.resource.data.uid == resource.data.uid && request.resource.data.email == resource.data.email && request.resource.data.createdAt == resource.data.createdAt) || isAdmin());
+                    
+      allow delete: if isAdmin();
+    }
+
+    match /sheetsConfigs/{configId} {
+      // All authenticated users can read configs
+      allow read: if isAuthenticated();
+      // Only admins can manage configs
+      allow create: if isAdmin() && isValidSheetConfig(request.resource.data) && request.resource.data.createdByUserId == request.auth.uid;
+      allow update: if isAdmin() && isValidSheetConfig(request.resource.data) && request.resource.data.createdByUserId == resource.data.createdByUserId && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isAdmin();
+    }
+
+    match /adsData/{dataId} {
+      // All authenticated users can read ads data
+      allow read: if isAuthenticated();
+      // Any authenticated user can write ads data (via auto-sync process)
+      allow create: if isAuthenticated() && isValidAdsData(request.resource.data);
+      allow update: if isAuthenticated() && isValidAdsData(request.resource.data) && 
+                    request.resource.data.date == resource.data.date &&
+                    request.resource.data.account_id == resource.data.account_id;
+      allow delete: if isAdmin();
+    }
+
+    match /adAccounts/{accountId} {
+      allow read: if isAuthenticated();
+      allow create: if isAdmin() && isValidAdAccount(request.resource.data);
+      allow update: if isAdmin() && isValidAdAccount(request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    match /fanpages/{pageId} {
+      allow read: if isAuthenticated();
+      allow create: if isAdmin() && isValidFanpage(request.resource.data);
+      allow update: if isAdmin() && isValidFanpage(request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    match /kpiMonths/{monthId} {
+      allow read: if isAuthenticated();
+      allow create: if isAdmin() && isValidKpiMonth(request.resource.data);
+      allow update: if isAdmin() && isValidKpiMonth(request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    match /partners/{partnerId} {
+      allow read: if isAuthenticated();
+      allow create: if isAdmin() && isValidPartner(request.resource.data);
+      allow update: if isAdmin() && isValidPartner(request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    match /system/sync_meta {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated();
+    }
+
+    match /sopDecisions/{decisionId} {
+      allow read: if isAuthenticated();
+      allow create: if isAdmin();
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+  }
+}
