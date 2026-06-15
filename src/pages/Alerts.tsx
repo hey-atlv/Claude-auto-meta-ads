@@ -227,8 +227,9 @@ export const Alerts = () => {
           slDataPrev,
           chiPhiHT: Math.round(p.chiPhi || 0),
           slDataHT: p.slData || 0,
-          cldt, 
+          cldt,
           trangThai,
+          campaignMaxDate,
           roasTrongPrev,
           roas3ThangPrev
         };
@@ -244,9 +245,12 @@ export const Alerts = () => {
       });
   }, [performance, contents, trangThaiFilter, rawRows, ky]);
 
-  // Runners per content+vung: page_code → runner name via fanpagesMap
-  const runnersMap = useMemo(() => {
-    const map: Record<string, string[]> = {};
+  // Runners per content+vung. Trả về 2 map:
+  //  - runnersMap: tất cả runner có spend trong kỳ (cho cột Người Chạy)
+  //  - latestRunnersMap: runner của NGÀY GẦN NHẤT có spend (cho cột Log)
+  const { runnersMap, latestRunnersMap } = useMemo(() => {
+    const allMap: Record<string, string[]> = {};
+    const latestMap: Record<string, { date: string; runners: string[] }> = {};
     const matchMonth = (dateStr: string, kyStr: string) => {
       if (kyStr === 'tong_nam' || !kyStr.startsWith('thang')) return true;
       const m = kyStr.replace('thang', '').padStart(2, '0');
@@ -257,6 +261,8 @@ export const Alerts = () => {
       if (!tenContent) return;
       const rootId = tenContent.match(/^(\d{4,})/)?.[1] || null;
       const seen = new Set<string>();
+      const runnerLatest: Record<string, string> = {}; // runner → ngày spend gần nhất của họ
+      let maxDate = '';
       rawRows.forEach((r: any) => {
         if (!r.page_code) return;
         if (itemVung === 'trong_nuoc' && r.market !== 'Nội Địa') return;
@@ -269,10 +275,22 @@ export const Alerts = () => {
           || normalizePersonnelName(r.page_code)
           || r.page_code;
         seen.add(runner);
+        const day: string = r.date;
+        if (!runnerLatest[runner] || day > runnerLatest[runner]) runnerLatest[runner] = day;
+        if (day > maxDate) maxDate = day; // so sánh chuỗi YYYY-MM-DD = đúng thứ tự ngày
       });
-      map[`${tenContent}_${itemVung}`] = Array.from(seen);
+      const key = `${tenContent}_${itemVung}`;
+      allMap[key] = Array.from(seen);
+      if (maxDate) {
+        // Lấy TẤT CẢ người còn active trong cửa sổ 2 ngày gần nhất (giống logic trangThai)
+        const maxTime = new Date(maxDate).getTime();
+        const latestRunners = Object.entries(runnerLatest)
+          .filter(([, day]) => (maxTime - new Date(day).getTime()) / 86400000 <= 2)
+          .map(([runner]) => runner);
+        latestMap[key] = { date: maxDate, runners: latestRunners };
+      }
     });
-    return map;
+    return { runnersMap: allMap, latestRunnersMap: latestMap };
   }, [joinedData, rawRows, fanpagesMap, ky]);
 
   const handleDecide = async (contentId: string, vungParam: string) => {
@@ -547,6 +565,7 @@ export const Alerts = () => {
                   hideConfigTab={true}
                   sopFilter={sopFilter}
                   runnersMap={runnersMap}
+                  latestRunnersMap={latestRunnersMap}
                   sopDecisions={sopDecisions}
                   ky={ky}
                   onDecide={handleDecide}
@@ -562,6 +581,7 @@ export const Alerts = () => {
                   hideConfigTab={true}
                   sopFilter={sopFilter}
                   runnersMap={runnersMap}
+                  latestRunnersMap={latestRunnersMap}
                   sopDecisions={sopDecisions}
                   ky={ky}
                   onDecide={handleDecide}

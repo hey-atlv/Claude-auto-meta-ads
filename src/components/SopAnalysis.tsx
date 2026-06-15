@@ -16,7 +16,7 @@ const formatVND = (num: number) => {
   return num.toLocaleString('vi-VN');
 };
 
-export const SopAnalysis = ({ joinedData, vung, sopConfig, setSopConfig, hideConfigTab, title, sopFilter = 'Tất cả', type = 'content', runnersMap = {}, sopDecisions = {}, ky = '', onDecide, onCancelDecide, onUpdateNote }: any) => {
+export const SopAnalysis = ({ joinedData, vung, sopConfig, setSopConfig, hideConfigTab, title, sopFilter = 'Tất cả', type = 'content', runnersMap = {}, latestRunnersMap = {}, sopDecisions = {}, ky = '', onDecide, onCancelDecide, onUpdateNote }: any) => {
   const { role } = useAuth();
   const [searchTerm, setSearchTerm] = React.useState('');
   const [page, setPage] = React.useState(1);
@@ -398,26 +398,33 @@ export const SopAnalysis = ({ joinedData, vung, sopConfig, setSopConfig, hideCon
                             const decision = (sopDecisions as any)[docId];
                             if (!decision) return <span className="text-gray-300 text-[9px]">—</span>;
                             const approvedAt: string = decision.approvedAt || '';
-                            const daysDiff = approvedAt ? Math.floor((new Date(todayStr).getTime() - new Date(approvedAt).getTime()) / 86400000) : 0;
-                            const runners: string[] = runnersMap[`${row.tenContent}_${vung}`] || [];
-                            const isStopped = row.trangThai !== 'Đang chạy';
                             const isToday = approvedAt === todayStr;
+                            // Ngày gần nhất content+vùng còn chạy (tính trực tiếp từ data, không dùng snapshot)
+                            const latest = (latestRunnersMap as any)[`${row.tenContent}_${vung}`] as { date: string; runners: string[] } | undefined;
+                            const latestDate = latest?.date || '';
+                            const latestRunners = latest?.runners || [];
+                            // Còn chạy sau YC cắt = ngày chạy gần nhất >= ngày yêu cầu và vẫn đang chạy
+                            const stillRunning = row.trangThai === 'Đang chạy' && latestDate && latestRunners.length > 0;
+                            // Số ngày ads tiếp tục chạy sau YC cắt
+                            const daysPast = (latestDate && approvedAt)
+                              ? Math.floor((new Date(latestDate).getTime() - new Date(approvedAt).getTime()) / 86400000)
+                              : 0;
                             return (
                               <div className="space-y-0.5 text-[9px] leading-snug">
                                 <div className="text-gray-500">
-                                  <span className="font-semibold text-gray-700">YC cắt:</span> {approvedAt}
-                                  <span className="text-gray-400 ml-1">({decision.approvedBy})</span>
+                                  <span className="font-semibold text-gray-700">YC cắt:</span> {approvedAt?.slice(5)}
+                                  <span className="text-gray-400 ml-1">({decision.approvedBy?.split(' ').pop()})</span>
                                 </div>
-                                {isStopped && (
-                                  <div className="font-semibold text-emerald-600">✅ Ads đã dừng</div>
-                                )}
-                                {!isStopped && isToday && (
+                                {isToday && row.trangThai === 'Đang chạy' && (
                                   <div className="font-semibold text-blue-500">⏳ Chờ xác nhận hôm nay</div>
                                 )}
-                                {!isStopped && !isToday && daysDiff > 0 && (
+                                {!stillRunning && (
+                                  <div className="font-semibold text-emerald-600">✅ Ads đã dừng</div>
+                                )}
+                                {!isToday && stillRunning && (
                                   <div className="font-semibold text-orange-600">
-                                    ⚠️ Vẫn chạy (+{daysDiff}N)
-                                    {runners.length > 0 && <span className="font-normal text-orange-500 ml-1">— {runners.join(', ')}</span>}
+                                    ⚠️ Còn chạy {daysPast > 0 ? `(+${daysPast}N)` : ''} · {latestDate.slice(5)}
+                                    <span className="font-normal text-orange-500 ml-1">— {latestRunners.join(', ')}</span>
                                   </div>
                                 )}
                               </div>
