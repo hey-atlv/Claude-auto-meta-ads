@@ -12,6 +12,9 @@ import clsx from 'clsx';
 
 export const KpiProgress: React.FC = () => {
   const { rawRows, roasSummary, dataMTT, fanpagesMap, personnelFilter, isLoading: isSheetsLoading } = useSheetsData();
+  // When the official Data M+TT sheet fails to load (e.g. missing API key), fall back to
+  // Ads-reported purchases so this page doesn't silently show 0 — mirrors Dashboard's behavior.
+  const dataMTTAvailable = dataMTT && dataMTT.length > 0;
 
   // Reuse same Branding/CTKM filter logic as Dashboard
   const isBrandingPage = (pageCode?: string): boolean => {
@@ -31,7 +34,7 @@ export const KpiProgress: React.FC = () => {
 
   // Pre-aggregate dataMTT by month for fast lookup
   const dataMTTByMonth = useMemo(() => {
-    const map: Record<string, { personnel: string; dataMTT: number; spend: number }[]> = {};
+    const map: Record<string, { name: string; personnel: string; dataMTT: number; spend: number }[]> = {};
     dataMTT.forEach(r => {
       const month = r.date.substring(0, 7); // "2026-05"
       if (!map[month]) map[month] = [];
@@ -129,14 +132,23 @@ export const KpiProgress: React.FC = () => {
       const monthRecords = dataMTTByMonth[selectedMonth] || [];
       const personRecords = monthRecords.filter(r => r.personnel === person.name);
       const isOverseasRow = (rowName: string) => /\bNN\b/i.test(rowName);
-      const actualDataDom = personRecords.filter(r => !isOverseasRow(r.name)).reduce((s, r) => s + r.dataMTT, 0);
-      const actualDataOv  = personRecords.filter(r =>  isOverseasRow(r.name)).reduce((s, r) => s + r.dataMTT, 0);
-      actualData = actualDataDom + actualDataOv;
 
       // Spend split by market from rawRows
       const perfRows = personRows.filter(r => !isBrandingPage(r.page_code));
       const actualSpendDom = perfRows.filter(r => r.market === 'Nội Địa' || r.market === 'Cả Hai').reduce((s, r) => s + (r.actualSpend || 0), 0);
       const actualSpendOv  = perfRows.filter(r => r.market === 'Việt Kiều').reduce((s, r) => s + (r.actualSpend || 0), 0);
+
+      let actualDataDom: number;
+      let actualDataOv: number;
+      if (dataMTTAvailable) {
+        actualDataDom = personRecords.filter(r => !isOverseasRow(r.name)).reduce((s, r) => s + r.dataMTT, 0);
+        actualDataOv  = personRecords.filter(r =>  isOverseasRow(r.name)).reduce((s, r) => s + r.dataMTT, 0);
+      } else {
+        // Official sheet unavailable — fall back to Ads-reported purchases
+        actualDataDom = perfRows.filter(r => r.market === 'Nội Địa' || r.market === 'Cả Hai').reduce((s, r) => s + (r.purchases || 0), 0);
+        actualDataOv  = perfRows.filter(r => r.market === 'Việt Kiều').reduce((s, r) => s + (r.purchases || 0), 0);
+      }
+      actualData = actualDataDom + actualDataOv;
 
       const actualCpa = actualData > 0 ? actualSpend / actualData : 0;
       
@@ -1191,10 +1203,15 @@ export const KpiProgress: React.FC = () => {
                                   .filter(r => r.date === dateStr && r.personnel === person.name && !isBrandingPage(r.page_code))
                                   .filter(r => isDom ? (r.market === 'Nội Địa' || r.market === 'Cả Hai') : r.market === 'Việt Kiều')
                                   .reduce((s, r) => s + (r.actualSpend || 0), 0);
-                                const dayData = (dataMTT || [])
-                                  .filter(r => r.date === dateStr && r.personnel === person.name)
-                                  .filter(r => isDom ? !/\bNN\b/i.test(r.name) : /\bNN\b/i.test(r.name))
-                                  .reduce((s, r) => s + r.dataMTT, 0);
+                                const dayData = dataMTTAvailable
+                                  ? (dataMTT || [])
+                                      .filter(r => r.date === dateStr && r.personnel === person.name)
+                                      .filter(r => isDom ? !/\bNN\b/i.test(r.name) : /\bNN\b/i.test(r.name))
+                                      .reduce((s, r) => s + r.dataMTT, 0)
+                                  : rawRows
+                                      .filter(r => r.date === dateStr && r.personnel === person.name && !isBrandingPage(r.page_code))
+                                      .filter(r => isDom ? (r.market === 'Nội Địa' || r.market === 'Cả Hai') : r.market === 'Việt Kiều')
+                                      .reduce((s, r) => s + (r.purchases || 0), 0);
                                 return dayData > 0 ? daySpend / dayData : null;
                               });
                               const validSpark = sparkPoints.filter((v): v is number => v !== null);

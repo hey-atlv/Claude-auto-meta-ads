@@ -131,6 +131,9 @@ const COLORS = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6'];
 // ─── Component ────────────────────────────────────────────────────────────────
 export const Analytics: React.FC = () => {
   const { rows, isLoading, lastDataDate, adAccountsMap, fanpagesMap, dataMTT, marketFilter } = useSheetsData();
+  // When the official Data M+TT sheet fails to load (e.g. missing API key), fall back to
+  // Ads-reported purchases so pages don't silently show 0 — mirrors Dashboard's behavior.
+  const dataMTTAvailable = dataMTT && dataMTT.length > 0;
 
   const [dateFrom,         setDateFrom]         = useState<string | null>(null);
   const [dateTo,           setDateTo]           = useState<string | null>(null);
@@ -227,14 +230,18 @@ export const Analytics: React.FC = () => {
     return Object.values(grouped)
       .filter((item: any) => item.spend > 0)
       .map((item: any) => {
-        // Attach M+TT data
+        // Attach M+TT data — fall back to Ads-reported purchases if the official sheet is unavailable
         let mttData = 0;
-        if (activeDimension === 'personnel') {
-          mttData = dataMTTByPersonnel[item.name] || 0;
-        } else if (activeDimension === 'market') {
-          const k = item.name?.toLowerCase() || '';
-          if (k.includes('nội địa') || k === 'domestic')    mttData = dataMTTByMarket.domestic;
-          else if (k.includes('nước ngoài') || k === 'overseas') mttData = dataMTTByMarket.overseas;
+        if (dataMTTAvailable) {
+          if (activeDimension === 'personnel') {
+            mttData = dataMTTByPersonnel[item.name] || 0;
+          } else if (activeDimension === 'market') {
+            const k = item.name?.toLowerCase() || '';
+            if (k.includes('nội địa') || k === 'domestic')    mttData = dataMTTByMarket.domestic;
+            else if (k.includes('nước ngoài') || k === 'overseas') mttData = dataMTTByMarket.overseas;
+          }
+        } else {
+          mttData = item.purchases;
         }
         const cpa     = item.purchases > 0 ? Math.round(item.actualSpend / item.purchases) : 0;
         const cplReal = mttData        > 0 ? Math.round(item.actualSpend / mttData)         : 0;
@@ -246,7 +253,7 @@ export const Analytics: React.FC = () => {
           runner:    pageInfo?.runner    || '',
         };
       });
-  }, [filteredRows, activeDimension, adAccountsMap, fanpagesMap, dataMTTByPersonnel, dataMTTByMarket]);
+  }, [filteredRows, activeDimension, adAccountsMap, fanpagesMap, dataMTTByPersonnel, dataMTTByMarket, dataMTTAvailable]);
 
   // Status per item (vs team average CPL)
   const statusMap = useMemo(() => {
