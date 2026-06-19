@@ -523,6 +523,7 @@ async function startServer() {
         let dailySummaries = readCacheFile('dailySummaries.json') || [];
         let contents = readCacheFile('contents.json') || [];
         let performance = readCacheFile('performance.json') || [];
+        let roasPage = readCacheFile('roasPage.json') || [];
 
         // Self-healing: if cache is empty/stale, trigger sync on-the-fly
         if (!adsData || adsData.length === 0) {
@@ -536,6 +537,7 @@ async function startServer() {
             dailySummaries = readCacheFile('dailySummaries.json') || [];
             contents = readCacheFile('contents.json') || [];
             performance = readCacheFile('performance.json') || [];
+            roasPage = readCacheFile('roasPage.json') || [];
           } else {
             return res.status(500).json({ error: "Cache data is unavailable and self-healing sync failed: " + syncResult.error });
           }
@@ -568,6 +570,7 @@ async function startServer() {
           dailySummaries,
           contents,
           performance,
+          roasPage,
           dataMTT
         });
       } else {

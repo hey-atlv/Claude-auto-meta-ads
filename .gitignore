@@ -10,3 +10,4 @@ server-cache/
 firebase-service-account*.json
 service-account*.json
 secrets/
+docs/HUONG_DAN_FIX_GOOGLE_SHEETS_API_KEY.md

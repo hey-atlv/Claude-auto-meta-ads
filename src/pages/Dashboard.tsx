@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { formatPercent, formatInteger, formatVND } from '../lib/formatUtils';
-import { useSheetsData } from '../contexts/SheetsDataContext';
+import { useSheetsData, computeDataMTTTotal } from '../contexts/SheetsDataContext';
 import { filterRowsByDate } from '../lib/dateUtils';
 import { MarketFilter } from '../components/MarketFilter';
 import { PersonnelFilter } from '../components/PersonnelFilter';
@@ -421,22 +421,10 @@ export const Dashboard: React.FC = () => {
   }, [filteredRows, rawRows, dailySummaries, personnelFilter, marketFilter, dateFrom, dateTo, fanpagesMap]);
 
   // Data M+TT from official Google Sheet — respects marketFilter
-  const sheetDataMTT = useMemo(() => {
-    if (!dateFrom || !dateTo || !dataMTT || dataMTT.length === 0) return null;
-
-    // Pick the correct aggregate row based on market filter
-    const personnelKey =
-      marketFilter === 'Nội Địa'   ? '__domestic__' :
-      marketFilter === 'Việt Kiều' ? '__overseas__'  :
-                                     '__team__';
-
-    // Filter by exact date range (not whole month) so CPL matches the selected period
-    const total = dataMTT
-      .filter(r => r.personnel === personnelKey && r.date >= dateFrom && r.date <= dateTo)
-      .reduce((sum, r) => sum + r.dataMTT, 0);
-
-    return total > 0 ? total : null;
-  }, [dataMTT, dateFrom, dateTo, marketFilter]);
+  const sheetDataMTT = useMemo(
+    () => computeDataMTTTotal(dataMTT, dateFrom, dateTo, marketFilter),
+    [dataMTT, dateFrom, dateTo, marketFilter]
+  );
 
   const previousKpis = useMemo(() => {
     if (!prevDateFrom || !prevDateTo) return null;

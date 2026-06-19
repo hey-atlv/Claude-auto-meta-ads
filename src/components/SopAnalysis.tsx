@@ -305,9 +305,10 @@ export const SopAnalysis = ({ joinedData, vung, sopConfig, setSopConfig, hideCon
                             const isComplied = decision && row.trangThai === 'Tắt';
                             const isEditing = editingNote === docId;
                             const runners: string[] = runnersMap[`${row.tenContent}_${vung}`] || [];
+                            const hasFormalDecision = !!decision?.approvedAt;
                             return (
                               <div className="space-y-1">
-                                {!decision && (isCutSop || isConsiderSop) && role === 'admin' && row.trangThai === 'Đang chạy' && (() => {
+                                {!hasFormalDecision && (isCutSop || isConsiderSop) && role === 'admin' && row.trangThai === 'Đang chạy' && (() => {
                                   const isChecked = pendingCuts.has(docId);
                                   return (
                                     <button
@@ -336,9 +337,9 @@ export const SopAnalysis = ({ joinedData, vung, sopConfig, setSopConfig, hideCon
                                     </button>
                                   );
                                 })()}
-                                {decision && (
-                                  <div className="space-y-0.5">
-                                    {/* Dòng 1: badge + meta + hủy */}
+                                <div className="space-y-0.5">
+                                  {/* Dòng 1: badge + meta + hủy — chỉ khi đã có yêu cầu cắt chính thức */}
+                                  {hasFormalDecision && (
                                     <div className="flex items-center gap-1 flex-wrap">
                                       {isNonCompliant && <span className="text-[8px] font-bold text-orange-600 bg-orange-50 border border-orange-200 px-1.5 py-0.5 rounded whitespace-nowrap">⚠️ Chưa TH</span>}
                                       {isPending    && <span className="text-[8px] font-bold text-blue-600 bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded whitespace-nowrap">⏳ Chờ KT</span>}
@@ -348,27 +349,27 @@ export const SopAnalysis = ({ joinedData, vung, sopConfig, setSopConfig, hideCon
                                         <button onClick={() => onCancelDecide?.(row.tenContent, vung)} className="text-[8px] text-gray-300 hover:text-red-400 transition-colors ml-auto shrink-0" title="Hủy yêu cầu">✕</button>
                                       )}
                                     </div>
-                                    {/* Dòng 2: ghi chú (ẩn khi trống và không edit) */}
-                                    {isEditing ? (
-                                      <input
-                                        autoFocus
-                                        value={noteValue}
-                                        onChange={e => setNoteValue(e.target.value)}
-                                        onBlur={() => { onUpdateNote?.(row.tenContent, vung, noteValue); setEditingNote(null); }}
-                                        onKeyDown={e => {
-                                          if (e.key === 'Enter') { onUpdateNote?.(row.tenContent, vung, noteValue); setEditingNote(null); }
-                                          if (e.key === 'Escape') setEditingNote(null);
-                                        }}
-                                        className="text-[9px] px-1.5 py-0.5 border border-blue-300 rounded w-full focus:outline-none"
-                                        placeholder="Ghi chú..."
-                                      />
-                                    ) : decision.note ? (
-                                      <div onClick={() => { if (role === 'admin') { setEditingNote(docId); setNoteValue(decision.note || ''); } }} className="text-[8px] text-gray-600 bg-yellow-50 border border-yellow-100 rounded px-1.5 py-0.5 cursor-pointer hover:bg-yellow-100 truncate" title={decision.note}>{decision.note}</div>
-                                    ) : role === 'admin' ? (
-                                      <div onClick={() => { setEditingNote(docId); setNoteValue(''); }} className="text-[8px] text-gray-300 cursor-pointer hover:text-gray-400">+ ghi chú</div>
-                                    ) : null}
-                                  </div>
-                                )}
+                                  )}
+                                  {/* Dòng 2: ghi chú nhanh — luôn khả dụng, không cần có yêu cầu cắt trước */}
+                                  {isEditing ? (
+                                    <input
+                                      autoFocus
+                                      value={noteValue}
+                                      onChange={e => setNoteValue(e.target.value)}
+                                      onBlur={() => { onUpdateNote?.(row.tenContent, vung, noteValue); setEditingNote(null); }}
+                                      onKeyDown={e => {
+                                        if (e.key === 'Enter') { onUpdateNote?.(row.tenContent, vung, noteValue); setEditingNote(null); }
+                                        if (e.key === 'Escape') setEditingNote(null);
+                                      }}
+                                      className="text-[9px] px-1.5 py-0.5 border border-blue-300 rounded w-full focus:outline-none"
+                                      placeholder="Ghi chú..."
+                                    />
+                                  ) : decision?.note ? (
+                                    <div onClick={() => { if (role === 'admin') { setEditingNote(docId); setNoteValue(decision.note || ''); } }} className="text-[8px] text-gray-600 bg-yellow-50 border border-yellow-100 rounded px-1.5 py-0.5 cursor-pointer hover:bg-yellow-100 truncate" title={decision.note}>{decision.note}</div>
+                                  ) : role === 'admin' ? (
+                                    <div onClick={() => { setEditingNote(docId); setNoteValue(''); }} className="text-[8px] text-gray-300 cursor-pointer hover:text-gray-400">+ ghi chú</div>
+                                  ) : null}
+                                </div>
                               </div>
                             );
                           })()}

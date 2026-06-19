@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { useSheetsData } from '../contexts/SheetsDataContext';
+import { useSheetsData, computeDataMTTTotal } from '../contexts/SheetsDataContext';
 import { filterRowsByDate } from '../lib/dateUtils';
 import { MarketFilter } from '../components/MarketFilter';
 import { PersonnelFilter } from '../components/PersonnelFilter';
@@ -332,6 +332,14 @@ export const Analytics: React.FC = () => {
                                           : <ArrowDown  className="w-4 h-4 text-blue-600" />;
 
   // Totals
+  // Official Data M+TT total — same authoritative __team__/__domestic__/__overseas__
+  // aggregate rows that Dashboard Hiệu suất and Báo cáo ROAS use, instead of summing
+  // individual rep rows (which excludes hotline/unattributed traffic and undercounts).
+  const officialMTTTotal = useMemo(
+    () => computeDataMTTTotal(dataMTT, dateFrom, dateTo, marketFilter),
+    [dataMTT, dateFrom, dateTo, marketFilter]
+  );
+
   const totals = useMemo(() => {
     const s = searched.reduce((acc, d) => ({
       actualSpend:  acc.actualSpend  + d.actualSpend,
@@ -341,13 +349,14 @@ export const Analytics: React.FC = () => {
       impressions:  acc.impressions  + (d.impressions || 0),
       clicks:       acc.clicks       + (d.clicks      || 0),
     }), { actualSpend: 0, spend: 0, purchases: 0, mttData: 0, impressions: 0, clicks: 0 });
-    return { ...s,
+    const mttData = officialMTTTotal ?? (dataMTTAvailable ? s.mttData : s.purchases);
+    return { ...s, mttData,
       cpa:     s.purchases   > 0 ? Math.round(s.actualSpend / s.purchases)                   : 0,
-      cplReal: s.mttData     > 0 ? Math.round(s.actualSpend / s.mttData)                     : 0,
+      cplReal: mttData       > 0 ? Math.round(s.actualSpend / mttData)                       : 0,
       ctr:     s.impressions > 0 ? +((s.clicks / s.impressions) * 100).toFixed(2)            : 0,
       cpm:     s.impressions > 0 ? Math.round((s.actualSpend / s.impressions) * 1000)        : 0,
     };
-  }, [searched]);
+  }, [searched, officialMTTTotal, dataMTTAvailable]);
 
   const prevTotals = useMemo(() => {
     const s = prevFilteredRows.reduce((acc: any, row: any) => ({

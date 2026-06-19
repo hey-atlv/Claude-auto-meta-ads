@@ -73,13 +73,19 @@ export const getSopStatus = (row: any, vung: 'trong_nuoc' | 'nuoc_ngoai', sopCon
       };
     }
     if (cldt !== 0 && cldt < (cfg.t2_cldt_min || 0)) {
-      return { 
+      return {
         level: 'Tầng 2 - Cắt/Giảm',
-        reason: `CLDT kém (${cldt.toFixed(1)}% < ${cfg.t2_cldt_min}%)${trendStr ? ` (${trendStr} so với tháng trước)` : ''}`, 
+        reason: `CLDT kém (${cldt.toFixed(1)}% < ${cfg.t2_cldt_min}%)${trendStr ? ` (${trendStr} so với tháng trước)` : ''}`,
         color: 'text-amber-600 bg-amber-50 border-amber-200',
         urgency: 2
       };
     }
+    return {
+      level: 'Tầng 2 - Theo dõi',
+      reason: `Data ở mức trung gian (${formatInteger(slData)}), CPL & CLDT vẫn trong ngưỡng an toàn`,
+      color: 'text-sky-600 bg-sky-50 border-sky-200',
+      urgency: 0
+    };
   } else {
     // Tầng 1: Cảnh báo sớm
     if (messages >= cfg.t1_mess_min || (slData === 0 && chiPhi >= cfg.t1_cpl_max * 1.5)) {

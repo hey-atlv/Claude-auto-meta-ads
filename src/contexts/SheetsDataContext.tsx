@@ -120,6 +120,7 @@ interface SheetsDataContextValue {
   roasSummary: RoasSummary[];
   contents: any[];
   performance: any[];
+  roasPage: any[];
   dataMTT: DataMTTRecord[];
   isLoading: boolean;
   isAutoSyncing: boolean;
@@ -147,6 +148,7 @@ const SheetsDataContext = createContext<SheetsDataContextValue>({
   roasSummary: [],
   contents: [],
   performance: [],
+  roasPage: [],
   dataMTT: [],
   isLoading: true,
   isAutoSyncing: false,
@@ -168,6 +170,29 @@ const SheetsDataContext = createContext<SheetsDataContextValue>({
 });
 
 export const useSheetsData = () => useContext(SheetsDataContext);
+
+/**
+ * Single source of truth for "Data M+TT" totals — reads the sheet's own
+ * pre-aggregated __team__/__domestic__/__overseas__ rows (authoritative,
+ * includes hotline/unattributed traffic) instead of re-summing individual
+ * rep rows. Mirrors the logic Dashboard.tsx has always used.
+ */
+export function computeDataMTTTotal(
+  dataMTT: DataMTTRecord[],
+  dateFrom: string | null,
+  dateTo: string | null,
+  market: string,
+): number | null {
+  if (!dateFrom || !dateTo || !dataMTT || dataMTT.length === 0) return null;
+  const personnelKey =
+    market === 'Nội Địa'   ? '__domestic__' :
+    market === 'Việt Kiều' ? '__overseas__'  :
+                              '__team__';
+  const total = dataMTT
+    .filter(r => r.personnel === personnelKey && r.date >= dateFrom && r.date <= dateTo)
+    .reduce((sum, r) => sum + r.dataMTT, 0);
+  return total > 0 ? total : null;
+}
 
 export const normalizePersonnelName = (adsName?: string, accountName?: string) => {
   const searchStr = (adsName || accountName || '').toLowerCase();
@@ -228,6 +253,7 @@ export const SheetsDataProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   const [roasSummary, setRoasSummary] = useState<RoasSummary[]>([]);
   const [contents, setContents] = useState<any[]>([]);
   const [performance, setPerformance] = useState<any[]>([]);
+  const [roasPage, setRoasPage] = useState<any[]>([]);
   const [dataMTT, setDataMTT] = useState<DataMTTRecord[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isAutoSyncing, setIsAutoSyncing] = useState(false);
@@ -313,6 +339,7 @@ export const SheetsDataProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
         // Performance: always from cache (PG summary_content_perf has no per-content rows)
         setPerformance(cache.performance || []);
+        setRoasPage(cache.roasPage || []);
         setDataMTT(cache.dataMTT || []);
 
         console.log(`[SheetsData] PG loaded — ROAS: ${Object.keys(roasGrouped).length}, Daily: ${Object.keys(dailyMap).length}, Content: ${(cache.performance||[]).length}`);
@@ -330,6 +357,7 @@ export const SheetsDataProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         setDailySummaries(cache.dailySummaries || []);
         setContents(cache.contents || []);
         setPerformance(cache.performance || []);
+        setRoasPage(cache.roasPage || []);
         setDataMTT(cache.dataMTT || []);
       }
 
@@ -539,6 +567,7 @@ export const SheetsDataProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       roasSummary,
       contents,
       performance,
+      roasPage,
       dataMTT,
       isLoading,
       isAutoSyncing,

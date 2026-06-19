@@ -11,7 +11,6 @@ import { KpiManagement } from './pages/KpiManagement';
 import { KpiProgress } from './pages/KpiProgress';
 import { ContentAnalysis } from './pages/ContentAnalysis';
 import { Alerts } from './pages/Alerts';
-import { AlertsV2 } from './pages/AlertsV2';
 import { AlertsFanpage } from './pages/AlertsFanpage';
 import { Settings } from './pages/Settings';
 import { Downloads } from './pages/Downloads';
@@ -77,7 +76,6 @@ const AppRoutes = () => {
         } />
         <Route path="content" element={<ContentAnalysis />} />
         <Route path="alerts" element={<Alerts />} />
-        <Route path="alerts-v2" element={<AlertsV2 />} />
         <Route path="alerts-fanpage" element={<AlertsFanpage />} />
         <Route path="accounts" element={<Accounts />} />
         <Route path="pages" element={<Fanpages />} />

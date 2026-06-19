@@ -170,7 +170,6 @@ export const Layout: React.FC = () => {
             <SidebarLink to="/roas-summary" icon={TrendingUp} iconColor="text-cyan-500" isCollapsed={isSidebarCollapsed}>ROAS Tổng hợp</SidebarLink>
             <SidebarLink to="/kpi-progress" icon={Gauge} iconColor="text-amber-500" isCollapsed={isSidebarCollapsed}>Tiến độ KPI</SidebarLink>
             <SidebarLink to="/alerts" icon={BellRing} iconColor="text-rose-500" isCollapsed={isSidebarCollapsed}>Cảnh báo Content</SidebarLink>
-            <SidebarLink to="/alerts-v2" icon={BellRing} iconColor="text-violet-500" isCollapsed={isSidebarCollapsed}>Cảnh báo Content v2</SidebarLink>
             <SidebarLink to="/alerts-fanpage" icon={ShieldAlert} iconColor="text-orange-500" isCollapsed={isSidebarCollapsed}>Cảnh báo Fanpage</SidebarLink>
             <SidebarLink to="/content" icon={Clapperboard} iconColor="text-fuchsia-500" isCollapsed={isSidebarCollapsed}>Phân tích Content</SidebarLink>
           </SidebarGroup>

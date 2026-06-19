@@ -8,6 +8,7 @@ import {
   adaptContentMaster,
   adaptFanpageConfigs,
   adaptRoasContentMatrix,
+  adaptRoasPageMatrix,
   adaptRoasSummary,
   parseCldtMap
 } from './canonicalAdapters.js';
@@ -191,6 +192,7 @@ export const syncAllSheetsServer = async (db: Firestore | null, configsToSync?: 
     let dailySummariesList: any[] = [];
     let contentsList: any[] = [];
     let performanceList: any[] = [];
+    let roasPageList: any[] = [];
     const qualityReports: NormalizedSheetReport[] = [];
     const quarantineRecords: any[] = [];
     const normalizationMappings: any[] = [];
@@ -281,6 +283,19 @@ export const syncAllSheetsServer = async (db: Firestore | null, configsToSync?: 
           performanceList.push(...parsedPerformance);
         } catch (e: any) {
           log(`[ServerSync] Bỏ qua lỗi Roas content: ${e instanceof Error ? e.message : String(e)}`);
+        }
+
+        // Tab A4: Roas page (per-fanpage performance — authoritative source for AlertsFanpage)
+        try {
+          log(`[ServerSync] Tải tab 'Roas page'...`);
+          const rows = await fetchTabSmart(config.spreadsheetId, 'Roas page', config.apiKey, log);
+          const normalization = await normalizeAndTrack(config, 'Roas page', rows, 'content_performance_matrix');
+          const parsedRoasPage = adaptRoasPageMatrix(rows);
+          normalization.report.stats.adapterOutputRows = parsedRoasPage.length;
+          log(`[ServerSync] Roas page normalized rows: ${parsedRoasPage.length}`);
+          roasPageList.push(...parsedRoasPage);
+        } catch (e: any) {
+          log(`[ServerSync] Bỏ qua lỗi Roas page: ${e instanceof Error ? e.message : String(e)}`);
         }
 
       } else {
@@ -407,6 +422,9 @@ export const syncAllSheetsServer = async (db: Firestore | null, configsToSync?: 
     if (contentsList.length > 0) {
       writeCacheFile('contents.json', contentsList);
     }
+    if (roasPageList.length > 0) {
+      writeCacheFile('roasPage.json', roasPageList);
+    }
     if (performanceList.length > 0) {
       writeCacheFile('performance.json', performanceList);
     }
@@ -449,6 +467,7 @@ export const syncAllSheetsServer = async (db: Firestore | null, configsToSync?: 
         dailySummaries: dailySummariesList.length,
         contents: contentsList.length,
         performance: performanceList.length,
+        roasPage: roasPageList.length,
         quality: {
           healthScore: qualitySummary.healthScore,
           quarantineRows: quarantineRecords.length,

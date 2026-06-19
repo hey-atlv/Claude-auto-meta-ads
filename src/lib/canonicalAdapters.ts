@@ -197,6 +197,57 @@ export function adaptRoasContentMatrix(values: unknown[][]) {
   return output;
 }
 
+// "Roas page" tab shares the exact column-block layout of "Roas content"
+// (Kênh / Phân loại / Tên content header text is reused verbatim even though
+// the values are page descriptors, not numeric content IDs) — so entity rows
+// here are NOT prefixed with a 4-6 digit code and must not be filtered as such.
+export function adaptRoasPageMatrix(values: unknown[][]) {
+  const metricRowIndex = values.findIndex(row => {
+    const keys = row.map(normalizeSheetKey);
+    return keys.some(key => key === 'kenh') && keys.some(key => key === 'phanloai') && keys.some(key => key === 'tencontent' || key === 'tenpage');
+  });
+  if (metricRowIndex < 0) return [];
+
+  const periodRow = values[Math.max(0, metricRowIndex - 2)] || [];
+  const regionRow = values[Math.max(0, metricRowIndex - 1)] || [];
+  const metricRow = values[metricRowIndex] || [];
+  const metricKeys = metricRow.map(normalizeSheetKey);
+  const pageCol = metricKeys.findIndex(key => key === 'tencontent' || key === 'tenpage');
+  const channelCol = metricKeys.findIndex(key => key === 'kenh');
+  const classificationCol = metricKeys.findIndex(key => key === 'phanloai');
+  const blocks = buildPerformanceBlocks(periodRow, regionRow, metricRow);
+  const output: any[] = [];
+
+  for (let rowIndex = metricRowIndex + 1; rowIndex < values.length; rowIndex++) {
+    const row = values[rowIndex] || [];
+    const tenPage = text(row[pageCol]);
+    if (!tenPage) continue;
+
+    for (const block of blocks) {
+      const chiPhi = num(row[block.col]);
+      const slDataRaw = row[block.col + 1];
+      const slDataText = text(slDataRaw);
+      if (chiPhi === 0 && !slDataText) continue;
+      output.push({
+        tenPage,
+        kenh: text(row[channelCol]),
+        phanLoai: text(row[classificationCol]).replace(/facbeook/i, 'Facebook'),
+        ky: block.periodName,
+        kyLabel: block.periodLabel,
+        kyIndex: block.periodIndex,
+        vung: block.regionName,
+        vungLabel: block.regionLabel,
+        chiPhi,
+        slData: num(slDataRaw),
+        giaTData: num(row[block.col + 2]),
+        roasTrong: num(row[block.col + 3]),
+        roas3Thang: num(row[block.col + 4])
+      });
+    }
+  }
+  return output;
+}
+
 export function adaptRoasSummary(values: unknown[][]) {
   const headerRowIndex = values.findIndex(row => row.some(cell => normalizeSheetKey(cell).includes('thangbaocao')));
   if (headerRowIndex < 0) return [];

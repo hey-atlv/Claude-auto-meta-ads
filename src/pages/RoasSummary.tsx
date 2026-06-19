@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useSheetsData, RoasSummary as RoasSummaryType } from '../contexts/SheetsDataContext';
 import { 
   TrendingUp, 
@@ -108,6 +108,21 @@ export const RoasSummary: React.FC = () => {
       personnel: Array.from(uniquePersonnel).sort(),
     };
   }, [roasSummary]);
+
+  // Default to the current reporting month once data loads, instead of "Tất cả thời kỳ".
+  // reportMonth values mix real periods ("2026_T06") with aggregate rows ("Tổng năm 2026"),
+  // so match the exact current-month label rather than just taking the first sorted entry.
+  useEffect(() => {
+    if (monthFilter !== 'all' || filterOptions.months.length === 0) return;
+    const now = new Date();
+    const currentMonthLabel = `${now.getFullYear()}_T${String(now.getMonth() + 1).padStart(2, '0')}`;
+    if (filterOptions.months.includes(currentMonthLabel)) {
+      setMonthFilter(currentMonthLabel);
+    } else {
+      const latestRealMonth = filterOptions.months.find(m => /^\d{4}_T\d{2}$/.test(m));
+      setMonthFilter(latestRealMonth || filterOptions.months[0]);
+    }
+  }, [filterOptions.months]);
 
   // Hierarchy processing: Kênh -> Phân loại -> Nhân sự
   const processedData = useMemo(() => {

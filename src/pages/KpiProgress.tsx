@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { formatPercent, formatRoas, formatInteger, formatVND } from '../lib/formatUtils';
-import { useSheetsData } from '../contexts/SheetsDataContext';
+import { useSheetsData, computeDataMTTTotal } from '../contexts/SheetsDataContext';
 import { getKpiForMonth } from '../services/kpiService';
 import { KpiMonth } from '../types/kpi';
 import { format, parseISO, getDaysInMonth, getDate, subMonths } from 'date-fns';
@@ -345,12 +345,19 @@ export const KpiProgress: React.FC = () => {
       });
     });
 
+    // Override Nội Địa / Việt Kiều actualData with the sheet's own aggregate rows —
+    // same authoritative method Dashboard Hiệu suất uses — since summing per-rep
+    // records misses unattributed/hotline traffic and is vulnerable to name mismatches.
+    const monthStart = `${selectedMonth}-01`;
+    const monthEnd = `${selectedMonth}-${String(daysInMonth).padStart(2, '0')}`;
+    const domesticMTTFromSheet = computeDataMTTTotal(dataMTT, monthStart, monthEnd, 'Nội Địa');
+    const overseasMTTFromSheet = computeDataMTTTotal(dataMTT, monthStart, monthEnd, 'Việt Kiều');
+    if (domesticMTTFromSheet !== null) marketTotals['Nội Địa'].actualData = domesticMTTFromSheet;
+    if (overseasMTTFromSheet !== null) marketTotals['Việt Kiều'].actualData = overseasMTTFromSheet;
+
     // Calculate Team Totals
     // Use __team__ aggregate from Data_M+TT sheet for actualData (most accurate)
-    const monthMTTRecords = dataMTTByMonth[selectedMonth] || [];
-    const teamDataMTTFromSheet = monthMTTRecords
-      .filter(r => r.personnel === '__team__')
-      .reduce((sum, r) => sum + r.dataMTT, 0);
+    const teamDataMTTFromSheet = computeDataMTTTotal(dataMTT, monthStart, monthEnd, 'all');
 
     const teamTotals = personnelProgress.reduce((acc, p) => {
       acc.targetData += p.targetData;
@@ -361,7 +368,7 @@ export const KpiProgress: React.FC = () => {
     }, { targetData: 0, targetBudget: 0, actualData: 0, actualSpend: 0 });
 
     // Override actualData with sheet aggregate if available
-    if (teamDataMTTFromSheet > 0) {
+    if (teamDataMTTFromSheet !== null) {
       teamTotals.actualData = teamDataMTTFromSheet;
     }
 
