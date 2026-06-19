@@ -211,15 +211,15 @@ export const Alerts = () => {
             const tDate = new Date(targetMaxDate).getTime();
             const cDate = new Date(campaignMaxDate).getTime();
             const diffDays = (tDate - cDate) / (1000 * 3600 * 24);
-            if (diffDays <= 2) {
+            if (diffDays <= 1) {
                 isRunning = true;
             }
         }
         const trangThai = isRunning ? 'Đang chạy' : 'Tắt';
-        
-        return { 
-          ...p, ...c, 
-          id: p.tenContent, 
+
+        return {
+          ...p, ...c,
+          id: p.tenContent,
           messages: messages2T, 
           chiPhi: chiPhi2T,
           slData: slData2T,
@@ -321,7 +321,10 @@ export const Alerts = () => {
 
   const handleUpdateNote = async (contentId: string, vungParam: string, note: string) => {
     const docId = `${contentId}_${vungParam}_${ky}`.replace(/[^a-zA-Z0-9_]/g, '_');
-    await setDoc(doc(db, 'sopDecisions', docId), { note }, { merge: true });
+    // Must include contentId/vung/ky even on a note-only write — the real-time
+    // listener above filters by `ky`, so a doc missing it never reflects back
+    // into sopDecisions and the note silently appears "unsaved" in the UI.
+    await setDoc(doc(db, 'sopDecisions', docId), { contentId, vung: vungParam, ky, note }, { merge: true });
   };
 
   return (

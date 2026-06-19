@@ -53,7 +53,7 @@ export const ContentAnalysis = () => {
   const [activeDashboardTab, setActiveDashboardTab] = useState('overview');
   
   // Filters
-  const [ky, setKy] = useState('thang5');
+  const [ky, setKy] = useState(`thang${new Date().getMonth() + 1}`);
   const [vung, setVung] = useState('trong_nuoc');
   const [kenh, setKenh] = useState('Tất cả');
   const [dinhDang, setDinhDang] = useState('Tất cả');
@@ -161,15 +161,15 @@ export const ContentAnalysis = () => {
             const tDate = new Date(targetMaxDate).getTime();
             const cDate = new Date(campaignMaxDate).getTime();
             const diffDays = (tDate - cDate) / (1000 * 3600 * 24);
-            if (diffDays <= 2) {
+            if (diffDays <= 1) {
                 isRunning = true;
             }
         }
         const trangThai = isRunning ? 'Đang chạy' : 'Tắt';
-        
-        return { 
-          ...p, ...c, 
-          id: p.tenContent, 
+
+        return {
+          ...p, ...c,
+          id: p.tenContent,
           messages, 
           cldt, 
           trangThai,
