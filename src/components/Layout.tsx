@@ -82,6 +82,7 @@ export const Layout: React.FC = () => {
   const { logActivity } = useActivityLogger();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const [showUserPanel, setShowUserPanel] = useState(false);
   const location = useLocation();
 
   // Close mobile menu when route changes and log activity
@@ -169,6 +170,7 @@ export const Layout: React.FC = () => {
             <SidebarLink to="/roas-summary" icon={TrendingUp} iconColor="text-cyan-500" isCollapsed={isSidebarCollapsed}>ROAS Tổng hợp</SidebarLink>
             <SidebarLink to="/kpi-progress" icon={Gauge} iconColor="text-amber-500" isCollapsed={isSidebarCollapsed}>Tiến độ KPI</SidebarLink>
             <SidebarLink to="/alerts" icon={BellRing} iconColor="text-rose-500" isCollapsed={isSidebarCollapsed}>Cảnh báo Content</SidebarLink>
+            <SidebarLink to="/alerts-v2" icon={BellRing} iconColor="text-violet-500" isCollapsed={isSidebarCollapsed}>Cảnh báo Content v2</SidebarLink>
             <SidebarLink to="/alerts-fanpage" icon={ShieldAlert} iconColor="text-orange-500" isCollapsed={isSidebarCollapsed}>Cảnh báo Fanpage</SidebarLink>
             <SidebarLink to="/content" icon={Clapperboard} iconColor="text-fuchsia-500" isCollapsed={isSidebarCollapsed}>Phân tích Content</SidebarLink>
           </SidebarGroup>
@@ -188,42 +190,44 @@ export const Layout: React.FC = () => {
           </SidebarGroup>
         </div>
 
-        <div className={clsx("p-6 lg:p-8 border-t border-gray-50 bg-gray-50/30", isSidebarCollapsed && "p-2 py-4")}>
-          {!isSidebarCollapsed ? (
-            <div className="flex items-center gap-3 lg:gap-4 mb-6 lg:mb-8 p-3 rounded-3xl bg-white border border-gray-100 shadow-xl shadow-gray-200/50 group hover:border-blue-200 transition-all duration-300">
-              <div className="relative">
-                <img 
-                  src={user?.photoURL || `https://ui-avatars.com/api/?name=${user?.email}`} 
-                  alt="Avatar" 
-                  className="w-10 h-10 lg:w-12 lg:h-12 rounded-2xl object-cover shadow-lg"
-                />
-                <div className="absolute -bottom-1 -right-1 w-3 h-3 lg:w-4 lg:h-4 bg-emerald-500 border-2 border-white rounded-full"></div>
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-[10px] lg:text-xs font-black text-gray-900 truncate uppercase tracking-widest">{user?.displayName || 'User'}</p>
-                <p className="text-[9px] lg:text-[10px] font-bold text-gray-400 truncate uppercase tracking-tighter mt-0.5">{user?.email}</p>
-              </div>
-            </div>
-          ) : (
-            <div className="flex justify-center mb-6">
-               <img 
-                src={user?.photoURL || `https://ui-avatars.com/api/?name=${user?.email}`} 
-                alt="Avatar" 
-                className="w-10 h-10 rounded-xl object-cover shadow-md"
+        <div className="border-t border-gray-100">
+          {/* Collapsed avatar row — always visible */}
+          <button
+            onClick={() => setShowUserPanel(v => !v)}
+            className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors"
+            title={showUserPanel ? "Thu gọn" : "Tài khoản & Đăng xuất"}
+          >
+            <div className="relative shrink-0">
+              <img
+                src={user?.photoURL || `https://ui-avatars.com/api/?name=${user?.email}`}
+                alt="Avatar"
+                className="w-8 h-8 rounded-xl object-cover shadow-md"
               />
+              <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 border-2 border-white rounded-full" />
+            </div>
+            {!isSidebarCollapsed && (
+              <>
+                <div className="flex-1 min-w-0 text-left">
+                  <p className="text-[10px] font-black text-gray-700 truncate uppercase tracking-widest leading-tight">{user?.displayName || 'User'}</p>
+                  <p className="text-[9px] font-medium text-gray-400 truncate mt-0.5">{user?.email}</p>
+                </div>
+                <ChevronRight className={clsx("w-3.5 h-3.5 text-gray-400 shrink-0 transition-transform duration-200", showUserPanel && "rotate-90")} />
+              </>
+            )}
+          </button>
+
+          {/* Expandable logout panel */}
+          {showUserPanel && (
+            <div className="px-3 pb-3">
+              <button
+                onClick={logout}
+                className="w-full flex items-center justify-center gap-2 text-[10px] font-black text-rose-600 uppercase tracking-[0.15em] bg-rose-50 border border-rose-100 rounded-xl hover:bg-rose-100 transition-colors py-2.5"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+                Đăng xuất
+              </button>
             </div>
           )}
-          <button 
-            onClick={logout}
-            className={clsx(
-              "flex items-center justify-center gap-3 text-[10px] font-black text-rose-600 uppercase tracking-[0.2em] bg-white border border-rose-100 rounded-2xl hover:bg-rose-50 hover:border-rose-200 transition-all duration-300 shadow-xl shadow-rose-500/5 active:scale-[0.98]",
-              isSidebarCollapsed ? "w-10 h-10 mx-auto" : "w-full px-6 py-3 lg:py-4"
-            )}
-            title="Đăng xuất"
-          >
-            <LogOut className="w-4 h-4" />
-            {!isSidebarCollapsed && "Đăng xuất"}
-          </button>
         </div>
       </aside>
 
