@@ -173,6 +173,31 @@ export const Alerts = () => {
     const docId = `${contentId}_${vungParam}_${ky}`.replace(/[^a-zA-Z0-9_]/g, '_');
     await setDoc(doc(db, 'sopDecisions', docId), { contentId, vung: vungParam, ky, note }, { merge: true });
   };
+  const handleConfirmDone = async (contentId: string, vungParam: string) => {
+    const docId = `${contentId}_${vungParam}_${ky}`.replace(/[^a-zA-Z0-9_]/g, '_');
+    try {
+      await setDoc(doc(db, 'sopDecisions', docId), {
+        contentId, vung: vungParam, ky,
+        manuallyConfirmed: true,
+        confirmedBy: (user as any)?.displayName || (user as any)?.email || 'Leader',
+        confirmedAt: format(new Date(), 'yyyy-MM-dd'),
+      }, { merge: true });
+    } catch (err) {
+      console.error('[sopDecisions v2] confirm write failed:', err);
+      setDecideError('Không thể xác nhận. Kiểm tra kết nối và thử lại.');
+    }
+  };
+  const handleUnconfirmDone = async (contentId: string, vungParam: string) => {
+    const docId = `${contentId}_${vungParam}_${ky}`.replace(/[^a-zA-Z0-9_]/g, '_');
+    try {
+      await setDoc(doc(db, 'sopDecisions', docId), {
+        manuallyConfirmed: false, confirmedBy: null, confirmedAt: null,
+      }, { merge: true });
+    } catch (err) {
+      console.error('[sopDecisions v2] unconfirm write failed:', err);
+      setDecideError('Không thể hủy xác nhận. Vui lòng thử lại.');
+    }
+  };
 
   // ── Build per-content rows — mirrors Alerts.tsx joinedData two-pass algorithm exactly ──
   const rows = useMemo(() => {
@@ -383,22 +408,22 @@ export const Alerts = () => {
 
   const kyOptions = [1,2,3,4,5,6,7,8,9,10,11,12].map(m => ({ value:`thang${m}`, label:`Tháng ${m}` }));
 
-  const TH  = 'px-1 py-1.5 text-right text-[8px] font-bold uppercase tracking-wide text-gray-400 whitespace-nowrap cursor-pointer hover:text-blue-500 select-none overflow-hidden';
-  const THL = 'px-1.5 py-1.5 text-left text-[8px] font-bold uppercase tracking-wide text-gray-400 whitespace-nowrap select-none overflow-hidden';
+  const TH  = 'px-1 py-1.5 text-right text-[9px] font-bold uppercase tracking-wide text-gray-400 whitespace-nowrap cursor-pointer hover:text-blue-500 select-none overflow-hidden';
+  const THL = 'px-1.5 py-1.5 text-left text-[9px] font-bold uppercase tracking-wide text-gray-400 whitespace-nowrap select-none overflow-hidden';
 
   // every month block always shows the same 4 metrics: CP, SL, CPL, ROAS
   const MonthCols = ({ cp, sl, cpl, roas, dim }: { cp: number; sl: number; cpl: number; roas: number; dim?: boolean }) => (
     <>
-      <td className={cn('px-1 py-1.5 text-right tabular-nums truncate text-[9px]', dim ? 'text-gray-400' : 'text-gray-600')}>{fmtCP(cp)}</td>
+      <td className={cn('px-1 py-1.5 text-right tabular-nums truncate', dim ? 'text-gray-400' : 'text-gray-600')}>{fmtCP(cp)}</td>
       <td className={cn('px-1 py-1.5 text-right tabular-nums truncate', dim ? 'text-gray-400' : 'text-gray-600')}>{fmtSL(sl)}</td>
-      <td className={cn('px-1 py-1.5 text-right tabular-nums truncate text-[9px]', dim ? 'text-gray-400' : 'text-gray-600')}>{fmtCPL(cpl)}</td>
+      <td className={cn('px-1 py-1.5 text-right tabular-nums truncate', dim ? 'text-gray-400' : 'text-gray-600')}>{fmtCPL(cpl)}</td>
       <td className={cn('px-1 py-1.5 text-right tabular-nums truncate', dim ? 'text-gray-400' : 'text-gray-600')}>{fmtRoas(roas)}</td>
     </>
   );
 
   return (
     <div className="flex-1 overflow-y-auto bg-[#f0f2f7] min-h-screen custom-scrollbar">
-      <div className="max-w-[1700px] mx-auto px-4 py-6 space-y-4">
+      <div className="w-full px-4 py-6 space-y-4">
 
         {/* Header */}
         <div className="flex items-start justify-between gap-4">
@@ -526,26 +551,26 @@ export const Alerts = () => {
         </div>
 
         {/* Table */}
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse table-fixed" style={{ fontSize: '10px' }}>
+        <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <div className="overflow-auto rounded-xl max-h-[70vh]">
+            <table className="w-full border-collapse table-fixed" style={{ fontSize: '11px' }}>
               <colgroup>
-                <col style={{ width: '150px' }} />
-                <col style={{ width: '34px' }} />
+                <col style={{ width: '220px' }} />
+                <col style={{ width: '40px' }} />
                 {p2M && <>
-                  <col style={{ width: '58px' }} /><col style={{ width: '34px' }} /><col style={{ width: '60px' }} /><col style={{ width: '40px' }} />
+                  <col style={{ width: '72px' }} /><col style={{ width: '42px' }} /><col style={{ width: '74px' }} /><col style={{ width: '50px' }} />
                 </>}
                 {prevM && <>
-                  <col style={{ width: '58px' }} /><col style={{ width: '34px' }} /><col style={{ width: '60px' }} /><col style={{ width: '40px' }} />
+                  <col style={{ width: '72px' }} /><col style={{ width: '42px' }} /><col style={{ width: '74px' }} /><col style={{ width: '50px' }} />
                 </>}
-                <col style={{ width: '62px' }} /><col style={{ width: '36px' }} /><col style={{ width: '64px' }} /><col style={{ width: '42px' }} />
-                <col style={{ width: '38px' }} />
-                <col style={{ width: '62px' }} />
-                <col style={{ width: '70px' }} />
-                <col style={{ width: '92px' }} />
+                <col style={{ width: '78px' }} /><col style={{ width: '44px' }} /><col style={{ width: '80px' }} /><col style={{ width: '52px' }} />
+                <col style={{ width: '48px' }} />
+                <col style={{ width: '90px' }} />
                 <col style={{ width: '110px' }} />
+                <col style={{ width: '160px' }} />
+                <col style={{ width: '170px' }} />
               </colgroup>
-              <thead>
+              <thead className="sticky top-0 z-20">
                 {/* Month group row */}
                 <tr className="bg-[#f5f6fa] border-b border-gray-100">
                   <th className="px-1.5 py-1" colSpan={2} />
@@ -608,9 +633,10 @@ export const Alerts = () => {
 
                   const docId = `${row.tenContent}_${row.vung}_${ky}`.replace(/[^a-zA-Z0-9_]/g, '_');
                   const decision = sopDecisions[docId];
-                  const isNonCompliant = decision && decision.approvedAt < todayStr && row.trangThai === 'Đang chạy';
-                  const isPending = decision && decision.approvedAt === todayStr && row.trangThai === 'Đang chạy';
-                  const isComplied = decision && row.trangThai === 'Tắt';
+                  const isManuallyConfirmed = !!decision?.manuallyConfirmed;
+                  const isNonCompliant = decision && decision.approvedAt < todayStr && row.trangThai === 'Đang chạy' && !isManuallyConfirmed;
+                  const isPending = decision && decision.approvedAt === todayStr && row.trangThai === 'Đang chạy' && !isManuallyConfirmed;
+                  const isComplied = decision && (row.trangThai === 'Tắt' || isManuallyConfirmed);
                   const hasFormalDecision = !!decision?.approvedAt;
                   const isEditing = editingNote === docId;
 
@@ -629,13 +655,13 @@ export const Alerts = () => {
                       {/* Content — full tenContent, same as v1 */}
                       <td className="px-1.5 py-1.5 overflow-hidden">
                         <div className="flex items-center gap-1 overflow-hidden">
-                          <span className="font-semibold text-[10px] text-gray-900 truncate" title={row.tenContent}>{row.tenContent}</span>
+                          <span className="font-semibold text-[11px] text-gray-900 truncate" title={row.tenContent}>{row.tenContent}</span>
                           <button onClick={() => handleCopy(row.tenContent, row.id)} className="text-gray-300 hover:text-gray-700 shrink-0">
-                            {copiedId === row.id ? <Check className="w-2.5 h-2.5 text-emerald-500" /> : <Copy className="w-2.5 h-2.5" />}
+                            {copiedId === row.id ? <Check className="w-3 h-3 text-emerald-500" /> : <Copy className="w-3 h-3" />}
                           </button>
                         </div>
                         {(row.kenh || row.phanLoai) && (
-                          <div className="text-[8px] text-gray-400 font-semibold uppercase tracking-wide truncate">
+                          <div className="text-[9px] text-gray-400 font-semibold uppercase tracking-wide truncate">
                             {row.kenh}{row.phanLoai ? ` • ${row.phanLoai}` : ''}
                           </div>
                         )}
@@ -643,7 +669,7 @@ export const Alerts = () => {
 
                       {/* Status — icon-only pill, same compact style as v1 */}
                       <td className="px-1 py-1.5 text-center">
-                        <span className={cn('inline-flex px-1 py-0.5 rounded-full text-[8px] font-bold uppercase',
+                        <span className={cn('inline-flex px-1 py-0.5 rounded-full text-[9px] font-bold uppercase',
                           row.isRunning ? 'bg-emerald-50 text-emerald-600 border border-emerald-200/50' : 'bg-gray-100 text-gray-500 border border-gray-200/50'
                         )} title={row.isRunning ? 'Đang chạy' : 'Tắt'}>
                           {row.isRunning ? '▶' : '■'}
@@ -656,26 +682,26 @@ export const Alerts = () => {
                       {/* T-1 */}
                       {prevM && (
                         <>
-                          <td className="px-1 py-1.5 text-right tabular-nums text-gray-500 truncate text-[9px]">
+                          <td className="px-1 py-1.5 text-right tabular-nums text-gray-500 truncate">
                             {fmtCP(row.chiPhiP1)}<DeltaArrow curr={row.chiPhiT} prev={row.chiPhiP1} />
                           </td>
                           <td className="px-1 py-1.5 text-right tabular-nums text-gray-500 truncate">{fmtSL(row.slDataP1)}</td>
-                          <td className="px-1 py-1.5 text-right tabular-nums text-gray-500 truncate text-[9px]">{fmtCPL(row.cplP1)}</td>
+                          <td className="px-1 py-1.5 text-right tabular-nums text-gray-500 truncate">{fmtCPL(row.cplP1)}</td>
                           <td className="px-1 py-1.5 text-right tabular-nums text-gray-500 truncate">{fmtRoas(row.roasP1)}</td>
                         </>
                       )}
 
                       {/* T current — colored vs median, highlighted bg for contrast */}
-                      <td className={cn('px-1 py-1.5 text-right tabular-nums truncate bg-orange-50/60 text-[9px]', numCls(row.chiPhiT, medians.cp))}>{fmtCP(row.chiPhiT)}</td>
+                      <td className={cn('px-1 py-1.5 text-right tabular-nums truncate bg-orange-50/60', numCls(row.chiPhiT, medians.cp))}>{fmtCP(row.chiPhiT)}</td>
                       <td className={cn('px-1 py-1.5 text-right tabular-nums truncate bg-orange-50/60', numCls(row.slDataT, medians.sl))}>{fmtSL(row.slDataT)}</td>
-                      <td className={cn('px-1 py-1.5 text-right tabular-nums truncate bg-orange-50/60 text-[9px]', numCls(row.cplT, medians.cpl, true))}>{fmtCPL(row.cplT)}</td>
+                      <td className={cn('px-1 py-1.5 text-right tabular-nums truncate bg-orange-50/60', numCls(row.cplT, medians.cpl, true))}>{fmtCPL(row.cplT)}</td>
                       <td className={cn('px-1 py-1.5 text-right tabular-nums truncate bg-orange-50/60', numCls(row.roasT, medians.roas))}>{fmtRoas(row.roasT)}</td>
                       <td className={cn('px-1 py-1.5 text-right tabular-nums truncate', numCls(row.cldt, medians.cldt))}>{fmtCldt(row.cldt)}</td>
 
                       {/* SOP badge */}
                       <td className="px-1 py-1.5 overflow-hidden">
                         {vs ? (
-                          <span className={cn('inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[8px] font-semibold border whitespace-nowrap truncate', vs.bg, vs.text, vs.border)}>
+                          <span className={cn('inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-semibold border whitespace-nowrap truncate', vs.bg, vs.text, vs.border)}>
                             <span className={cn('w-1.5 h-1.5 rounded-full shrink-0', vs.dot)} />
                             {vs.short}
                           </span>
@@ -687,7 +713,7 @@ export const Alerts = () => {
                         {!runners.length ? <span className="text-gray-300 text-[9px]">-</span> : (
                           <div className="flex flex-col gap-0.5">
                             {runners.map(r => (
-                              <span key={r} className="px-1 py-0.5 bg-blue-50 text-blue-700 text-[8px] font-semibold rounded border border-blue-100 truncate block">{r}</span>
+                              <span key={r} className="px-1 py-0.5 bg-blue-50 text-blue-700 text-[9px] font-semibold rounded border border-blue-100 truncate block">{r}</span>
                             ))}
                           </div>
                         )}
@@ -699,7 +725,7 @@ export const Alerts = () => {
                           {!hasFormalDecision && (isCutSop || isConsiderSop) && role === 'admin' && row.trangThai === 'Đang chạy' && (
                             <button
                               onClick={() => handleDecide(row.tenContent, row.vung)}
-                              className={cn('flex items-center gap-1 px-1 py-0.5 rounded border text-[8px] font-semibold transition-all w-full truncate',
+                              className={cn('flex items-center gap-1 px-1 py-0.5 rounded border text-[9px] font-semibold transition-all w-full truncate',
                                 isCutSop ? 'border-rose-300 bg-rose-50 text-rose-600 hover:bg-rose-100' : 'border-orange-300 bg-orange-50 text-orange-600 hover:bg-orange-100')}
                             >
                               {isCutSop ? '✂ Y/cầu cắt' : '✂ Cân nhắc'}
@@ -707,14 +733,36 @@ export const Alerts = () => {
                           )}
                           {hasFormalDecision && (
                             <div className="flex items-center gap-0.5 flex-wrap">
-                              {isNonCompliant && <span className="text-[8px] font-bold text-orange-600 bg-orange-50 border border-orange-200 px-1 py-0.5 rounded whitespace-nowrap">⚠️Chưa TH</span>}
-                              {isPending    && <span className="text-[8px] font-bold text-blue-600 bg-blue-50 border border-blue-200 px-1 py-0.5 rounded whitespace-nowrap">⏳Chờ KT</span>}
-                              {isComplied   && <span className="text-[8px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-1 py-0.5 rounded whitespace-nowrap">✅Xong</span>}
-                              <span className="text-[8px] text-gray-400 truncate">{decision.approvedBy?.split(' ').pop()} {decision.approvedAt?.slice(5)}</span>
+                              {isNonCompliant && <span className="text-[9px] font-bold text-orange-600 bg-orange-50 border border-orange-200 px-1 py-0.5 rounded whitespace-nowrap">⚠️Chưa TH</span>}
+                              {isPending    && <span className="text-[9px] font-bold text-blue-600 bg-blue-50 border border-blue-200 px-1 py-0.5 rounded whitespace-nowrap">⏳Chờ KT</span>}
+                              {isComplied   && (
+                                <span className="text-[9px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-1 py-0.5 rounded whitespace-nowrap">
+                                  ✅Xong{isManuallyConfirmed && row.trangThai === 'Đang chạy' ? ' (thủ công)' : ''}
+                                </span>
+                              )}
+                              <span className="text-[9px] text-gray-400 truncate">{decision.approvedBy?.split(' ').pop()} {decision.approvedAt?.slice(5)}</span>
                               {role === 'admin' && (
-                                <button onClick={() => handleCancelDecide(row.tenContent, row.vung)} className="text-[8px] text-gray-300 hover:text-red-400 transition-colors" title="Hủy yêu cầu">✕</button>
+                                <button onClick={() => handleCancelDecide(row.tenContent, row.vung)} className="text-[9px] text-gray-300 hover:text-red-400 transition-colors" title="Hủy yêu cầu">✕</button>
                               )}
                             </div>
+                          )}
+                          {role === 'admin' && hasFormalDecision && (isNonCompliant || isPending) && (
+                            <button
+                              onClick={() => handleConfirmDone(row.tenContent, row.vung)}
+                              className="inline-flex items-center px-1 py-[1px] rounded border border-emerald-300 bg-emerald-50 text-emerald-600 hover:bg-emerald-100 text-[8px] leading-tight font-semibold transition-all truncate"
+                              title="Xác nhận thủ công là đã thực hiện"
+                            >
+                              ✓ Xác nhận
+                            </button>
+                          )}
+                          {role === 'admin' && isManuallyConfirmed && row.trangThai === 'Đang chạy' && (
+                            <button
+                              onClick={() => handleUnconfirmDone(row.tenContent, row.vung)}
+                              className="text-[8px] leading-tight text-gray-300 hover:text-red-400 transition-colors"
+                              title="Hủy xác nhận thủ công"
+                            >
+                              Hủy xác nhận
+                            </button>
                           )}
                           {isEditing ? (
                             <input
@@ -724,13 +772,13 @@ export const Alerts = () => {
                                 if (e.key === 'Enter') { handleUpdateNote(row.tenContent, row.vung, noteValue); setEditingNote(null); }
                                 if (e.key === 'Escape') setEditingNote(null);
                               }}
-                              className="text-[8px] px-1 py-0.5 border border-blue-300 rounded w-full focus:outline-none"
+                              className="text-[9px] px-1 py-0.5 border border-blue-300 rounded w-full focus:outline-none"
                               placeholder="Ghi chú..."
                             />
                           ) : decision?.note ? (
-                            <div onClick={() => { if (role === 'admin') { setEditingNote(docId); setNoteValue(decision.note || ''); } }} className="text-[8px] text-gray-600 bg-yellow-50 border border-yellow-100 rounded px-1 py-0.5 cursor-pointer hover:bg-yellow-100 truncate" title={decision.note}>{decision.note}</div>
+                            <div onClick={() => { if (role === 'admin') { setEditingNote(docId); setNoteValue(decision.note || ''); } }} className="text-[9px] text-gray-600 bg-yellow-50 border border-yellow-100 rounded px-1 py-0.5 cursor-pointer hover:bg-yellow-100 truncate" title={decision.note}>{decision.note}</div>
                           ) : role === 'admin' ? (
-                            <div onClick={() => { setEditingNote(docId); setNoteValue(''); }} className="text-[8px] text-gray-300 cursor-pointer hover:text-gray-400">+ ghi chú</div>
+                            <div onClick={() => { setEditingNote(docId); setNoteValue(''); }} className="text-[9px] text-gray-300 cursor-pointer hover:text-gray-400">+ ghi chú</div>
                           ) : null}
                         </div>
                       </td>
@@ -738,18 +786,26 @@ export const Alerts = () => {
                       {/* Log */}
                       <td className="px-1 py-1.5 overflow-hidden">
                         {!decision ? <span className="text-gray-300 text-[9px]">—</span> : (
-                          <div className="space-y-0.5 text-[8px] leading-snug">
+                          <div className="space-y-0.5 text-[9px] leading-snug">
                             <div className="text-gray-500 truncate">
                               <span className="font-semibold text-gray-700">YC:</span> {decision.approvedAt?.slice(5)}
                               <span className="text-gray-400 ml-1">({decision.approvedBy?.split(' ').pop()})</span>
                             </div>
-                            {decision.approvedAt === todayStr && row.trangThai === 'Đang chạy' && (
+                            {isManuallyConfirmed && (
+                              <div className="text-gray-500 truncate">
+                                <span className="font-semibold text-gray-700">XN:</span> {decision.confirmedAt?.slice(5)}
+                                <span className="text-gray-400 ml-1">({decision.confirmedBy?.split(' ').pop()})</span>
+                              </div>
+                            )}
+                            {isManuallyConfirmed ? (
+                              <div className="font-semibold text-emerald-600 truncate">✅ Xác nhận thủ công</div>
+                            ) : decision.approvedAt === todayStr && row.trangThai === 'Đang chạy' && (
                               <div className="font-semibold text-blue-500 truncate">⏳ Chờ xác nhận</div>
                             )}
-                            {!stillRunning && (
+                            {!isManuallyConfirmed && !stillRunning && (
                               <div className="font-semibold text-emerald-600 truncate">✅ Đã dừng</div>
                             )}
-                            {decision.approvedAt !== todayStr && stillRunning && (
+                            {!isManuallyConfirmed && decision.approvedAt !== todayStr && stillRunning && (
                               <div className="font-semibold text-orange-600 truncate">
                                 ⚠️ Còn chạy {daysPast > 0 ? `(+${daysPast}N)` : ''}
                               </div>

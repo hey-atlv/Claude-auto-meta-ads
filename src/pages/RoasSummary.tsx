@@ -381,6 +381,54 @@ export const RoasSummary: React.FC = () => {
       .sort((a, b) => a.month.localeCompare(b.month));
   }, [roasSummary, searchTerm, channelFilter, classificationFilter, personnelFilter]);
 
+  // ── ROAS cùng kỳ — checkpoint comparison (mốc 5/10/15/20/25/cuối tháng) ──
+  const [roasCheckpoints, setRoasCheckpoints] = useState<any[]>([]);
+  useEffect(() => {
+    getDocs(collection(db, 'roasCheckpoints'))
+      .then(snap => setRoasCheckpoints(snap.docs.map(d => d.data())))
+      .catch(err => console.error('Lỗi tải checkpoint ROAS:', err));
+  }, []);
+
+  const sameKyData = useMemo(() => {
+    const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }));
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const day = now.getDate();
+    const lastDayOfMonth = new Date(year, month, 0).getDate();
+    const checkpointDays = Array.from(new Set([5, 10, 15, 20, 25, lastDayOfMonth])).sort((a, b) => a - b);
+    const currentMoc = checkpointDays.find(d => d >= day) ?? lastDayOfMonth;
+    const mocLabel = currentMoc === lastDayOfMonth && currentMoc !== 25 ? 'eom' : String(currentMoc);
+
+    const pad = (n: number) => String(n).padStart(2, '0');
+    const currentReportMonth = `${year}_T${pad(month)}`;
+
+    // Past checkpoints matching the same mốc label — one per month, oldest → newest
+    const history = roasCheckpoints
+      .filter(c => c.mocLabel === mocLabel && c.reportMonth !== currentReportMonth)
+      .sort((a, b) => String(a.reportMonth).localeCompare(String(b.reportMonth)))
+      .map(c => ({
+        month: c.reportMonth,
+        "Tổng_ROAS": c.total?.roasMonth ?? 0,
+        "Nội_ROAS": c.domestic?.roasMonth ?? 0,
+        "Ngoại_ROAS": c.overseas?.roasMonth ?? 0,
+        isLive: false,
+      }));
+
+    // Current month — live value (chưa chốt checkpoint), lấy từ chartData đã tính sẵn
+    const currentLive = chartData.find(m => m.month === currentReportMonth);
+    if (currentLive) {
+      history.push({
+        month: currentReportMonth,
+        "Tổng_ROAS": currentLive["Tổng_ROAS_Tháng"],
+        "Nội_ROAS": currentLive["Nội_ROAS_Tháng"],
+        "Ngoại_ROAS": currentLive["Ngoại_ROAS_Tháng"],
+        isLive: true,
+      });
+    }
+
+    return { mocLabel, series: history };
+  }, [roasCheckpoints, chartData]);
+
   if (isLoading) {
     return (
       <div className="flex items-center justify-center h-full">
@@ -675,7 +723,7 @@ export const RoasSummary: React.FC = () => {
                         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
                         <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 800, fill: '#94A3B8' }} />
                         <YAxis yAxisId="left" axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 700, fill: '#3B82F6' }} tickFormatter={(val) => `${(val / 1000000).toFixed(0)}M`} />
-                        <YAxis yAxisId="right" orientation="right" axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 700, fill: '#10B981' }} tickFormatter={(val) => `${val}%`} />
+                        <YAxis yAxisId="right" orientation="right" axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 700, fill: '#10B981' }} tickFormatter={(val) => `${val}x`} />
                         <Tooltip 
   cursor={{ fill: 'rgba(200, 200, 200, 0.1)' }}
   contentStyle={{ borderRadius: '16px', border: 'none', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', padding: '12px' }} 
@@ -709,7 +757,7 @@ export const RoasSummary: React.FC = () => {
                         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
                         <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 800, fill: '#94A3B8' }} />
                         <YAxis yAxisId="left" axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 700, fill: '#3B82F6' }} tickFormatter={(val) => `${(val / 1000000).toFixed(0)}M`} />
-                        <YAxis yAxisId="right" orientation="right" axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 700, fill: '#10B981' }} tickFormatter={(val) => `${val}%`} />
+                        <YAxis yAxisId="right" orientation="right" axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 700, fill: '#10B981' }} tickFormatter={(val) => `${val}x`} />
                         <Tooltip 
   cursor={{ fill: 'rgba(200, 200, 200, 0.1)' }}
   contentStyle={{ borderRadius: '16px', border: 'none', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', padding: '12px' }} 
@@ -743,7 +791,7 @@ export const RoasSummary: React.FC = () => {
                         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
                         <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 800, fill: '#94A3B8' }} />
                         <YAxis yAxisId="left" axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 700, fill: '#3B82F6' }} tickFormatter={(val) => `${(val / 1000000).toFixed(0)}M`} />
-                        <YAxis yAxisId="right" orientation="right" axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 700, fill: '#10B981' }} tickFormatter={(val) => `${val}%`} />
+                        <YAxis yAxisId="right" orientation="right" axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 700, fill: '#10B981' }} tickFormatter={(val) => `${val}x`} />
                         <Tooltip 
   cursor={{ fill: 'rgba(200, 200, 200, 0.1)' }}
   contentStyle={{ borderRadius: '16px', border: 'none', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', padding: '12px' }} 
@@ -762,6 +810,46 @@ export const RoasSummary: React.FC = () => {
                     </ResponsiveContainer>
                   </div>
                 </div>
+              </div>
+
+              {/* 4. SO SÁNH ROAS CÙNG KỲ */}
+              <div className="bg-white rounded-[32px] border border-gray-100 p-8 shadow-sm">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-2 h-2 rounded-full bg-violet-500"></div>
+                  <h3 className="text-[12px] font-black text-violet-700 uppercase tracking-widest">
+                    So Sánh ROAS Cùng Kỳ — Mốc {sameKyData.mocLabel === 'eom' ? 'Cuối Tháng' : sameKyData.mocLabel}
+                  </h3>
+                </div>
+                <p className="text-[10px] text-gray-400 mb-6">
+                  ROAS tại cùng mốc ngày của các tháng trước (đã chốt) so với tháng hiện tại (đang chạy, chưa chốt).
+                </p>
+                {sameKyData.series.length < 2 ? (
+                  <div className="h-[200px] flex items-center justify-center text-[11px] text-gray-400 text-center px-8">
+                    Chưa đủ dữ liệu checkpoint để so sánh cùng kỳ — hệ thống sẽ tự tích lũy dần từ các mốc 5/10/15/20/25/cuối tháng sắp tới.
+                  </div>
+                ) : (
+                  <div className="h-[280px] w-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <ComposedChart data={sameKyData.series} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
+                        <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 800, fill: '#94A3B8' }} />
+                        <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 700, fill: '#6366F1' }} tickFormatter={(val) => `${val}x`} />
+                        <Tooltip
+                          contentStyle={{ borderRadius: '16px', border: 'none', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', padding: '12px' }}
+                          itemStyle={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase' }}
+                          formatter={(value: any, name: any, item: any) => [
+                            `${Number(value).toFixed(2)}x${item?.payload?.isLive ? ' (đang chạy)' : ''}`,
+                            name.toString().replace(/_/g, ' ')
+                          ]}
+                        />
+                        <Legend wrapperStyle={{ paddingTop: '20px', fontSize: '9px', fontWeight: 900, textTransform: 'uppercase' }} />
+                        <Line type="monotone" dataKey="Tổng_ROAS" name="Tổng" stroke="#0F172A" strokeWidth={3} dot={{ r: 4, fill: '#fff' }} />
+                        <Line type="monotone" dataKey="Nội_ROAS" name="Nội Địa" stroke="#10B981" strokeWidth={2} dot={{ r: 3, fill: '#fff' }} />
+                        <Line type="monotone" dataKey="Ngoại_ROAS" name="Nước Ngoài" stroke="#F59E0B" strokeWidth={2} dot={{ r: 3, fill: '#fff' }} />
+                      </ComposedChart>
+                    </ResponsiveContainer>
+                  </div>
+                )}
               </div>
             </motion.div>
           )}

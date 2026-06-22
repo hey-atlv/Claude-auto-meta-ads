@@ -13,16 +13,13 @@ import { ContentAnalysis } from './pages/ContentAnalysis';
 import { Alerts } from './pages/Alerts';
 import { AlertsFanpage } from './pages/AlertsFanpage';
 import { Settings } from './pages/Settings';
-import { Downloads } from './pages/Downloads';
 
 import { Accounts } from './pages/Accounts';
 import { Fanpages } from './pages/Fanpages';
 import { Usage } from './pages/Usage';
-import { Guide } from './pages/Guide';
-import { FAQ } from './pages/FAQ';
 
 const ProtectedRoute = ({ children, requireAdmin = false }: { children: React.ReactNode, requireAdmin?: boolean }) => {
-  const { user, role, isLoading } = useAuth();
+  const { user, role, status, isLoading, logout } = useAuth();
 
   if (isLoading) {
     return <div className="min-h-screen flex items-center justify-center">Đang tải...</div>;
@@ -30,6 +27,26 @@ const ProtectedRoute = ({ children, requireAdmin = false }: { children: React.Re
 
   if (!user) {
     return <Navigate to="/login" replace />;
+  }
+
+  // Only emails explicitly approved by an admin (Quản lý Truy cập) may view
+  // any report page. Admins are always implicitly approved.
+  if (role !== 'admin' && status !== 'approved') {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-6">
+        <p className="text-lg font-bold text-gray-900">Tài khoản đang chờ phê duyệt</p>
+        <p className="text-sm text-gray-500 max-w-md">
+          Email <span className="font-semibold">{user.email}</span> chưa được admin cấp quyền xem báo cáo.
+          Vui lòng liên hệ admin để được cấp quyền truy cập.
+        </p>
+        <button
+          onClick={() => logout()}
+          className="mt-2 px-4 py-2 rounded-lg border border-gray-300 text-sm font-semibold text-gray-700 hover:bg-gray-50"
+        >
+          Đăng xuất
+        </button>
+      </div>
+    );
   }
 
   if (requireAdmin && role !== 'admin') {
@@ -89,10 +106,6 @@ const AppRoutes = () => {
             <Settings />
           </ProtectedRoute>
         } />
-        <Route path="changelog" element={<div className="p-8">Nhật ký Thay đổi (Đang phát triển)</div>} />
-        <Route path="guide" element={<Guide />} />
-        <Route path="downloads" element={<Downloads />} />
-        <Route path="faq" element={<FAQ />} />
       </Route>
     </Routes>
   );

@@ -12,7 +12,16 @@ service cloud.firestore {
     //   - email: string (required, immutable)
     //   - role: string (required, enum: ['admin', 'user'])
     //   - department: string (optional)
+    //   - status: string (optional, enum: ['pending', 'approved'] — gates report access, admin-only to change)
     //   - createdAt: number (required, immutable)
+    //
+    // Collection: invitedEmails
+    // Document ID: {email} (lowercase)
+    // Fields:
+    //   - email: string (required)
+    //   - role: string (required, enum: ['admin', 'user'])
+    //   - invitedBy: string (required)
+    //   - invitedAt: number (required)
     //
     // Collection: sheetsConfigs
     // Document ID: {configId}
@@ -124,11 +133,12 @@ service cloud.firestore {
     // Domain Validators
     // ===============================================================
     function isValidUser(data) {
-      return hasOnlyAllowedFields(['uid', 'email', 'role', 'department', 'createdAt']) &&
+      return hasOnlyAllowedFields(['uid', 'email', 'role', 'department', 'status', 'createdAt']) &&
              data.uid is string && data.uid.size() > 0 &&
              data.email is string && isValidEmail(data.email) &&
              data.role in ['admin', 'user'] &&
              (!('department' in data) || data.department is string) &&
+             (!('status' in data) || data.status in ['pending', 'approved']) &&
              data.createdAt is number;
     }
 
@@ -227,6 +237,14 @@ service cloud.firestore {
              (!('updatedAt' in data) || data.updatedAt is number);
     }
 
+    function isValidInvite(data) {
+      return hasOnlyAllowedFields(['email', 'role', 'invitedBy', 'invitedAt']) &&
+             data.email is string && isValidEmail(data.email) &&
+             data.role in ['admin', 'user'] &&
+             data.invitedBy is string &&
+             data.invitedAt is number;
+    }
+
     function isValidPartner(data) {
       return hasOnlyAllowedFields(['name', 'feeHistory', 'createdAt']) &&
              data.name is string && data.name.size() > 0 && data.name.size() < 100 &&
@@ -304,6 +322,14 @@ service cloud.firestore {
       allow create, update, delete: if isAuthenticated();
     }
 
+    match /roasCheckpoints/{checkpointId} {
+      // Written only by the server (Admin SDK, bypasses these rules) on a
+      // schedule. Any signed-in user may read; only admins may write/delete
+      // via the client SDK (defense in depth — normal flow never does this).
+      allow read: if isAuthenticated();
+      allow create, update, delete: if isAdmin();
+    }
+
     match /syncHistory/{historyId} {
       allow read: if isAuthenticated();
       allow create: if isAuthenticated() && isValidSyncHistory(request.resource.data);
@@ -326,13 +352,28 @@ service cloud.firestore {
       // Users can read their own profile, admins can read all
       allow read: if isOwner(userId) || isAdmin();
       
-      // Only admins can create/update users, OR a user can create their own profile with 'user' role
-      allow create: if isAuthenticated() && isValidUser(request.resource.data) && 
-                    ((isOwner(userId) && request.resource.data.role == 'user' && request.resource.data.uid == request.auth.uid) || isAdmin());
-      
-      allow update: if isAuthenticated() && isValidUser(request.resource.data) && 
-                    ((isOwner(userId) && request.resource.data.role == resource.data.role && request.resource.data.uid == resource.data.uid && request.resource.data.email == resource.data.email && request.resource.data.createdAt == resource.data.createdAt) || isAdmin());
-                    
+      // Only admins can create/update users, OR a user can create their own profile
+      // with 'user' role and 'pending' status — self-service signup, but access
+      // approval (status) and role can only ever be granted by an admin.
+      allow create: if isAuthenticated() && isValidUser(request.resource.data) &&
+                    ((isOwner(userId) && request.resource.data.role == 'user' &&
+                      request.resource.data.uid == request.auth.uid &&
+                      (!('status' in request.resource.data) || request.resource.data.status == 'pending')) || isAdmin());
+
+      // Self-update may only refresh allowed metadata — role and status are
+      // immutable from the user's own side; only an admin can change them.
+      allow update: if isAuthenticated() && isValidUser(request.resource.data) &&
+                    ((isOwner(userId) && request.resource.data.role == resource.data.role && request.resource.data.uid == resource.data.uid && request.resource.data.email == resource.data.email && request.resource.data.createdAt == resource.data.createdAt &&
+                      (request.resource.data.status == resource.data.status || (!('status' in request.resource.data) && !('status' in resource.data)))) || isAdmin());
+
+      allow delete: if isAdmin();
+    }
+
+    match /invitedEmails/{emailId} {
+      // A signed-in user may check whether THEIR OWN email was invited
+      // (needed by AuthContext on first login); admins can read/manage all.
+      allow read: if isAdmin() || (isAuthenticated() && request.auth.token.email != null && request.auth.token.email.lower() == emailId);
+      allow create, update: if isAdmin() && isValidInvite(request.resource.data) && request.resource.data.email.lower() == emailId;
       allow delete: if isAdmin();
     }
 

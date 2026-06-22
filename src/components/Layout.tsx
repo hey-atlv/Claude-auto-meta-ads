@@ -9,11 +9,7 @@ import {
   BarChart3, 
   TrendingUp,
   FileText, 
-  Settings, 
-  History, 
-  BookOpen, 
-  Download, 
-  HelpCircle,
+  Settings,
   LogOut,
   Users,
   Flag,
@@ -179,13 +175,6 @@ export const Layout: React.FC = () => {
             {user && role === 'admin' && (
               <SidebarLink to="/usage" icon={Radar} iconColor="text-teal-500" isCollapsed={isSidebarCollapsed}>Quản lý Truy cập</SidebarLink>
             )}
-            <SidebarLink to="/changelog" icon={History} iconColor="text-gray-500" isCollapsed={isSidebarCollapsed}>Nhật ký Thay đổi</SidebarLink>
-          </SidebarGroup>
-
-          <SidebarGroup title="Tài Nguyên" isCollapsed={isSidebarCollapsed}>
-            <SidebarLink to="/guide" icon={BookOpen} iconColor="text-blue-500" isCollapsed={isSidebarCollapsed}>Tổng quan & Các bước</SidebarLink>
-            <SidebarLink to="/downloads" icon={Download} iconColor="text-emerald-500" isCollapsed={isSidebarCollapsed}>Download Script</SidebarLink>
-            <SidebarLink to="/faq" icon={HelpCircle} iconColor="text-amber-500" isCollapsed={isSidebarCollapsed}>FAQ & Xử lý Lỗi</SidebarLink>
           </SidebarGroup>
         </div>
 

@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { db } from '../firebase';
-import { collection, query, orderBy, limit, onSnapshot, getDocs } from 'firebase/firestore';
+import { collection, query, orderBy, limit, onSnapshot, getDocs, doc, updateDoc, setDoc, deleteDoc } from 'firebase/firestore';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell, Legend } from 'recharts';
-import { Activity, Users, Clock, Eye, ShieldCheck, Mail, Calendar, TrendingUp, Zap, MousePointer2 } from 'lucide-react';
+import { Activity, Users, Clock, Eye, ShieldCheck, Mail, Calendar, TrendingUp, Zap, MousePointer2, Check, X, UserCog, UserPlus, Trash2 } from 'lucide-react';
 import { format, subDays, startOfDay, endOfDay } from 'date-fns';
 import clsx from 'clsx';
+import { useAuth } from '../contexts/AuthContext';
 
 interface UserActivity {
   id: string;
@@ -17,30 +18,120 @@ interface UserActivity {
 
 interface UserProfile {
   uid: string;
+  email: string;
   role: 'admin' | 'user';
+  status?: 'pending' | 'approved';
+  createdAt?: number;
+}
+
+interface InvitedEmail {
+  id: string;
+  email: string;
+  role: 'admin' | 'user';
+  invitedBy: string;
+  invitedAt: number;
 }
 
 export const Usage: React.FC = () => {
+  const { user } = useAuth();
   const [activities, setActivities] = useState<UserActivity[]>([]);
   const [userRoles, setUserRoles] = useState<Record<string, 'admin' | 'user'>>({});
+  const [allUsers, setAllUsers] = useState<UserProfile[]>([]);
+  const [invites, setInvites] = useState<InvitedEmail[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [savingUid, setSavingUid] = useState<string | null>(null);
+  const [inviteEmail, setInviteEmail] = useState('');
+  const [inviteRole, setInviteRole] = useState<'admin' | 'user'>('user');
+  const [isInviting, setIsInviting] = useState(false);
+  const [inviteError, setInviteError] = useState<string | null>(null);
+
+  const fetchUsers = async () => {
+    try {
+      const snapshot = await getDocs(collection(db, 'users'));
+      const roles: Record<string, 'admin' | 'user'> = {};
+      const list: UserProfile[] = [];
+      snapshot.forEach(d => {
+        const data = d.data() as UserProfile;
+        roles[data.uid] = data.role;
+        list.push({ ...data, uid: data.uid || d.id });
+      });
+      setUserRoles(roles);
+      list.sort((a, b) => (a.email || '').localeCompare(b.email || ''));
+      setAllUsers(list);
+    } catch (error) {
+      console.error("Error fetching users:", error);
+    }
+  };
+
+  const fetchInvites = async () => {
+    try {
+      const snapshot = await getDocs(collection(db, 'invitedEmails'));
+      const list: InvitedEmail[] = [];
+      snapshot.forEach(d => list.push({ id: d.id, ...(d.data() as Omit<InvitedEmail, 'id'>) }));
+      list.sort((a, b) => (b.invitedAt || 0) - (a.invitedAt || 0));
+      setInvites(list);
+    } catch (error) {
+      console.error("Error fetching invites:", error);
+    }
+  };
+
+  const updateUserAccess = async (uid: string, patch: Partial<Pick<UserProfile, 'status' | 'role'>>) => {
+    setSavingUid(uid);
+    try {
+      await updateDoc(doc(db, 'users', uid), patch);
+      setAllUsers(prev => prev.map(u => (u.uid === uid ? { ...u, ...patch } : u)));
+      setUserRoles(prev => (patch.role ? { ...prev, [uid]: patch.role } : prev));
+    } catch (error) {
+      console.error("Error updating user access:", error);
+      alert("Không thể cập nhật quyền truy cập. Vui lòng thử lại.");
+    } finally {
+      setSavingUid(null);
+    }
+  };
+
+  const sendInvite = async () => {
+    const email = inviteEmail.trim().toLowerCase();
+    setInviteError(null);
+    if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+      setInviteError('Email không hợp lệ.');
+      return;
+    }
+    if (allUsers.some(u => (u.email || '').toLowerCase() === email)) {
+      setInviteError('Email này đã có trong hệ thống — dùng nút "Cấp quyền" ở bảng dưới.');
+      return;
+    }
+    setIsInviting(true);
+    try {
+      await setDoc(doc(db, 'invitedEmails', email), {
+        email,
+        role: inviteRole,
+        invitedBy: user?.email || 'admin',
+        invitedAt: Date.now(),
+      });
+      setInviteEmail('');
+      setInviteRole('user');
+      await fetchInvites();
+    } catch (error) {
+      console.error("Error sending invite:", error);
+      setInviteError('Không thể gửi lời mời. Vui lòng thử lại.');
+    } finally {
+      setIsInviting(false);
+    }
+  };
+
+  const cancelInvite = async (id: string) => {
+    try {
+      await deleteDoc(doc(db, 'invitedEmails', id));
+      setInvites(prev => prev.filter(i => i.id !== id));
+    } catch (error) {
+      console.error("Error cancelling invite:", error);
+      alert("Không thể hủy lời mời. Vui lòng thử lại.");
+    }
+  };
 
   useEffect(() => {
-    // Fetch users for role mapping
-    const fetchUsers = async () => {
-      try {
-        const snapshot = await getDocs(collection(db, 'users'));
-        const roles: Record<string, 'admin' | 'user'> = {};
-        snapshot.forEach(doc => {
-          const data = doc.data() as UserProfile;
-          roles[data.uid] = data.role;
-        });
-        setUserRoles(roles);
-      } catch (error) {
-        console.error("Error fetching users:", error);
-      }
-    };
     fetchUsers();
+    fetchInvites();
 
     const q = query(collection(db, 'userActivities'), orderBy('timestamp', 'desc'), limit(1000));
     const unsubscribe = onSnapshot(q, (snapshot) => {
@@ -159,6 +250,154 @@ export const Usage: React.FC = () => {
             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
             <span className="text-[10px] font-black text-emerald-700 uppercase tracking-widest">Hệ thống Đang hoạt động</span>
           </div>
+        </div>
+      </div>
+
+      {/* Access control — approve/revoke which emails may view reports */}
+      <div className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-200/40">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-1.5 h-6 bg-rose-500 rounded-full" />
+          <h3 className="text-xs font-black text-gray-900 uppercase tracking-[0.2em]">Phân quyền truy cập báo cáo</h3>
+          <span className="text-[8px] font-black text-gray-400 uppercase px-2 py-1 bg-gray-50 rounded">
+            Chỉ email đã được duyệt mới xem được báo cáo
+          </span>
+        </div>
+
+        {/* Invite by email — pre-approve an email before they ever log in */}
+        <div className="mb-6 p-4 bg-gray-50 rounded-2xl border border-gray-100">
+          <div className="flex items-center gap-2 mb-3">
+            <UserPlus className="w-4 h-4 text-blue-600" />
+            <span className="text-[10px] font-black text-gray-700 uppercase tracking-widest">Gửi lời mời truy cập</span>
+          </div>
+          <div className="flex flex-wrap items-stretch gap-2">
+            <input
+              type="email"
+              value={inviteEmail}
+              onChange={e => setInviteEmail(e.target.value)}
+              onKeyDown={e => { if (e.key === 'Enter') sendInvite(); }}
+              placeholder="email@congty.com"
+              className="flex-1 min-w-[220px] px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+            />
+            <select
+              value={inviteRole}
+              onChange={e => setInviteRole(e.target.value as 'admin' | 'user')}
+              className="px-3 py-2 rounded-lg border border-gray-200 text-sm bg-white"
+            >
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+            <button
+              disabled={isInviting || !inviteEmail.trim()}
+              onClick={sendInvite}
+              className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-bold hover:bg-blue-700 disabled:opacity-50"
+            >
+              <UserPlus className="w-4 h-4" /> {isInviting ? 'Đang gửi...' : 'Mời'}
+            </button>
+          </div>
+          {inviteError && <p className="text-xs text-rose-600 mt-2">{inviteError}</p>}
+          <p className="text-[10px] text-gray-400 mt-2">
+            Email được mời sẽ tự động được duyệt ngay khi họ đăng nhập Google lần đầu — không cần chờ xét duyệt.
+          </p>
+
+          {invites.length > 0 && (
+            <div className="mt-4 space-y-1.5">
+              {invites.map(inv => {
+                const alreadyJoined = allUsers.some(u => (u.email || '').toLowerCase() === inv.email.toLowerCase());
+                return (
+                  <div key={inv.id} className="flex items-center justify-between gap-3 px-3 py-2 bg-white rounded-lg border border-gray-100">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <Mail className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                      <span className="text-xs font-semibold text-gray-700 truncate">{inv.email}</span>
+                      <span className={clsx('text-[8px] font-black uppercase px-1.5 py-0.5 rounded-full shrink-0',
+                        inv.role === 'admin' ? 'bg-violet-50 text-violet-700' : 'bg-gray-100 text-gray-600')}>
+                        {inv.role === 'admin' ? 'Admin' : 'User'}
+                      </span>
+                      {alreadyJoined ? (
+                        <span className="text-[8px] font-black uppercase px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 shrink-0">Đã tham gia</span>
+                      ) : (
+                        <span className="text-[8px] font-black uppercase px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 shrink-0">Chưa đăng nhập</span>
+                      )}
+                    </div>
+                    <button
+                      onClick={() => cancelInvite(inv.id)}
+                      className="flex items-center gap-1 px-2 py-1 rounded-lg text-rose-600 hover:bg-rose-50 text-[10px] font-bold shrink-0"
+                    >
+                      <Trash2 className="w-3 h-3" /> Hủy
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-left">
+            <thead>
+              <tr className="border-b border-gray-100">
+                <th className="py-2 px-3 text-[9px] font-black text-gray-400 uppercase tracking-widest">Email</th>
+                <th className="py-2 px-3 text-[9px] font-black text-gray-400 uppercase tracking-widest">Vai trò</th>
+                <th className="py-2 px-3 text-[9px] font-black text-gray-400 uppercase tracking-widest">Trạng thái</th>
+                <th className="py-2 px-3 text-[9px] font-black text-gray-400 uppercase tracking-widest text-right">Hành động</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-50">
+              {allUsers.length === 0 && (
+                <tr><td colSpan={4} className="py-6 text-center text-xs text-gray-400">Chưa có người dùng nào.</td></tr>
+              )}
+              {allUsers.map(u => {
+                const isApproved = u.role === 'admin' || u.status === 'approved';
+                const isSaving = savingUid === u.uid;
+                return (
+                  <tr key={u.uid}>
+                    <td className="py-2.5 px-3 text-xs font-semibold text-gray-800">{u.email || u.uid}</td>
+                    <td className="py-2.5 px-3">
+                      <span className={clsx('text-[9px] font-black uppercase px-2 py-1 rounded-full',
+                        u.role === 'admin' ? 'bg-violet-50 text-violet-700' : 'bg-gray-100 text-gray-600')}>
+                        {u.role === 'admin' ? 'Admin' : 'User'}
+                      </span>
+                    </td>
+                    <td className="py-2.5 px-3">
+                      <span className={clsx('text-[9px] font-black uppercase px-2 py-1 rounded-full',
+                        isApproved ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700')}>
+                        {isApproved ? 'Đã duyệt' : 'Chờ duyệt'}
+                      </span>
+                    </td>
+                    <td className="py-2.5 px-3 text-right">
+                      <div className="flex items-center justify-end gap-2">
+                        {u.role !== 'admin' && (
+                          isApproved ? (
+                            <button
+                              disabled={isSaving}
+                              onClick={() => updateUserAccess(u.uid, { status: 'pending' })}
+                              className="flex items-center gap-1 px-2.5 py-1 rounded-lg border border-amber-200 text-amber-700 bg-amber-50 hover:bg-amber-100 text-[10px] font-bold disabled:opacity-50"
+                            >
+                              <X className="w-3 h-3" /> Thu hồi
+                            </button>
+                          ) : (
+                            <button
+                              disabled={isSaving}
+                              onClick={() => updateUserAccess(u.uid, { status: 'approved' })}
+                              className="flex items-center gap-1 px-2.5 py-1 rounded-lg border border-emerald-200 text-emerald-700 bg-emerald-50 hover:bg-emerald-100 text-[10px] font-bold disabled:opacity-50"
+                            >
+                              <Check className="w-3 h-3" /> Cấp quyền
+                            </button>
+                          )
+                        )}
+                        <button
+                          disabled={isSaving}
+                          onClick={() => updateUserAccess(u.uid, { role: u.role === 'admin' ? 'user' : 'admin', status: 'approved' })}
+                          className="flex items-center gap-1 px-2.5 py-1 rounded-lg border border-gray-200 text-gray-600 bg-gray-50 hover:bg-gray-100 text-[10px] font-bold disabled:opacity-50"
+                        >
+                          <UserCog className="w-3 h-3" /> {u.role === 'admin' ? 'Bỏ admin' : 'Đặt admin'}
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
       </div>
 

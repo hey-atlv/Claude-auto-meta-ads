@@ -1147,6 +1147,85 @@ function startAutoSync() {
   // Then every hour
   setInterval(runSync, INTERVAL_MS);
   console.log(`[AutoSync] Đã lên lịch đồng bộ tự động mỗi ${INTERVAL_MS / 60000} phút.`);
+
+  // Run once 45s after startup, then every 30 min — independent of the
+  // heavy ETL sync above so a checkpoint still gets captured even if sheet
+  // sync is slow/failing.
+  setTimeout(maybeSaveRoasCheckpoint, 45_000);
+  setInterval(maybeSaveRoasCheckpoint, 30 * 60 * 1000);
+  console.log('[RoasCheckpoint] Đã lên lịch lưu checkpoint ROAS mỗi 30 phút (mốc 5/10/15/20/25/cuối tháng).');
+}
+
+// ── ROAS CHECKPOINT SNAPSHOTS (mốc 5/10/15/20/25/cuối tháng) ────────────────
+// Saves the official weighted ROAS (Tổng/Nội Địa/Nước Ngoài), taken straight
+// from summary_roas_monthly (same source + same spend-weighted-average
+// formula as the Xu hướng ROAS chart), into Firestore so future months can
+// be compared "cùng kỳ" against these fixed checkpoints. Only the SAME
+// formula as RoasSummary.tsx's chartData aggregation is replicated here —
+// no daily revenue is reconstructed, since none is reliably available.
+function getVNDateParts(): { year: number; month: number; day: number } {
+  const vn = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }));
+  return { year: vn.getFullYear(), month: vn.getMonth() + 1, day: vn.getDate() };
+}
+
+const ROAS_CHECKPOINT_DAYS = [5, 10, 15, 20, 25];
+
+async function maybeSaveRoasCheckpoint() {
+  try {
+    const { year, month, day } = getVNDateParts();
+    const lastDayOfMonth = new Date(year, month, 0).getDate();
+    const allCheckpoints = Array.from(new Set([...ROAS_CHECKPOINT_DAYS, lastDayOfMonth]));
+
+    // Catch-up logic: find the most recent checkpoint day that has already
+    // passed (or is today) but hasn't been saved yet. This way a missed
+    // mốc (server down, Sunday with no fresh data, etc.) still gets a
+    // best-effort snapshot using the current live value, instead of being
+    // silently skipped — but we only ever backfill the SINGLE most recent
+    // gap, not every missed mốc, to avoid faking identical values across
+    // multiple checkpoint labels.
+    const passedCheckpoints = allCheckpoints.filter(d => d <= day).sort((a, b) => b - a);
+    if (passedCheckpoints.length === 0) return;
+
+    const pad = (n: number) => String(n).padStart(2, '0');
+    for (const checkpointDay of passedCheckpoints) {
+      const dateStr = `${year}-${pad(month)}-${pad(checkpointDay)}`;
+      const docRef = db.collection('roasCheckpoints').doc(dateStr);
+      const existing = await docRef.get();
+      if (existing.exists) continue; // already saved — nothing to catch up before this one
+
+      const mocLabel = checkpointDay === lastDayOfMonth && checkpointDay !== 25 ? 'eom' : String(checkpointDay);
+      const reportMonth = `${year}_T${pad(month)}`;
+
+      const r = await pgPool.query(
+        `SELECT geography, spend::float AS spend, roas_month::float AS roas_month, roas_3months::float AS roas_3months
+         FROM summary_roas_monthly WHERE report_month = $1`,
+        [reportMonth]
+      );
+
+      const weighted = (geo: string) => {
+        const rows = r.rows.filter((x: any) => x.geography === geo);
+        const totalSpend = rows.reduce((s: number, x: any) => s + (x.spend || 0), 0);
+        const roasMonth = totalSpend > 0 ? rows.reduce((s: number, x: any) => s + (x.spend || 0) * (x.roas_month || 0), 0) / totalSpend : 0;
+        const roas3m = totalSpend > 0 ? rows.reduce((s: number, x: any) => s + (x.spend || 0) * (x.roas_3months || 0), 0) / totalSpend : 0;
+        return { spend: totalSpend, roasMonth: Math.round(roasMonth * 100) / 100, roas3m: Math.round(roas3m * 100) / 100 };
+      };
+
+      await docRef.set({
+        date: dateStr,
+        year, month, day: checkpointDay, mocLabel,
+        reportMonth,
+        total: weighted('total'),
+        domestic: weighted('domestic'),
+        overseas: weighted('overseas'),
+        capturedLate: checkpointDay !== day,
+        createdAt: Date.now(),
+      });
+      console.log(`[RoasCheckpoint] Đã lưu checkpoint ${dateStr} (mốc ${mocLabel})${checkpointDay !== day ? ' [bắt kịp trễ]' : ''}`);
+      break; // only backfill the single most recent gap
+    }
+  } catch (e: any) {
+    console.error('[RoasCheckpoint] Lỗi khi lưu checkpoint:', e.message);
+  }
 }
 
 startServer();
